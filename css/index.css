@@ -80,7 +80,7 @@ h3 {
     background-color: transparent;
 }
 
-article {
+.column {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -101,7 +101,7 @@ article {
     border-radius: 4px;
 }
 
-.seperator {
+.separator {
     position: static;
     width: 80%;
     height: 0px;
@@ -116,4 +116,11 @@ article {
     order: 1;
     flex-grow: 0;
     margin: 24px 0px;
+}
+
+.notification{
+    position: absolute;
+    top: 20%;
+    right: 10%;
+    color: white;
 }
