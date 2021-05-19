@@ -1,0 +1,119 @@
+body {
+    position: relative;
+    width: auto;
+    height: 100vh;
+
+    background: #252836;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+nav {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    left: -3%;
+    top: -1%;
+    z-index: 2;
+
+
+    background: #1F1D2B;
+}
+
+.active {
+    position: absolute;
+    width: 89%;
+    height: 56px;
+    left: 30px;
+    top: 128px;
+    border: none;
+
+    background: #ea7c6918;
+}
+
+.active-underline {
+    position: absolute;
+    top: 100%;
+    width: 80%;
+    height: 5%;
+    background-color: #EA7C69;
+    z-index: 1;
+}
+
+h1,
+h3 {
+    color: whitesmoke;
+    font-weight: normal;
+}
+
+.btn-salg {
+    position: absolute;
+    width: 89%;
+    height: 6%;
+    left: 10%;
+    top: 20%;
+    background-color: transparent;
+    border: none;
+
+
+}
+
+.button-txt {
+    position: absolute;
+    bottom: -15%;
+    left: 50%;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 1.5em;
+    color: #FF7D69;
+}
+
+.topbar {
+    /* Topbar */
+
+    position: absolute;
+    left: 14%;
+    right: -0%;
+    top: 0.72%;
+    bottom: 87.65%;
+    background-color: transparent;
+}
+
+article {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    width: 85%;
+    height: 124px;
+    left: 262px;
+    top: 19%;
+
+    background: #1F1D2B;
+    border: 1px solid #E74C3C;
+    box-sizing: border-box;
+
+    /* Notification shadow */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.seperator {
+    position: static;
+    width: 80%;
+    height: 0px;
+    left: 0px;
+    top: 46px;
+
+    /* Base / Dark Line */
+    border: 1px solid #393C49;
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 24px 0px;
+}
