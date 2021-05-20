@@ -1,0 +1,195 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+i {
+    color: #FFFFFF;
+    width: 50%;
+    margin-left: 20px;
+}
+
+
+
+/**** Log ut ikon ****/
+.fa-sign-out-alt {
+    margin: 0;
+}
+.fa-chevron-down {
+    margin: 0 20px;
+    width: 0;
+    cursor: pointer;
+}
+.fa-sign-in-alt {
+    width: 0;
+    cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    color: whitesmoke;
+    font-weight: normal;
+    font-family: 'Barlow', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #252836;
+}
+
+/**** Navbar Styling ****/
+
+.logo {
+    width: 100%;
+    top: -10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo-image {
+    width: 50%;
+}
+
+.navigation {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #1F1D2B;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 200px;
+    height: 56px;
+    overflow: hidden;  
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #FFFFFF;
+    width: 100%;
+    text-align: start;
+    font-family: 'Barlow', sans-serif;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    transform: translateX(-100%) scale(0);
+    transform-origin: 50% 50%;
+    width: 100%;
+    height: 1px;
+    background-color: #EA7C69;
+    transition: transform 1.5s;
+}
+
+.nav-link:hover::after {
+    transform: translateX(-100%) scale(1);
+}
+
+.nav-link::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    left: 0;
+    top: 15px;
+    background-color: #EA7C69;
+    transition: opacity 0.6s;
+}
+
+.nav-link:hover::before {
+    opacity: 0.4;
+}
+
+.nav-logout-div {
+
+    position: absolute;
+    top: 90%;  
+}
+
+.nav-logout-button {
+    padding: 6px 15px;
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex; 
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+
+.main-div {
+    position: absolute;
+    width: calc(100% - 200px);
+    left: 200px;
+    max-width: 1400px;
+    min-height: 100vh;
+}
+
+.topbar {
+    padding: 2rem 10rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-title {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.topbar-username {
+    display: flex;
+    align-items: center;
+    
+}
+
+.topbar-line {
+    width: 0.5px;
+    height: 35px;
+    background-color: #fff;
+    margin-left: 10px;
+}
+
+.date {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+
+ /**** Topbar ****/
+
+
+
