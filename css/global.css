@@ -1,3 +1,7 @@
+
+/*****COMMON STYLING*****/
+/************************/
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -67,14 +71,14 @@ body {
     flex-direction: column;
 }
 
-ul {
+.nav-links-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-li {
+.nav-links {
     position: relative;
     display: flex;
     align-items: center;
@@ -146,7 +150,7 @@ li:hover::after {
     justify-content: space-around;
 }
 
-
+/**** Header Styling ****/
 
 .main-div {
     position: absolute;
@@ -156,8 +160,6 @@ li:hover::after {
     min-height: 100vh;
     padding: 2rem 10rem;
 }
-
-
 
 .topbar {
     width: 100%;
