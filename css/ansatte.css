@@ -60,7 +60,7 @@
 
 .cardo {
     width: 250px;
-    height: 250px;
+    height: 300px;
     background-color: #1F1D2B;
     display: flex;
     align-items: center;
@@ -68,7 +68,7 @@
     box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
-.image-wrapper {
+.cardo-content-wrapper {
     max-width: 250px;
     max-height: 250px;
     display: flex;
@@ -77,8 +77,16 @@
     
 }
 
-.card-image {
-    width: 50px;
-    border-radius: 15px 5px;
+.image-wrapper {
+    max-width: 50%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.card-image  {
+  max-width: 100%;
+ 
+  
 }
 
