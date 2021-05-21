@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/global.css">
     <title>Gyldene Pizza</title>
     <!--Font awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+    <!--Bulma-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma-rtl.min.css">
 </head>
 
 <body onload="initialDate()">
@@ -26,7 +28,7 @@
                 <a class="nav-link" href="/index.html">Forside</a>
             </li>
 
-            <li> 
+            <li class="active"> 
                 <i class="fas fa-wallet"></i>
                 <a class="nav-link" href="/salg.html">Salg</a>
             </li>
@@ -109,6 +111,8 @@
             updateDate();
             window.setInterval("updateDate()", 1);
         };
+
+      
     </script>
 </body>
 

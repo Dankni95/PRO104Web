@@ -1,0 +1,47 @@
+
+
+.label-title {
+    font-size: 30px;
+    color: #fff ;
+}
+
+.section-left {
+    display: flex;
+    align-items: center;
+    width: 55%;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.select select {
+    background: #1F1D2B !important;
+    border: none !important;
+    outline: none !important;
+    color: #fff !important;
+    padding: 0 4rem !important;
+    
+}
+
+.select::before {
+    background-color: #fff !important;
+}
+
+.section-btn {
+    padding: 8px 20px;
+    color: #FF6F5A;
+    background-color: #50343A;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.span-pluss {
+    color: #fff;
+
+}
+
+.wrapper-btn {
+    overflow: hidden;
+    
+}
