@@ -17,96 +17,130 @@
     <link rel="stylesheet" href="css/salg.css">
 </head>
 
-<body>
+<body onload="data()">
 
-    <header class="topbar">
-        <div class="topbar-left">
-            <h1 class="topbar-title">Salg</h1>
-            <div class="date" style="color: white;">
-                <span id="day-id">Day</span>,
-                <span id="day-nr-id">00</span>.
-                <span id="month-id">Month</span>
-                <span id="year-id">Year</span>
-            </div>
-            <div class="separator"></div>
-            <div class="choose-department deparment-placement"><img src="/images/choose-icon.svg" alt="department icon">
-                <select class="department-dropdown" name="department-chooser">
-                    <option value="Oslo øst">Oslo øst</option>
-                    <option value="Oslo vest">Oslo vest</option>
-                    <option value="Asker">Asker</option>
-                    <option value="Fornebu">Fornebu</option>
-                </select>
-            </div>
-        </div>
-        <div class="user-name">Daniel Lysak</div>
-        <div class="user-buttons">
-            <div class="fas fa-angle-down" style="position:relative; right: 50%;"></div>
-            <div class="active-underline rotate"></div>
-            <div class="far fa-bell" style="position:relative; left: 50%;"></div>
-        </div>
-        <div class="separator"></div>
-        </div>
-    </header>
-
-
-    <nav>
+    <nav class="navigation">
         <div class="logo">
             <img class="logo-image" src="/images/Logo.svg" alt="A chef logo">
         </div>
-        <ul>
-            <li>
+        <ul class="nav-links-wrapper">
+            <li class="nav-links">
                 <i class="far fa-bell"></i>
-                <a href="/index.html">Forside</a>
+                <a class="nav-link " href="/index.html">Forside</a>
             </li>
 
-            <li>
+            <li class="nav-links active">
                 <i class="fas fa-wallet"></i>
-                <a href="/salg.html">Salg</a>
+                <a class="nav-link" href="/salg.html">Salg</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="far fa-map"></i>
-                <a href="/meny.html">Meny</a>
+                <a class="nav-link" href="/meny.html">Meny</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="fas fa-users"></i>
-                <a href="/ansatte.html">Ansatte</a>
+                <a class="nav-link " href="/ansatte.html">Ansatte</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="fas fa-utensils"></i>
-                <a href="/restauranter.html">Restauranter</a>
+                <a class="nav-link" href="/restauranter.html">Restauranter</a>
             </li>
         </ul>
 
         <div class="seperator"></div>
 
-        <div class="nav-logout">
+        <div class="nav-logout-div">
             <button class="nav-logout-button">
                 <i class="fas fa-sign-out-alt"></i>
                 Logout
             </button>
         </div>
-
     </nav>
 
-    <main>
+    <main class="main-div">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="topbar-title">Ansatte</h1>
+                <div class="date">
+                    <span id="day-id">Day</span>,
+                    <span id="day-nr-id">00</span>.
+                    <span id="month-id">Month</span>
+                    <span id="year-id">Year</span>
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="dropdown is-active">
+                <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        <span>Velg avdeling</span>
+                        <span class="icon is-small">
+                        </span>
+                    </button>
+
+                </div>
+                <div class="dropdown-menu">
+                    <div class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                            Dropdown item
+                        </a>
+                        <a class="dropdown-item">
+                            Other dropdown item
+                        </a>
+                        <a href="#" class="dropdown-item is-active">
+                            Active dropdown item
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Other dropdown item
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topbar-right">
+                <div class="topbar-username">
+                    <h4>Daniel Lysak</h4>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="topbar-line"></div>
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+            </div>
+        </header>
+
         <div class="sales-figures">
             <div class="sales">
                 <img class="icon-size icon-placement" src="images/money-icon.svg" alt="money icon">
                 <img class="arrow-size arrow-placement is-hidden" src="images/down-icon.svg" alt="arrow down">
                 <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
+                <p class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
+                <div class="figures-size figures-placement has-text-primary">
+                    <p>FiguresNOK</p>
+                </div>
+
             </div>
             <div class="total-pizzas">
                 <img class="icon-size icon-placement" src="/images/pizza-icon.svg" alt="placeholder icon">
                 <img class="arrow-size arrow-placement" src="images/down-icon.svg" alt="arrow down">
                 <img class="arrow-size arrow-placement is-hidden" src="images/up-icon.svg" alt="arrow up">
+                <p class="sales-percentage-size sales-percentage-placement has-text-danger">%Placeholder</p>
+                <div class="figures-size figures-placement has-text-danger">
+                    <p>Pizza</p>
+                </div>
+
+
             </div>
             <div class="customers">
                 <img class="icon-size icon-placement" src="/images/customers-icon.svg" alt="cutomers icon">
                 <img class="arrow-size arrow-placement is-hidden" src="images/down-icon.svg" alt="arrow down">
                 <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
+                <p class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
+                <div class="figures-size figures-placement has-text-primary">
+                    <p>Customers</p>
+                </div>
             </div>
         </div>
 
@@ -114,6 +148,12 @@
             <div class="separator" style="position:absolute; top: 21%; width: 100% "></div>
             <div class="pizzas"></div>
         </div>
+
+        <div class="days-pizza-position days-pizza-size">
+            <img class="pizza-icon" src="/images/pizza.png" alt="Pizza">
+        </div>
+
+
         <div class="mainpanel-customers">
             <table class="table">
                 <thead>
@@ -121,24 +161,45 @@
                         <th><abbr title="Hvem har bestilt">Kunde</abbr></th>
                         <th><abbr title="Hva kunden har bestilt">Meny</abbr></th>
                         <th>
-                            <th><abbr title="Totalt bestillingen kostet">Totalt</abbr></th>
-                            <th><abbr title="Status på bestilling">Status</abbr></th>
-                        </tr>
-                        <div class="separator" style="position:absolute; top: 21%; width: 100% "></div>
-                        <tr>
-                            <th>Lars lolipop</th>
-                            <th>Pepperoni pizza</th>
-                            <th>
-                            <th>500</th>
-                            <th><img src="/images/avventer-icon.svg" alt=""></th>
-                        </tr>
-                        <tr>
-                            <th>Lars lolipop</th>
-                            <th>Pepperoni pizza</th>
-                            <th>
-                            <th>500</th>
-                            <th><img src="/images/ferdig-icon.svg" alt=""></th>
-                        </tr>
+                        <th><abbr title="Totalt bestillingen kostet">Totalt</abbr></th>
+                        <th><abbr title="Status på bestilling">Status</abbr></th>
+                    </tr>
+                    <div class="separator" style="position:absolute; top: 21%; width: 100% "></div>
+                    <tr>
+                        <th>Lars lolipop</th>
+                        <th>Pepperoni pizza</th>
+                        <th>
+                        <th>500</th>
+                        <th><img src="/images/avventer-icon.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <th>Lars lolipop</th>
+                        <th>Pepperoni pizza</th>
+                        <th>
+                        <th>500</th>
+                        <th><img src="/images/ferdig-icon.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <th>Lars lolipop</th>
+                        <th>Pepperoni pizza</th>
+                        <th>
+                        <th>500</th>
+                        <th><img src="/images/tilbereder-icon.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <th>Lars lolipop</th>
+                        <th>Pepperoni pizza</th>
+                        <th>
+                        <th>500</th>
+                        <th><img src="/images/tilbereder-icon.svg" alt=""></th>
+                    </tr>
+                    <tr>
+                        <th>Lars lolipop</th>
+                        <th>Pepperoni pizza</th>
+                        <th>
+                        <th>500</th>
+                        <th><img src="/images/tilbereder-icon.svg" alt=""></th>
+                    </tr>
                     <tr>
                         <th>Lars lolipop</th>
                         <th>Pepperoni pizza</th>
@@ -155,7 +216,7 @@
 
 
 
-
+    <script type="module" src="js/test.js"></script>
 </body>
 
 </html>

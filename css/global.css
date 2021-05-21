@@ -1,3 +1,6 @@
+/*****COMMON STYLING*****/
+/************************/
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,13 +13,38 @@ i {
     margin-left: 20px;
 }
 
+.separator {
+    margin-top: 10px;
+    position: absolute;
+    width: 90%;
+    height: 0%;
+    
+    border: 1px solid #393C49;
+    z-index: 1;
+}
+
+
+
+
 /**** Log ut ikon ****/
 .fa-sign-out-alt {
     margin: 0;
 }
+.fa-chevron-down {
+    margin: 0 20px;
+    width: 0;
+    cursor: pointer;
+}
+.fa-sign-in-alt {
+    width: 0;
+    cursor: pointer;
+}
 
 h1,
-h3 {
+h2,
+h3,
+h4,
+p {
     color: whitesmoke;
     font-weight: normal;
     font-family: 'Barlow', sans-serif;
@@ -42,8 +70,9 @@ body {
     width: 50%;
 }
 
-nav {
-    width: 11%;
+.navigation {
+    position: fixed;
+    width: 200px;
     height: 100%;
     background: #1F1D2B;
     display: flex;
@@ -52,69 +81,68 @@ nav {
     flex-direction: column;
 }
 
-ul {
+.nav-links-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-li {
+.nav-links {
     position: relative;
     display: flex;
     align-items: center;
     width: 200px;
     height: 56px;
-    overflow: hidden;
+    overflow: hidden; 
+    
 }
 
-/* Overriding bulma link decoration, had to use important :O */
-a {
+.nav-link {
     text-decoration: none;
-    color: #FFFFFF !important;
+    color: #FFFFFF;
     width: 100%;
     text-align: start;
     font-family: 'Barlow', sans-serif;
+    cursor: pointer; 
+    z-index: 1;
 }
 
-a::after {
+.nav-link:hover {
+    color: #fff;
+}
+
+
+li::after {
     content: "";
     position: absolute;
     left: 100%;
     bottom: 0;
     transform: translateX(-100%) scale(0);
-    transform-origin: 50% 50%;
+    transform-origin: 100%;
     width: 100%;
     height: 1px;
     background-color: #EA7C69;
     transition: transform 1.5s;
 }
 
-a:hover::after {
+li:hover::after {
     transform: translateX(-100%) scale(1);
+  
 }
 
-a::before {
-    content: "";
+.active {
+    background-color: #ea7c694f;
+    
+}
+
+.active:hover::after {
+    transform: none;
+}
+
+.nav-logout-div {
     position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    left: 0;
-    top: 15px;
-    background-color: #EA7C69;
-    transition: opacity 0.6s;
-}
-
-a:hover::before {
-    opacity: 0.4;
-}
-
-.nav-logout {
-
-    position: absolute;
-    top: 90%;
+    top: 90%;  
 }
 
 .nav-logout-button {
@@ -126,84 +154,60 @@ a:hover::before {
     color: #FFFFFF;
     border-radius: 50px;
     cursor: pointer;
-    display: flex;
+    display: flex; 
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
 }
 
-/**** Topbar ****/
+/**** Header Styling ****/
+
+.main-div {
+    position: absolute;
+    width: calc(100% - 200px);
+    left: 200px;
+    max-width: 1600px;
+    min-height: 100vh;
+    padding: 2rem 5rem;
+}
 
 .topbar {
-    max-width: 100%;
-    position: absolute;
-    left: 14%;
-    right: -0%;
-    top: 0.72%;
-    bottom: 87.65%;
-    background-color: transparent;
-}
-
-.topbar-left {
-    padding: 0.2%;
-}
-
-
-.separator {
-    position: absolute;
-    width: 59%;
-    height: 0%;
-    left: 0%;
-    top: 70%;
-    border: 1px solid #393C49;
-    z-index: 1;
-}
-
-.user-name {
-    position: absolute;
-    top: 30%;
-    font-weight: none;
-    left: 80%;
-    color: white;
-}
-
-.user-buttons {
-    position: absolute;
-    top: 30%;
-    left: 90%;
-    color: white;
-}
-
-.rotate {
-    position: absolute;
-    width: 90%;
-    top: 50%;
-    transform: rotateY(0deg) rotate(90deg);
-}
-
-/* has to be moved */
-.title {
-    position: absolute;
-    left: 14%;
-    top: 14%;
-}
-
-.active {
-    position: absolute;
-    width: 89%;
-    height: 56px;
-    left: 30px;
-    top: 128px;
-    border: none;
-
-    background: #ea7c6918;
-}
-
-.active-underline {
-    position: absolute;
-    top: 50%;
     width: 100%;
-    height: 10%;
-    background-color: #EA7C69;
-    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topbar-title {
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-size: 28px;
+}
+
+.topbar-username {
+    display: flex;
+    align-items: center;
+    
+}
+
+.topbar-line {
+    width: 0.5px;
+    height: 35px;
+    background-color: #fff;
+    margin-left: 10px;
+}
+
+.date {
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+
+html {
+    overflow-x: hidden;
+}
+html::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
 }
