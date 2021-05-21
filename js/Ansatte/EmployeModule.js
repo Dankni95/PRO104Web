@@ -23,3 +23,5 @@ const getAllEmployees = () => employe;
 return {getAllEmployees}
 
 } ());
+
+export default EmployeModule;
