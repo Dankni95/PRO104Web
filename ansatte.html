@@ -21,28 +21,28 @@
         <div class="logo">
             <img class="logo-image" src="/images/Logo.svg" alt="A chef logo">
         </div>
-        <ul>
-            <li>
+        <ul class="nav-links-wrapper">
+            <li class="nav-links"> 
                 <i class="far fa-bell"></i>
-                <a class="nav-link" href="/index.html">Forside</a>
+                <a class="nav-link " href="/index.html">Forside</a>
             </li>
 
-            <li>
+            <li class="nav-links"> 
                 <i class="fas fa-wallet"></i>
                 <a class="nav-link" href="/salg.html">Salg</a>
             </li>
 
-            <li>
+            <li class="nav-links"> 
                 <i class="far fa-map"></i>
                 <a class="nav-link" href="/meny.html">Meny</a>
             </li>
 
-            <li>
+            <li class="nav-links active"> 
                 <i class="fas fa-users"></i>
-                <a class="nav-link" href="/ansatte.html">Ansatte</a>
+                <a class="nav-link " href="/ansatte.html">Ansatte</a>
             </li>
 
-            <li>
+            <li class="nav-links"> 
                 <i class="fas fa-utensils"></i>
                 <a class="nav-link" href="/restauranter.html">Restauranter</a>
             </li>
@@ -50,7 +50,7 @@
 
         <div class="seperator"></div>
 
-        <div class="nav-logout">
+        <div class="nav-logout-div">
             <button class="nav-logout-button">
                 <i class="fas fa-sign-out-alt"></i>
                 Logout
@@ -63,21 +63,24 @@
         <header class="topbar">
             <div class="topbar-left">
                 <h1 class="topbar-title">Ansatte</h1>
-                <div class="date" style="color: white;">
+                <div class="date">
                     <span id="day-id">Day</span>,
                     <span id="day-nr-id">00</span>.
                     <span id="month-id">Month</span>
                     <span id="year-id">Year</span>
                 </div>
+                <div class="separator"></div>
             </div>
-            <div class="user-name">Daniel Lysak</div>
-            <div class="user-buttons">
-                <div class="fas fa-angle-down" style="position:relative; right: 50%;"></div>
-                <div class="active-underline rotate"></div>
-                <div class="far fa-bell" style="position:relative; left: 50%;"></div>
-            </div>
-            <div class="separator"></div>
-            </div>
+            
+            <div class="topbar-right">
+                <div class="topbar-username">
+                    <h4>Daniel Lysak</h4>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="topbar-line"></div>
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+                
+            </div>     
         </header>
 
 

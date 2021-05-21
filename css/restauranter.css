@@ -1,0 +1,48 @@
+.boxes {
+    width: 100px;
+    height: 100px ;
+}
+
+
+
+.container-one {
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    left: 14%;
+    top: 40%;
+    background-color: #1F1D2B;
+}
+
+.container-two {
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    left: 36%;
+    top: 40%;
+    background-color: #1F1D2B;
+}
+
+.container-three {
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    left: 58%;
+    top: 40%;
+    background-color: #1F1D2B;
+}
+
+.container-four {
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    left: 80%;
+    top: 40%;
+    background-color: #1F1D2B;
+}
+
+
+
+
+
+
