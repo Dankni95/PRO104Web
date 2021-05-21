@@ -1,15 +1,27 @@
 
 
 .label-title {
-    font-size: 30px;
+    font-size: 24px;
     color: #fff ;
+}
+
+.section-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .section-left {
     display: flex;
     align-items: center;
-    width: 55%;
+    width: 48%;
     justify-content: space-between;
+    margin-top: 40px;
+}
+
+.section-right {
     margin-top: 40px;
 }
 
@@ -38,10 +50,35 @@
 
 .span-pluss {
     color: #fff;
-
 }
 
-.wrapper-btn {
-    overflow: hidden;
+.cards {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.cardo {
+    width: 250px;
+    height: 250px;
+    background-color: #1F1D2B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2);
+}
+
+.image-wrapper {
+    max-width: 250px;
+    max-height: 250px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     
 }
+
+.card-image {
+    width: 50px;
+    border-radius: 15px 5px;
+}
+
