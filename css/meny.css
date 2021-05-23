@@ -1,0 +1,99 @@
+ .topbar-title{
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.edit-menu{
+    position: absolute;
+    top: 12%;
+    left: 14.3%;
+    font-weight: bolder;
+    font-size: 130%;
+}
+
+.horizontal-list {
+    flex-direction: row;
+    font-weight: bold;
+    position: absolute;
+    left: 9%;
+    top: 5%;
+    
+    padding: 10px 10px 10px 10px;
+}
+.horizontal-a{
+    text-align: center;
+}
+.search-bar {
+    position: absolute;
+    left: 60%;
+    top: 15%;
+    overflow: hidden;
+    border-radius: 0.5em 0.5em 0.5em 0.5em;
+    background-color:#393C49 ;
+}
+.search-bar input[type=text]{
+    color: white;
+    background-color: #393C49;
+    padding: 10px 10px 10px 10px;
+}
+.fa-search{
+    position: absolute;
+    left: 57%;
+    top:22%;
+}
+.section {
+    position: absolute;
+    top:15%;
+    left: 12%;
+    max-width: 65%;
+}
+.card {
+    background-color: #1F1D2B !important;
+    padding-top: 6%;
+    
+}
+.title {
+    color: white !important;
+    
+}
+.price {
+    position:absolute;
+    left: 45%;
+}
+.card-footer {
+    background-color: rgba(234, 124, 105, 0.5) !important;
+
+}
+.edit-dish {
+    color: #FF4500 !important;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/*
+.containers{
+    position:absolute;
+    top: 30%;
+}
+
+.price-text{
+    font-weight: bold;
+   
+}
+.card-image{
+    background-color:black;
+}
+.card-content{
+    background-color:black;
+}
+.card-price{
+    background-color: black;
+}
+*/

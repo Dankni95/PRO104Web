@@ -72,7 +72,7 @@ li {
 
 a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #FFFFFF !important;
     width: 100%;
     text-align: start;
     font-family: 'Barlow', sans-serif;
