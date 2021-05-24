@@ -99,17 +99,21 @@
     <main class="columnPosi">
 
         <div class="columns">
+
             <div class="column is-11
-            is-offset-1 clumnColr  is-multiline" onclick="remove(this)">is-four-fifths <i class="fas fa-times"></i>
+            is-offset-1 clumnColr  is-multiline">
+                <div class="has-text-right "><i class="fas fa-times" onclick="remove(this)"></i></div>
+                is-four-fifths
             </div>
 
         </div>
 
         <div class="columns">
             <div class="column is-11
-            is-offset-1 clumnColr  is-multiline" onclick="remove(this)">is-three-quarters</div>
-
-        </div>
+            is-offset-1 clumnColr  is-multiline" onclick="remove(this)">
+                <div class="has-text-right "><i class="fas fa-times"></i></div>
+                is-four-fifths
+            </div>
 
     </main>
     </main>
@@ -122,16 +126,27 @@
         function showclick() {
             output.innerHTML += `<div class="columns" onclick="remove(this)">
                     <div class="column is-11
-            is-offset-1 clumnColr" >is-three-quarters</div>
+            is-offset-1 clumnColr is-multiline"> 
+            <div class="has-text-right "><i class="fas fa-times"></i>
+                </div>
+                is-four-fifths</div>
                 </div>`;
+
         }
 
         function remove(element) {
-            element.remove();
+
+
+            element.parentNode.remove();
+            let lol = element.parentNode
+            console.log(element.parentNode);
         }
+
+
+
+
+
     </script>
-
-
 </body>
 
 </html>
