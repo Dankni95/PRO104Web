@@ -96,56 +96,62 @@
 
         <p><strong>+</strong> Legg til kunngjøring</p>
     </button>
-    <main class="columnPosi">
+    <main id="main" class="columnPosi">
 
-        <div class="columns">
-
+        <div id="1" class="columns">
             <div class="column is-11
-            is-offset-1 clumnColr  is-multiline">
-                <div class="has-text-right "><i class="fas fa-times" onclick="remove(this)"></i></div>
-                is-four-fifths
-            </div>
-
-        </div>
-
-        <div class="columns">
-            <div class="column is-11
-            is-offset-1 clumnColr  is-multiline" onclick="remove(this)">
+            is-offset-1 clumnColr is-multiline">
                 <div class="has-text-right "><i class="fas fa-times"></i></div>
                 is-four-fifths
             </div>
+        </div>
 
-    </main>
+        <div id="2" class="columns">
+            <div class="column is-11 is-offset-1 clumnColr is-multiline">
+                <div class="has-text-right "><i id="lols" class="fas fa-times"></i></div>
+                is-four-fifths
+            </div>
+        </div>
     </main>
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
 
-
         console.info(output.childNodes);
 
+        
         function showclick() {
-            output.innerHTML += `<div class="columns" onclick="remove(this)">
-                    <div class="column is-11
-            is-offset-1 clumnColr is-multiline"> 
-            <div class="has-text-right "><i class="fas fa-times"></i>
+            output.innerHTML += ` <div id=$ class="columns">
+                <div class="column is-11 is-offset-1 clumnColr is-multiline">
+                <div class="has-text-right "><i class="fas fa-times"></i></div>
+                is-four-fifths
                 </div>
-                is-four-fifths</div>
                 </div>`;
 
+                update();
+                
         }
 
-        function remove(element) {
-
-
-            element.parentNode.remove();
-            let lol = element.parentNode
-            console.log(element.parentNode);
+        function update(){
+            removeButtonFunctionality();
         }
 
 
+        let notification = document.getElementsByTagName("I");
+        function removeButtonFunctionality(){
+
+            for (var i = 0; i < notification.length; i++) {
+
+            notification[i].addEventListener("mousedown", function (e) {
+                if (e.target.tagName === "I" && e.target.className === "fas fa-times" ) {
+                    e.target.offsetParent.remove()
+                }
+            }, false)
+        }
+    }
+    window.unload = update();
 
 
-
+        
     </script>
 </body>
 
