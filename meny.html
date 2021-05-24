@@ -20,76 +20,111 @@
 
 <body>
     
+    <!--Input field for pizza-->
+    <img class="fas fa-search"></i>
+    <div class="search-bar">
+        <input type="text" placeholder="Søk på pizza">
+      </div>
+
+    <nav class="navigation">
+        <div class="logo">
+            <img class="logo-image" src="/images/Logo.svg" alt="A chef logo">
+        </div>
+        <ul class="nav-links-wrapper">
+            <li class="nav-links"> 
+                <i class="far fa-bell"></i>
+                <a class="nav-link " href="/index.html">Forside</a>
+            </li>
+
+            <li class="nav-links"> 
+                <i class="fas fa-wallet"></i>
+                <a class="nav-link" href="/salg.html">Salg</a>
+            </li>
+
+            <li class="nav-links  active"> 
+                <i class="far fa-map"></i>
+                <a class="nav-link" href="/meny.html">Meny</a>
+            </li>
+
+            <li class="nav-links"> 
+                <i class="fas fa-users"></i>
+                <a class="nav-link " href="/ansatte.html">Ansatte</a>
+            </li>
+
+            <li class="nav-links"> 
+                <i class="fas fa-utensils"></i>
+                <a class="nav-link" href="/restauranter.html">Restauranter</a>
+            </li>
+        </ul>
+
+        <div class="seperator"></div>
+
+        <div class="nav-logout-div">
+            <button class="nav-logout-button">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+            </button>   
+        </div>
+    </nav>
+
     <main class="main-div">
+
         <header class="topbar">
             <div class="topbar-left">
                 <h1 class="topbar-title">Meny</h1>
-                <div class="date" style="color: white;">
+                <div class="date">
                     <span id="day-id">Day</span>,
                     <span id="day-nr-id">00</span>.
                     <span id="month-id">Month</span>
                     <span id="year-id">Year</span>
                 </div>
+                <div class="separator"></div>
             </div>
-            <div class="user-name">Daniel Lysak</div>
-            <div class="user-buttons">
-                <div class="fas fa-angle-down" style="position:relative; right: 50%;"></div>
-                <div class="active-underline rotate"></div>
-                <div class="far fa-bell" style="position:relative; left: 50%;"></div>
-            </div>
-            <div class="separator"></div>
-            </div>
-
-    <!--Input field for pizza-->
-            <i class="fas fa-search"></i>
-            <div class="search-bar">
-                <input type="text" placeholder="Søk på pizza">
-              </div>
-
+            
+            <div class="topbar-right">
+                <div class="topbar-username">
+                    <h4>Daniel Lysak</h4>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="topbar-line"></div>
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+            </div>     
+              
         </header>
-
+         <!--Horizontal list for pizzaes-->
         
-    </main>
-
-    
-
-    <!--Horizontal list for pizzaes-->
-    <div>
-        <nav>
+         <nav class="horizontal-list">
             <div>
-                <ul class="horizontal-list">
-                    <li> 
-                        <a class="horizontal-a">Hot Pizza</a>
-                    </li>
-                    <li> 
-                        <a class="horizontal-a">Mild Pizza</a>
-                    </li>
-                    <li> 
-                        <a class="horizontal-a">Vegetariansk</a>
-                    </li>
-                    <li> 
-                        <a class="horizontal-a">BBQ</a>
-                    </li>
-    
-                    <li> 
-                        <a class="horizontal-a">Forretter</a>
-                    </li>
-                    <li> 
-                        <a class="horizontal-a">Desserter</a>
-                    </li>  
-                </ul>
+                <div> 
+                    <a class="horizontal-a">Hot Pizza</a>
+                </div>
+                <div> 
+                    <a class="horizontal-a">Mild Pizza</a>
+                </div>
+                <div> 
+                    <a class="horizontal-a">Vegetariansk</a>
+                </div>
+                <div> 
+                    <a class="horizontal-a">BBQ</a>
+                </div>
+
+                <div> 
+                    <a class="horizontal-a">Forretter</a>
+                </div>
+                <div> 
+                    <a class="horizontal-a">Desserter</a>
+                </div>  
             </div>
-        </nav>
-    </div>
+    </nav>
+    
 <!--Rediger meny-->
     <h3 class="edit-menu">Rediger meny</h3>
 <!--Kort elementer-->
 
-
 <section class="section">
     <div class="container">
         <div class="columns mt-5 is-8 is-variable">
-            <div class="column is-4-desktop">
+            <div class="column is-5-desktop">
                 <div class="card">
                     <div class="card-image px-6">
                         <img src="./images/pizza-california.png" alt="">
@@ -105,7 +140,7 @@
                     </footer>
                 </div>
             </div>
-            <div class="column is-4-desktop">
+            <div class="column is-5-desktop">
                 <div class="card">
                     <div class="card-image px-6">
                         <img src="./images/pizza-chicken.png" alt="">
@@ -121,7 +156,7 @@
                     </footer>
                 </div>
             </div>
-            <div class="column is-4-desktop">
+            <div class="column is-5-desktop">
                 <div class="card">
                     <div class="card-image px-6">
                         <img src="./images/pizza-pepperoni.png" alt="">
@@ -139,7 +174,7 @@
             </div>
         </div>
         <div class="columns mt-5 is-8 is-variable">
-            <div class="column is-4-desktop">
+            <div class="column is-5-desktop">
                 <div class="card">
                     <div class="card-image px-6">
                         <img src="./images/pizza-seafood.png" alt="">
@@ -155,7 +190,7 @@
                     </footer>
                 </div>
             </div>
-            <div class="column is-4-desktop">
+            <div class="column is-5-desktop">
                 <div class="card">
                     <div class="card-image px-6">
                         <img src="./images/pizza-tandoori.png" alt="">
@@ -171,7 +206,7 @@
                     </footer>
                 </div>
             </div>
-            <div class="column is-4-desktop">
+            <div class="column is-5-desktop">
                 <div class="card">
                     <div class="card-image px-6">
                         <img src="./images/pizza-vegetar.png" alt="">
@@ -193,51 +228,7 @@
 </section>
 
 
-    <nav>
-        <div class="logo">
-            <img class="logo-image" src="/images/Logo.svg" alt="A chef logo">
-        </div>
-        <ul>
-            <li> 
-                <i class="far fa-bell"></i>
-                <a href="/index.html">Forside</a>
-            </li>
-
-            <li> 
-                <i class="fas fa-wallet"></i>
-                <a href="/salg.html">Salg</a>
-            </li>
-
-            <li> 
-                <i class="far fa-map"></i>
-                <a href="/meny.html">Meny</a>
-            </li>
-
-            <li> 
-                <i class="fas fa-users"></i>
-                <a href="/ansatte.html">Ansatte</a>
-            </li>
-
-            <li> 
-                <i class="fas fa-utensils"></i>
-                <a href="/restauranter.html">Restauranter</a>
-            </li>
-        </ul>
-
-        <div class="seperator"></div>
-
-        <div class="nav-logout">
-            <button class="nav-logout-button">
-                <i class="fas fa-sign-out-alt"></i>
-                Logout
-            </button>   
-        </div>
-
-    </nav>
-
-    
-    
-
+</main>
 </body>
 
 </html>

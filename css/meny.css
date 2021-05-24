@@ -5,27 +5,36 @@
 
 .edit-menu{
     position: absolute;
-    top: 12%;
-    left: 14.3%;
+    top: 18%;
+    left: 5%;
     font-weight: bolder;
     font-size: 130%;
 }
 
-.horizontal-list {
-    flex-direction: row;
+.horizontal-list{
+    display: inline;
     font-weight: bold;
     position: absolute;
-    left: 9%;
-    top: 5%;
-    
+    left: 1%;
+    top: 10%;
+    z-index: 100;
     padding: 10px 10px 10px 10px;
 }
+
+.horizontal-list div{
+    display: inline;
+}
+
 .horizontal-a{
     text-align: center;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    
 }
 .search-bar {
     position: absolute;
-    left: 60%;
+    left: 74.5%;
     top: 15%;
     overflow: hidden;
     border-radius: 0.5em 0.5em 0.5em 0.5em;
@@ -44,9 +53,11 @@
 .section {
     position: absolute;
     top:15%;
-    left: 12%;
+    left: 3%;
     max-width: 65%;
+   
 }
+
 .card {
     background-color: #1F1D2B !important;
     padding-top: 6%;
@@ -61,6 +72,7 @@
     left: 45%;
 }
 .card-footer {
+    /*bruk rgba. Bruker man hex og opacity arves det ned til .edit-dish klassen*/
     background-color: rgba(234, 124, 105, 0.5) !important;
 
 }
