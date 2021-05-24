@@ -16,7 +16,7 @@
 .section-left {
     display: flex;
     align-items: center;
-    width: 48%;
+    width: 100%;
     justify-content: space-between;
     margin-top: 40px;
 }
@@ -54,7 +54,7 @@
 
 .cards {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     margin-top: 15px;
 }
 
@@ -66,6 +66,7 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 5px 3px 0 rgba(0, 0, 0, 0.2);
+    margin-right: 15px;
 }
 
 .cardo-content-wrapper {
