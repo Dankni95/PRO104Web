@@ -217,8 +217,10 @@ th {
     display: block;
     position: relative;
     height: 335px;
+    right: 7%;
     width: 100%;
 }
+
 
 
 html {

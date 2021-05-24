@@ -1,3 +1,3 @@
-import {data} from "./salg.js";
+import DataModule from "./DataModule.js";
 
-data();
+console.log(DataModule.getAllData().Ullern)

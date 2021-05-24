@@ -1,10 +1,10 @@
 
   {
-    "store": {
+    "Oslo": {
       "navn": "Oslo",
-      "salg": "1",
-      "kunder": "1",
-      "pizzas": "1",
+      "salg": "392999",
+      "kunder": "50023",
+      "pizzas": "123010",
       "DagensPizza": [
         {
           "mandag": "Pepperoni Pizza"
@@ -48,11 +48,11 @@
           }
         }
     },
-    "store1": {
+    "Ullern": {
       "name": "Ullern",
-      "sales": "1",
-      "customers": "1",
-      "pizzas": "1",
+      "sales": "100002",
+      "customers": "12321",
+      "pizzas": "19212",
       "DagensPizza": [
         {
           "mandag": "Pepperoni Pizza"
@@ -96,11 +96,11 @@
           }
         }
     },
-    "store2": {
+    "Asker": {
       "name": "Asker",
-      "sales": "1",
-      "customers": "1",
-      "pizzas": "1",
+      "sales": "200000",
+      "customers": "5000",
+      "pizzas": "13213",
       "DagensPizza": [
         {
           "mandag": "Pepperoni Pizza"
@@ -144,11 +144,11 @@
           }
         }
     },
-    "store3": {
+    "Fornebu": {
       "name": "Fornebu",
-      "sales": "1",
-      "customers": "1",
-      "pizzas": "1",
+      "sales": "392342",
+      "customers": "21389",
+      "pizzas": "21399",
       "DagensPizza": [
         {
           "mandag": "Pepperoni Pizza"
