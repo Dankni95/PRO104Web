@@ -1,12 +1,15 @@
 import EmployeModule from './EmployeModule.js'
+import DataModule from './DataModule.js'
 
 const selector = document.querySelector("#card-section");
 const outputDiv = document.querySelector("#cardsId");
 const options = document.querySelectorAll('option');
 
+console.log(DataModule.getAllData())
+
 
 selector.addEventListener('change', () => {
-    const filterCategory = EmployeModule.getAllEmployees();
+    const filterCategory = DataModule.getAllData();
     for(let i = 0; filterCategory.length; i++) {
         console.log(filterCategory[i])
     }

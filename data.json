@@ -1,0 +1,195 @@
+
+  {
+    "store": {
+      "navn": "Oslo",
+      "salg": "1",
+      "kunder": "1",
+      "pizzas": "1",
+      "DagensPizza": [
+        {
+          "mandag": "Pepperoni Pizza"
+        },
+        {
+          "tirsdag": "Vegetarisk Pizza"
+        },
+        {
+          "onsdag": "Taco Pizza"
+        },
+        {
+          "torsdag": "Kebab Pizza"
+        },
+        {
+          "fredag": "Skinke Pizza"
+        },
+        {
+          "lørdag": "Kylling Pizza"
+        },
+        {
+          "søndag": "Biff Pizza"
+        }
+      ],
+      "ansatte": {
+        "name": {
+          "John Doe": [
+            {
+              "stilling": "HR"
+            }
+          ],
+          "Anna Doe": [
+              {
+              "stilling": "CTO"
+              }
+            ],
+          "Steven Doe": [
+              {
+              "stilling": "Kokk"
+              }
+            ]
+          }
+        }
+    },
+    "store1": {
+      "name": "Ullern",
+      "sales": "1",
+      "customers": "1",
+      "pizzas": "1",
+      "DagensPizza": [
+        {
+          "mandag": "Pepperoni Pizza"
+        },
+        {
+          "tirsdag": "Vegetarisk Pizza"
+        },
+        {
+          "onsdag": "Taco Pizza"
+        },
+        {
+          "torsdag": "Kebab Pizza"
+        },
+        {
+          "fredag": "Skinke Pizza"
+        },
+        {
+          "lørdag": "Kylling Pizza"
+        },
+        {
+          "søndag": "Biff Pizza"
+        }
+      ],
+       "ansatte": {
+        "name": {
+          "John Doe": [
+            {
+              "stilling": "HR"
+            }
+          ],
+          "Anna Doe": [
+              {
+              "stilling": "CTO"
+              }
+            ],
+          "Steven Doe": [
+              {
+              "stilling": "Kokk"
+              }
+            ]
+          }
+        }
+    },
+    "store2": {
+      "name": "Asker",
+      "sales": "1",
+      "customers": "1",
+      "pizzas": "1",
+      "DagensPizza": [
+        {
+          "mandag": "Pepperoni Pizza"
+        },
+        {
+          "tirsdag": "Vegetarisk Pizza"
+        },
+        {
+          "onsdag": "Taco Pizza"
+        },
+        {
+          "torsdag": "Kebab Pizza"
+        },
+        {
+          "fredag": "Skinke Pizza"
+        },
+        {
+          "lørdag": "Kylling Pizza"
+        },
+        {
+          "søndag": "Biff Pizza"
+        }
+      ],
+       "ansatte": {
+        "name": {
+          "John Doe": [
+            {
+              "stilling": "HR"
+            }
+          ],
+          "Anna Doe": [
+              {
+              "stilling": "CTO"
+              }
+            ],
+          "Steven Doe": [
+              {
+              "stilling": "Kokk"
+              }
+            ]
+          }
+        }
+    },
+    "store3": {
+      "name": "Fornebu",
+      "sales": "1",
+      "customers": "1",
+      "pizzas": "1",
+      "DagensPizza": [
+        {
+          "mandag": "Pepperoni Pizza"
+        },
+        {
+          "tirsdag": "Vegetarisk Pizza"
+        },
+        {
+          "onsdag": "Taco Pizza"
+        },
+        {
+          "torsdag": "Kebab Pizza"
+        },
+        {
+          "fredag": "Skinke Pizza"
+        },
+        {
+          "lørdag": "Kylling Pizza"
+        },
+        {
+          "søndag": "Biff Pizza"
+        }
+      ],
+       "ansatte": {
+        "name": {
+          "John Doe": [
+            {
+              "stilling": "HR"
+            }
+          ],
+          "Anna Doe": [
+              {
+              "stilling": "CTO"
+              }
+            ],
+          "Steven Doe": [
+              {
+              "stilling": "Kokk"
+              }
+            ]
+          }
+        }
+    }
+  }
