@@ -6,3 +6,4 @@ export function data() {
         })
         .then(data => console.log(data));
 }
+
