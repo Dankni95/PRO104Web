@@ -90,52 +90,48 @@
 
             </div>
         </header>
-
-
-
     </main>
-
-
 
     <button href="#" class="addBtn" onclick="showclick()">
 
         <p><strong>+</strong> Legg til kunngjøring</p>
     </button>
+    <main class="columnPosi">
 
-
-    <main class="test">
         <div class="columns">
-            <div class="column is-full test2">is-four-fifths</div>
+            <div class="column is-11
+            is-offset-1 clumnColr  is-multiline" onclick="remove(this)">is-four-fifths <i class="fas fa-times"></i>
+            </div>
 
         </div>
-        <br>
+
         <div class="columns">
-            <div class="column is-full test2">is-three-quarters</div>
+            <div class="column is-11
+            is-offset-1 clumnColr  is-multiline" onclick="remove(this)">is-three-quarters</div>
+
         </div>
-    </main>
 
     </main>
-
+    </main>
     <script>
-        var output = document.getElementsByClassName("test")[0];
-
-
-
-
+        var output = document.getElementsByClassName("columnPosi")[0];
 
 
         console.info(output.childNodes);
 
         function showclick() {
-
-
-            output.innerHTML += `<br><div class="columns">
-                        <div class="column is-full test2">is-four-fifths</div>
+            output.innerHTML += `<div class="columns" onclick="remove(this)">
+                    <div class="column is-11
+            is-offset-1 clumnColr" >is-three-quarters</div>
                 </div>`;
         }
 
-
+        function remove(element) {
+            element.remove();
+        }
     </script>
+
+
 </body>
 
 </html>
