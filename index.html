@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/global.css">
+    <!--<link rel="stylesheet" href="/css/global.css">-->
     <link rel="stylesheet" href="/css/index.css">
 
     <title>Gyldene Pizza</title>
@@ -92,57 +92,125 @@
         </header>
     </main>
 
-    <button href="#" class="addBtn" onclick="showclick()">
+    <button href="#" class="addBtn" onclick="addTextArray()">
 
         <p><strong>+</strong> Legg til kunngjøring</p>
     </button>
-    <main class="columnPosi">
 
-        <div class="columns">
 
+
+
+
+    <input id="text-field" class="test70" type="text">
+
+    Prioritet<input id="priority" type="text">
+
+
+
+
+    <main id="main" class="columnPosi">
+
+        <div id="1" class="columns">
             <div class="column is-11
-            is-offset-1 clumnColr  is-multiline">
-                <div class="has-text-right "><i class="fas fa-times" onclick="remove(this)"></i></div>
+            is-offset-1 clumnColr is-multiline">
+                <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
                 is-four-fifths
             </div>
-
         </div>
 
-        <div class="columns">
-            <div class="column is-11
-            is-offset-1 clumnColr  is-multiline" onclick="remove(this)">
-                <div class="has-text-right "><i class="fas fa-times"></i></div>
+        <div id="2" class="columns">
+            <div class="column is-11 is-offset-1 clumnColr is-multiline">
+                <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
                 is-four-fifths
             </div>
+        </div>
 
     </main>
-    </main>
+
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
 
 
+
+
+        var priority = document.getElementById("priority");
+        var textField = document.getElementById("text-field");
+
+
+
         console.info(output.childNodes);
 
-        function showclick() {
-            output.innerHTML += `<div class="columns" onclick="remove(this)">
-                    <div class="column is-11
-            is-offset-1 clumnColr is-multiline"> 
-            <div class="has-text-right "><i class="fas fa-times"></i>
+        var colorArray = ["red", "blue", "yellow", "green", "orange", "cyan", "purple"];
+
+        var taskArray = []
+
+
+
+
+
+
+        function addTextArray() {
+            var textField = document.getElementById("text-field").value;
+
+            var priority = document.getElementById("priority").value.toLowerCase();
+
+
+            for (var i = 0; i < colorArray.length; i++) {
+                if (priority === colorArray[i]) {
+
+                    taskArray.push(
+                        {
+                            colorChoice: colorArray[i],
+                            task: textField
+                        }
+                    );
+                }
+
+            }
+
+            printFunc()
+        }
+
+
+        function printFunc() {
+            output.innerHTML = "";
+            document.getElementById("text-field").value;
+            for (var i = 0; i < taskArray.length; i++) {
+
+                output.innerHTML += ` <div id=$ class="columns">
+                <div class="column is-11 is-offset-1 clumnColr is-multiline">
+                <div class="has-text-right "><b class="fas fa-times fa-lg"></b></div>
+                <p style="word-wrap:break-word;">is-four-fifths${taskArray[i].task}</p>
                 </div>
-                is-four-fifths</div>
                 </div>`;
 
+                update();
+
+            }
+
         }
 
-        function remove(element) {
-
-
-            element.parentNode.remove();
-            let lol = element.parentNode
-            console.log(element.parentNode);
+        function update() {
+            removeButtonFunctionality();
         }
 
 
+        let notification = document.getElementsByTagName("B");
+
+        function removeButtonFunctionality() {
+
+            for (var i = 0; i < notification.length; i++) {
+
+                notification[i].addEventListener("mousedown", function (e) {
+                    if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") {
+                        e.target.offsetParent.remove()
+                    }
+                }, false)
+            }
+        }
+
+
+        window.unload = update();
 
 
 
