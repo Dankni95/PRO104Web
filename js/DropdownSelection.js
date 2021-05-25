@@ -1,3 +1,5 @@
+import DropdownModule from "./DropdownModule.js"
+
 const DropdownSelection = (function () {
     let selected = document.getElementById("selected");
     let dropdown = document.getElementsByClassName("dropdown")[0];
@@ -17,6 +19,9 @@ const DropdownSelection = (function () {
 
     }, false);
 
+    document.getElementById("dropdown-content").addEventListener("mouseleave", function (e) {
+        DropdownModule.activateDropdownMenu();
+    }, false);
 
 }());
 

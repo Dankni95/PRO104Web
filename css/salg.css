@@ -117,7 +117,7 @@
     position: absolute;
     left: 71.7%;
     width: 12.5%;
-    z-index: 1;
+    z-index: 10;
 }
 
 .dropdown div {
@@ -144,7 +144,13 @@
 
 .mainpanel-title {
     background-color: #15131dee;
-    border-color: #ffffff34 !important;
+}
+
+.customer-icon{
+    position: relative;
+    top: 20%;
+    width: 15%;
+
 }
 
 th {

@@ -1,4 +1,6 @@
 import DataModule from "./DataModule.js"
+import CustomersModule from "./CustomersModule.js"
+
 
 const SalesModule = (function () {
     let franchise = document.getElementById("selected");
@@ -7,22 +9,27 @@ const SalesModule = (function () {
     const customers = document.getElementById("customers");
 
     const changeFranchise = new MutationObserver(function () {
-        console.log(franchise.innerHTML.trim());
-        switch (franchise.innerHTML.trim()) {
+        console.log(franchise.innerText);
+        switch (franchise.innerText) {
             case "Lambertseter":
                 changeToLambertseterFranchise();
+                CustomersModule.setDataInCustomersMainPanelLambertseter();
                 break;
             case "Frogner":
                 changeToFrognerFranchise();
+                CustomersModule.setDataInCustomersMainPanelFrogner()
                 break;
             case "Grønland":
                 changeToGrønlandFranchise();
+                CustomersModule.setDataInCustomersMainPanelGrønland();
                 break;
             case "Grünnerløkka":
                 changeToGrünnerløkkaFranchise();
+                CustomersModule.setDataInCustomersMainPanelGrünnerløkka();
                 break;
             default:
-            // code block
+            let error = new Error ("something went wrong! Please contact the IT department")
+            alert(error)
         }
     });
 
