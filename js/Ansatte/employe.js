@@ -23,7 +23,7 @@ selector.addEventListener('change', (e) => {
                         </div>
                         <h2 class="name-title">${employe.name}</h2>
                         <p class="card-phone">${employe.phone}</p>
-                        <p class="card-job-title">Admin</p>
+                        <p class="card-job-title">${employe.title}</p>
                         <p class="card-job-title">${employe.category}</p>
                         <button style="margin-top: 15px;" class="section-btn">Mer informasjon</button>
                     </div>
