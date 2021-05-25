@@ -2,12 +2,13 @@
 const DataModule = (window.onload = function data() {
 
 
-    let json = {
-        "Oslo": {
-            "navn": "Oslo",
-            "salg": "1",
-            "kunder": "1",
-            "pizzas": "1",
+    let json =
+    {
+        "Lambertseter": {
+            "navn": "Lambertseter",
+            "salg": "392999",
+            "kunder": "50023",
+            "pizzas": "123010",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -51,11 +52,11 @@ const DataModule = (window.onload = function data() {
                 }
             }
         },
-        "Ullern": {
-            "name": "Ullern",
-            "sales": "1",
-            "customers": "1",
-            "pizzas": "1",
+        "Frogner": {
+            "navn": "Frogner",
+            "salg": "100002",
+            "kunder": "12321",
+            "pizzas": "19212",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -99,11 +100,11 @@ const DataModule = (window.onload = function data() {
                 }
             }
         },
-        "Asker": {
-            "name": "Asker",
-            "sales": "1",
-            "customers": "1",
-            "pizzas": "1",
+        "Grønland": {
+            "navn": "Grønland",
+            "salg": "200000",
+            "kunder": "5000",
+            "pizzas": "13213",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -147,11 +148,11 @@ const DataModule = (window.onload = function data() {
                 }
             }
         },
-        "Fornebu": {
-            "name": "Fornebu",
-            "sales": "1",
-            "customers": "1",
-            "pizzas": "1",
+        "Grünnerløkka": {
+            "navn": "Grünnerløkka",
+            "salg": "392342",
+            "kunder": "21389",
+            "pizzas": "21399",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -196,6 +197,7 @@ const DataModule = (window.onload = function data() {
             }
         }
     }
+
 
 
 

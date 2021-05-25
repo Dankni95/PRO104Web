@@ -116,6 +116,8 @@
 .dropdown {
     position: absolute;
     left: 71.7%;
+    width: 12.5%;
+    z-index: 1;
 }
 
 .dropdown div {

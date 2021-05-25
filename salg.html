@@ -73,29 +73,29 @@
                 </div>
                 <div class="separator"></div>
             </div>
-            <div class="dropdown is-">
+            <div class="dropdown">
                 <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <button id="activate" class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                         <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        <span>Velg avdeling</span>
+                        <span id="selected">Velg avdeling</span>
                         <span class="icon is-small">
                         </span>
                     </button>
 
                 </div>
-                <div class="dropdown-menu">
-                    <div class="dropdown-content">
+                <div id="dropdown-content" class="dropdown-menu">
+                    <div id="dropdown-menu" class="dropdown-content">
                         <a href="#" class="dropdown-item">
-                            Dropdown item
+                            Lambertseter
                         </a>
                         <a class="dropdown-item">
-                            Other dropdown item
-                        </a>
-                        <a href="#" class="dropdown-item is-active">
-                            Active dropdown item
+                            Frogner
                         </a>
                         <a href="#" class="dropdown-item">
-                            Other dropdown item
+                            Grønland
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Grünnerløkka
                         </a>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                 <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
                 <p class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
                 <div class="figures-size figures-placement has-text-primary">
-                    <p>FiguresNOK</p>
+                    <p id="turnover">FiguresNOK</p>
                 </div>
 
             </div>
@@ -127,7 +127,7 @@
                 <img class="arrow-size arrow-placement is-hidden" src="images/up-icon.svg" alt="arrow up">
                 <p class="sales-percentage-size sales-percentage-placement has-text-danger">%Placeholder</p>
                 <div class="figures-size figures-placement has-text-danger">
-                    <p>Pizza</p>
+                    <p id="pizza-sold">Pizza</p>
                 </div>
 
 
@@ -138,7 +138,7 @@
                 <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
                 <p class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
                 <div class="figures-size figures-placement has-text-primary">
-                    <p>Customers</p>
+                    <p id="customers">Customers</p>
                 </div>
             </div>
         </div>
