@@ -110,10 +110,23 @@
       }
 
 
-      .test70{
+      .txtInput{
       
         position: absolute;
         top: 17.1%;
+        left: 84%;
+        height: 5.7%;
+        background: #1F1D2B;
+        border: 1px solid #E74C3C;
+        box-sizing: border-box;
+        color: white;
+      }
+
+
+      .prioInput{
+      
+        position: absolute;
+        top: 25%;
         left: 84%;
         height: 5.7%;
         background: #1F1D2B;

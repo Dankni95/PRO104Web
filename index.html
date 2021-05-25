@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="/css/global.css">-->
+    <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/index.css">
 
     <title>Gyldene Pizza</title>
@@ -20,10 +20,6 @@
 </head>
 
 <body>
-
-
-
-
 
     <nav class="navigation">
         <div class="logo">
@@ -101,9 +97,13 @@
 
 
 
-    <input id="text-field" class="test70" type="text">
+    <input id="text-field" class="txtInput" type="text">
 
-    Prioritet<input id="priority" type="text">
+    <div class="prioInput">
+        <select id="priority">
+            <option>Velg en prioritet</option>
+        </select>
+    </div>
 
 
 
@@ -127,6 +127,13 @@
 
     </main>
 
+
+
+
+
+
+
+
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
 
@@ -149,18 +156,47 @@
 
 
 
+
+
+        /*for (var i = 0; i < colorArray.length; i++) {
+            
+        var opt = colorArray[i];
+        var el = document.createElement("option");
+        el.textContent = opt;
+        el.value = opt;
+        select.appendChild(el);
+
+        } */
+        var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
+        var optionsArray = ["Viktig", "moderat", "uformelt"];
+        for (var i = 0; i < optionsArray.length; i++) {
+            var optMenu = optionsArray[i];
+            var elem = document.createElement("option");
+            elem.textContent = optMenu;
+            elem.value = optMenu;
+            select.appendChild(elem);
+        }
+
+
+
         function addTextArray() {
             var textField = document.getElementById("text-field").value;
 
             var priority = document.getElementById("priority").value.toLowerCase();
 
 
-            for (var i = 0; i < colorArray.length; i++) {
-                if (priority === colorArray[i]) {
+
+
+            for (var i = 0; i < optionsArray.length; i++) {
+
+
+
+
+                if (priority === optionsArray[i]) {
 
                     taskArray.push(
                         {
-                            colorChoice: colorArray[i],
+                            optionChoice: optionsArray[i],
                             task: textField
                         }
                     );
@@ -181,6 +217,9 @@
                 <div class="column is-11 is-offset-1 clumnColr is-multiline">
                 <div class="has-text-right "><b class="fas fa-times fa-lg"></b></div>
                 <p style="word-wrap:break-word;">is-four-fifths${taskArray[i].task}</p>
+
+                
+                ${taskArray[i].optionChoice}
                 </div>
                 </div>`;
 
@@ -210,15 +249,6 @@
         }
 
 
-        window.unload = update();
-
-        notification[i].addEventListener("mousedown", function (e) {
-            if (e.target.tagName === "I" && e.target.className === "fas fa-times") {
-                e.target.offsetParent.remove()
-            }
-        }, false)
-        }
-    }
         window.unload = update();
 
 
