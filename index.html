@@ -125,52 +125,49 @@
             </div>
         </div>
 
+
+
+        <div id="error-msg" class="errorOutput"></div>
+
     </main>
 
 
 
-
+    <p id="demo"></p>
 
 
 
 
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
-
-
-
-
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field");
+        var errorMsg = document.getElementById("error-msg");
 
 
 
         console.info(output.childNodes);
 
-        var colorArray = ["red", "blue", "yellow", "green", "orange", "cyan", "purple"];
-
-        var taskArray = []
-
-
-
-
-
-
-
-
-        /*for (var i = 0; i < colorArray.length; i++) {
-            
-        var opt = colorArray[i];
-        var el = document.createElement("option");
-        el.textContent = opt;
-        el.value = opt;
-        select.appendChild(el);
-
-        } */
         var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
-        var optionsArray = ["Viktig", "moderat", "uformelt"];
+        var optionsArray =
+            [
+                {
+                    importance: "Kritisk!",
+                    colorTxt: "red"
+                },
+                {
+                    importance: "Moderat",
+                    colorTxt: "violet"
+                },
+                {
+                    importance: "Uformelt",
+                    colorTxt: "yellow"
+
+                }
+
+            ];
         for (var i = 0; i < optionsArray.length; i++) {
-            var optMenu = optionsArray[i];
+            var optMenu = optionsArray[i].importance;
             var elem = document.createElement("option");
             elem.textContent = optMenu;
             elem.value = optMenu;
@@ -178,26 +175,20 @@
         }
 
 
+        var taskArray = []
+
 
         function addTextArray() {
             var textField = document.getElementById("text-field").value;
-
-            var priority = document.getElementById("priority").value.toLowerCase();
-
-
-
+            var priority = document.getElementById("priority").value; //Important not to set toLowercase() when strings in array have capital first letters. Doesn't need this since it's not text imput.  
 
             for (var i = 0; i < optionsArray.length; i++) {
-
-
-
-
-                if (priority === optionsArray[i]) {
-
+                if (priority === optionsArray[i].importance) {
                     taskArray.push(
                         {
-                            optionChoice: optionsArray[i],
-                            task: textField
+                            optionChoice: optionsArray[i].importance, //adapting values from optionsArry
+                            task: textField,
+                            colorChoice: optionsArray[i].colorTxt //adapting values from optionsArry
                         }
                     );
                 }
@@ -208,23 +199,34 @@
         }
 
 
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d;
+
+
         function printFunc() {
-            output.innerHTML = "";
+            var countTask = 0;
+            errorMsg.innerHTML = "";
+            //output.innerHTML = ""; //This would delete existing tasks, already existing
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
-
-                output.innerHTML += ` <div id=$ class="columns">
+                if (textField.value != "") { //Make sure user needs to write something, not only choose importance, and still be able to create task. 
+                    output.innerHTML += ` <div id=$ class="columns">
                 <div class="column is-11 is-offset-1 clumnColr is-multiline">
                 <div class="has-text-right "><b class="fas fa-times fa-lg"></b></div>
                 <p style="word-wrap:break-word;">is-four-fifths${taskArray[i].task}</p>
-
-                
-                ${taskArray[i].optionChoice}
-                </div>
+                  <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
+                  </div>
                 </div>`;
+                    update();
+                    countTask++;
+                } /*else {
+                    output.innerHTML = "Error";
+                }*/
+                taskArray = []; //Remove all items in array, to prevent duplicates if user adds another task.
 
-                update();
-
+            }
+            if (countTask === 0) {
+                errorMsg.innerHTML = `Feil! Du må både velge prioritet og skrive noe i kunngjøringen`;
             }
 
         }

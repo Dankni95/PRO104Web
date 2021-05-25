@@ -135,4 +135,13 @@
         color: white;
       }
       
+      .errorOutput{
+          position: absolute;
+          color:yellow;
+          top: 25%;
+          left: 16%;
+          
+      }
+
+      /*hover dropdown. display none på body. defalut usynlig. når man hovrer over knappen, bytter den til display -ikke hidden. */
      
