@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/meny.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
-    
+   
     <!--<script defer type="module" src="./js/food-generate.js"></script>-->
 </head>
 
@@ -131,11 +131,11 @@
                     </div>
                     <div class="card-content">
                         <p class="price has-text-grey">129kr</p>
-                        <p class="title is-size-5" style="top: 70%; left: 30%;">California pizza</p> 
+                        <p class="title is-size-5" style="top: 65%; left: 30%;">California pizza</p> 
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <a href="" class="edit-dish">Edit dish</a>
+                            <button class="button active" id="edit-dish">Edit dish</button>
                         </p>
                     </footer>
                 </div>
@@ -147,11 +147,11 @@
                     </div>
                     <div class="card-content">
                         <p class="price has-text-grey">159kr</p>
-                        <p class="title is-size-5" style="top: 70%; left: 30%;">Chicken pizza</p> 
+                        <p class="title is-size-5" style="top: 65%; left: 30%;">Chicken pizza</p> 
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <a href="" class="edit-dish">Edit dish</a>
+                            <button class="button active"  id="nese">Edit dish</button>
                         </p>
                     </footer>
                 </div>
@@ -163,11 +163,11 @@
                     </div>
                     <div class="card-content">
                         <p class="price has-text-grey">149kr</p>
-                        <p class="title is-size-5" style="top: 70%; left: 30%;">Pepperoni Pizza</p> 
+                        <p class="title is-size-5" style="top: 65%; left: 30%;">Pepperoni Pizza</p> 
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <a href="" class="edit-dish">Edit dish</a>
+                            <button class="button active" id="edit-dish">Edit dish</button>
                         </p>
                     </footer>
                 </div>
@@ -181,11 +181,11 @@
                     </div>
                     <div class="card-content">
                         <p class="price has-text-grey">169kr</p>
-                        <p class="title is-size-5" style="top: 70%; left: 30%;">Seafood pizza</p> 
+                        <p class="title is-size-5" style="top: 65%; left: 30%;">Seafood pizza</p> 
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <a href="" class="edit-dish">Edit dish</a>
+                            <button class="button active" id="edit-dish">Edit dish</button>
                         </p>
                     </footer>
                 </div>
@@ -197,11 +197,11 @@
                     </div>
                     <div class="card-content">
                         <p class="price has-text-grey">149kr</p>
-                        <p class="title is-size-5" style="top: 70%; left: 30%;">Tandoori pizza</p> 
+                        <p class="title is-size-5" style="top: 65%; left: 30%;">Tandoori pizza</p> 
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <a href="" class="edit-dish">Edit dish</a>
+                            <button class="button active" id="edit-dish">Edit dish</button>
                         </p>
                     </footer>
                 </div>
@@ -213,11 +213,11 @@
                     </div>
                     <div class="card-content">
                         <p class="price has-text-grey">159kr</p>
-                        <p class="title is-size-5" style="top: 70%; left: 30%;">Vegetarian pizza</p> 
+                        <p class="title is-size-5" style="top: 65%; left: 30%;">Vegetarian pizza</p> 
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <a href="" class="edit-dish">Edit dish</a>
+                            <button class="button active" id="edit-dish">Edit dish</button>
                         </p>
                     </footer>
                 </div>
@@ -227,8 +227,56 @@
     </div>
 </section>
 
-
 </main>
+<!--Modal for å redigere matvarer.-->
+<div class="modal">
+    <div class="modal-background"></div> 
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">Rediger matretten</p>
+        </header>
+        <section class="modal-card-body">
+            <p style="color: black; font-weight: bolder;">Velg ingredienser som skal endres</p>
+            
+            <div>
+                <label for="choose-dough">Velg en bunn</label>
+                <select name="pizza-dough" id="pizza-dough">
+                <option value="amerikansk">Amerikansk</option>
+                <option value="italiensk">Italiensk</option>
+                <option value="glutenfri">Glutenfri</option>
+                <option value="grov">Grov</option>
+                </select>
+            </div>
+            <div>
+                <label for="choose-cheese">Velg ost</label>
+                <select name="pizza-cheese" id="pizza-cheese">
+                <option value="mozarella">Mozarella</option>
+                <option value="cheddar">Cheddar</option>
+                <option value="vegansk">Vegansk</option>
+                </select>
+            </div>
+            <div>
+                <label for="choose-sauce">Velg saus</label>
+                <select name="pizza-sauce" id="pizza-sauce">
+                <option value="tomat">Tomat</option>
+                <option value="alfredo">Alfredo</option>
+                <option value="pesto">Pesto</option>
+                </select>  
+            </div>
+            <div>
+                <label for="choose-price">Velg pris</label>
+                <input type="number" id="price-number" min="1" max="9999">
+             </div>
+        </section>
+        <footer class="modal-card-foot">
+            <button class="button">Lagre endringer</button>
+            <p style="color: black;position: absolute; right: 10%;">Trykk utenfor feltet for å avslutte</p>
+        </footer>
+        
+    </div>
+</div>
+
 </body>
+<script defer type="module" src="./js/meny.js"></script>
 
 </html>

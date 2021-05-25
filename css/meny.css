@@ -17,7 +17,6 @@
     position: absolute;
     left: 1%;
     top: 10%;
-    z-index: 100;
     padding: 10px 10px 10px 10px;
 }
 
@@ -31,14 +30,15 @@
     color: white;
     padding-left: 50px;
     padding-right: 50px;
+    padding-bottom: 10px;
     
 }
 .horizontal-a:hover{
-   background-color: rgba(234, 124, 105, 0.5);
-    
+   color: white;
 }
 
 .horizontal-a::after {
+    
     content: "";
     position: absolute;
     left: 100%;
@@ -104,12 +104,15 @@
     color: #FF4500 !important;
     text-align: center;
 }
+.modal-card {
+    height: 500px;
+    width: 2000px;
+    
+}
 
-
-
-
-
-
+.choose-dough {
+    
+}
 
 
 
