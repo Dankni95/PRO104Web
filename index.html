@@ -212,6 +212,15 @@
 
         window.unload = update();
 
+        notification[i].addEventListener("mousedown", function (e) {
+            if (e.target.tagName === "I" && e.target.className === "fas fa-times") {
+                e.target.offsetParent.remove()
+            }
+        }, false)
+        }
+    }
+        window.unload = update();
+
 
 
     </script>
