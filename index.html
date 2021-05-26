@@ -99,8 +99,9 @@
 
     <input id="text-field" class="txtInput" type="text">
 
-    <div class="prioInput">
-        <select id="priority">
+
+    <div>
+        <select id="priority" class="dropdownCSS">
             <option>Velg en prioritet</option>
         </select>
     </div>
@@ -141,7 +142,7 @@
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
         var priority = document.getElementById("priority");
-        var textField = document.getElementById("text-field");
+        var textField = document.getElementById("text-field").style.fontSize = "12pt";
         var errorMsg = document.getElementById("error-msg");
 
 

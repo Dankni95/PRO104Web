@@ -113,19 +113,6 @@
       .txtInput{
       
         position: absolute;
-        top: 17.1%;
-        left: 84%;
-        height: 5.7%;
-        background: #1F1D2B;
-        border: 1px solid #E74C3C;
-        box-sizing: border-box;
-        color: white;
-      }
-
-
-      .prioInput{
-      
-        position: absolute;
         top: 25%;
         left: 84%;
         height: 5.7%;
@@ -133,6 +120,22 @@
         border: 1px solid #E74C3C;
         box-sizing: border-box;
         color: white;
+        /*fiks word wrapping*/
+      }
+
+
+      .dropdownCSS{
+        position: absolute;
+        top: 17.1%;
+        left: 84%;
+        height: 5.7%;
+        width: 9.1%;
+        font-size: 100%;
+        text-align-last:center; /*A way to center text in dropdown menu. Only works in chrome*/
+        border: 1px solid #E74C3C;
+        /*box-sizing: border-box;*/
+        color:white;
+        background-color: #1F1D2B;
       }
       
       .errorOutput{
