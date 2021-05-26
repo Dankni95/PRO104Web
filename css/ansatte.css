@@ -1,5 +1,5 @@
 body {
-    height: 300vh;
+    height: 200vh;
     
 }
 
@@ -56,17 +56,17 @@ body {
 }
 
 .cards-wrapper {
-    max-width: 100%;
+    
     
 }
 
 .cards {
-    width: 100%;
+    
     display: grid;
-    grid-template-columns: 400px 400px 400px 400px;
-    grid-template-rows: 400px 400px 400px 400px; 
-    justify-content: stretch;
-    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: minmax(50px, auto);
+    grid-gap: 1rem;
+    justify-items: center;
     margin: 20px;
 }
 
