@@ -103,7 +103,7 @@
 
 
     <!--Can't use input tag. Need to use textarea for wrapping the user input text in multi lines.-->
-    <textarea name="text" id="text-field" class="txtInput" rows="14" cols="10" wrap="soft" maxlength="40"
+    <textarea id="text-field" class="txtInput" rows="14" cols="10" wrap="soft" maxlength="1000"
         style="overflow:hidden; resize:none;"></textarea>
 
 
@@ -163,7 +163,7 @@
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
         var priority = document.getElementById("priority");
-        var textField = document.getElementById("text-field").style.fontSize = "12pt";
+        var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var errorMsg = document.getElementById("error-msg");
 
 
