@@ -195,7 +195,7 @@
             var priority = document.getElementById("priority").value; //Important not to set toLowercase() when strings in array have capital first letters. Doesn't need this since it's not text imput.  
 
             for (var i = 0; i < optionsArray.length; i++) {
-                if (priority === optionsArray[i].importance && textField.value != "") {
+                if (priority === optionsArray[i].importance && textField != "") {
                     countTask++;
                     taskArray.push(
                         {
@@ -208,12 +208,12 @@
 
 
                 }
-                if (countTask === 0) {
-                    errorMsg.innerHTML += `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
-                }
+
 
             }
-
+            if (countTask === 0) {
+                errorMsg.innerHTML += `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
+            }
 
             printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
 
