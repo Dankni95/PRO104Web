@@ -119,46 +119,13 @@
     <main id="main" class="columnPosi">
 
         <div id="1" class="columns">
+            <!--Columns used for tasks/announcements-->
             <div class="column is-11
             is-offset-1 clumnColr is-multiline">
                 <div class="has-text-right"><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
-                <p class="test">test</p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.
             </div>
         </div>
-
-        <div id="2" class="columns">
-            <div class="column is-11 is-offset-1 clumnColr is-multiline">
-                <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
-                <p class="test">test</p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                laborum.
-            </div>
-        </div>
-
-
-
-
-
     </main>
-
-
-
-
-
-
-
 
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
@@ -166,28 +133,36 @@
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var errorMsg = document.getElementById("error-msg");
 
-       
+
 
         console.info(output.childNodes);
 
         var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
+
         var optionsArray =
             [
                 {
                     importance: "Kritisk!",
-                    colorTxt: "#FF6F5A"
+                    colorTxt: "#FF6F5A",
+                    prioritizeOrder: 1
+
                 },
                 {
                     importance: "Moderat",
-                    colorTxt: "violet"
+                    colorTxt: "violet",
+                    prioritizeOrder: 2
                 },
                 {
                     importance: "Uformelt",
-                    colorTxt: "yellow"
+                    colorTxt: "yellow",
+                    prioritizeOrder: 3
 
                 }
 
             ];
+
+
+        //Check what importance option user have selected in the drop down menu. Theese options are generated from the strings of .importance index in optionsArray   
         for (var i = 0; i < optionsArray.length; i++) {
             var optMenu = optionsArray[i].importance;
             var elem = document.createElement("option");
@@ -198,16 +173,18 @@
 
 
         var taskArray = [
-             {
-                 optionChoice: "Kritisk!",
-                 colorChoice: "#FF6F5A",
-                 task: "Pizzaovn 2 på Lambertseter delvis i ustand"
-             },
-             {
-                 optionChoice: "Moderat",
-                 colorChoice: "#FF6F5A",
-                 task: "Delivery bil nummer 4 skal på EU kontroll 1 juni"
-             }
+            {
+                optionChoice: "Kritisk!",
+                colorChoice: "#FF6F5A",
+                task: "Pizzaovn 2 på Lambertseter delvis i ustand",
+                prioritizeChoice: 1
+            },
+            {
+                optionChoice: "Moderat",
+                colorChoice: "violet",
+                task: "Delivery bil nummer 4 skal på EU kontroll 1 juni",
+                prioritizeChoice: 2
+            }
         ];
 
 
@@ -221,14 +198,15 @@
                         {
                             optionChoice: optionsArray[i].importance, //adapting values from optionsArry
                             task: textField,
-                            colorChoice: optionsArray[i].colorTxt //adapting values from optionsArry
+                            colorChoice: optionsArray[i].colorTxt, //adapting values from optionsArry
+                            prioritizeChoice: optionsArray[i].prioritizeOrder //Not for display. Just for bubble sorting.
                         }
                     );
                 }
 
             }
 
-            printFunc()
+            printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
         }
 
 
@@ -239,38 +217,38 @@
             output.innerHTML = "";
             var countTask = 0;
             errorMsg.innerHTML = "";
-            
+
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
-                
-                
-                
-                
-                
-                
+
+
+
+
+
+
                 //if (textField.value != "") { //Make sure user needs to write something, not only choose importance, and still be able to create task. 
-                    output.innerHTML += ` <div id=$ class="columns">
+                output.innerHTML += ` <div id=$ class="columns">
                 <div class="column is-11 is-offset-1 clumnColr is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
                 <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
-                <p style="word-wrap:break-word;">is-four-fifths${taskArray[i].task}</p>
+                <p style="word-wrap:break-word;">${taskArray[i].task}</p>
                   
                   </div>
                 </div>`;
-                    update();
-                    countTask++;
-                
-                
-                
-                   
-                
-                
-                
-                
-                
-                    /*}                     else {
-                    output.innerHTML = "Error";
-                }*/
+                update();
+                countTask++;
+
+
+
+
+
+
+
+
+
+                /*}                     else {
+                output.innerHTML = "Error";
+            }*/
                 //taskArray = []; //Remove all items in array, to prevent duplicates if user adds another task.
 
             }
@@ -284,60 +262,41 @@
             removeButtonFunctionality();
         }
 
-
+        /***DELETE TASK***/
         let notification = document.getElementsByTagName("B");
-
+        //Function for deleting
         function removeButtonFunctionality() {
-
             for (var i = 0; i < notification.length; i++) {
-
                 notification[i].addEventListener("mousedown", function (e) {
                     if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") {  //Deletes the selected index of the b class onclick. 
                         e.target.offsetParent.remove() //Removes the parent div for the task. And prevents it from displaying on the web page. 
-                        
+
                         //Thees two lines deletes the objectified array item by index. To make sure they do not reappear when user adds another task.
-                        var deleteIndex = taskArray.map(function(item) { return item.id; }).indexOf(i); //We already know the index, lets use the same index to delete from taskArray.
-                         // removes the object
+                        var deleteIndex = taskArray.map(function (item) { return item.id; }).indexOf(i); //We already know the index, lets use the same index to delete from taskArray.
+                        // removes the object
                         taskArray.splice(deleteIndex, 1);
 
                     }
                 }, false)
-                
+
 
             }
         }
 
-
-
-
-
-
-
+        /**IMPORTANT!! Theese need to be kept down here. Updating website.**/
         window.unload = update();
         window.unload = printFunc(); //In order to always display all elements inn array. Also the ones dummy/hardcoded in before user interference.
 
 
-        /*function teeeeest() {
-            for (var i = 0; i < taskArray.length; i++) {
-
-
-
-                output.innerHTML += "hei";
-
-
-                output.innerHTML += ` <div id=$ class="columns">
-                <div class="column is-11 is-offset-1 clumnColr is-multiline">
-                <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
-                <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
-                <p style="word-wrap:break-word;">is-four-fifths${taskArray[i].task}</p>
-                  
-                  </div>
-                </div>`;
-
-
-
+        function sortByImportance(a, b) { //Always change the crocodile mouth, when reversing the sorting. 
+            if (a.prioritizeChoice < b.prioritizeChoice) {
+                return -1;
+                if (a.prioritizeChoice > b.prioritizeChoice) {
+                    return 1;
+                }
             }
-        }*/
+            return 0;
+        }
 
 
     </script>
