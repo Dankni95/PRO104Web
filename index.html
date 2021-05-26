@@ -166,7 +166,7 @@
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var errorMsg = document.getElementById("error-msg");
 
-
+       
 
         console.info(output.childNodes);
 
@@ -197,7 +197,18 @@
         }
 
 
-        var taskArray = []
+        var taskArray = [
+             {
+                 optionChoice: "Kritisk!",
+                 colorChoice: "#FF6F5A",
+                 task: "Pizzaovn 2 på Lambertseter delvis i ustand"
+             },
+             {
+                 optionChoice: "Moderat",
+                 colorChoice: "#FF6F5A",
+                 task: "Delivery bil nummer 4 skal på EU kontroll 1 juni"
+             }
+        ];
 
 
         function addTextArray() {
@@ -225,12 +236,19 @@
 
 
         function printFunc() {
-            var countTask = 0;
-            errorMsg.innerHTML = "";
+            output.innerHTML = "";
+            //var countTask = 0;
+            //errorMsg.innerHTML = "";
             //output.innerHTML = ""; //This would delete existing tasks, already existing
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
-                if (textField.value != "") { //Make sure user needs to write something, not only choose importance, and still be able to create task. 
+                
+                
+                
+                
+                
+                
+                //if (textField.value != "") { //Make sure user needs to write something, not only choose importance, and still be able to create task. 
                     output.innerHTML += ` <div id=$ class="columns">
                 <div class="column is-11 is-offset-1 clumnColr is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
@@ -239,21 +257,31 @@
                   
                   </div>
                 </div>`;
-                    update();
-                    countTask++;
-                } /*else {
+                    //update();
+                    //countTask++;
+                
+                
+                
+                   
+                
+                
+                
+                
+                
+                    /*}                     else {
                     output.innerHTML = "Error";
                 }*/
-                taskArray = []; //Remove all items in array, to prevent duplicates if user adds another task.
+                //taskArray = []; //Remove all items in array, to prevent duplicates if user adds another task.
 
             }
-            if (countTask === 0) {
+            /*if (countTask === 0) {
                 errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
-            }
+            }*/
 
         }
 
         function update() {
+            
             removeButtonFunctionality();
         }
 
@@ -274,7 +302,30 @@
 
 
         window.unload = update();
+        window.unload = printFunc();
 
+
+        /*function teeeeest() {
+            for (var i = 0; i < taskArray.length; i++) {
+
+
+
+                output.innerHTML += "hei";
+
+
+                output.innerHTML += ` <div id=$ class="columns">
+                <div class="column is-11 is-offset-1 clumnColr is-multiline">
+                <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
+                <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
+                <p style="word-wrap:break-word;">is-four-fifths${taskArray[i].task}</p>
+                  
+                  </div>
+                </div>`;
+
+
+
+            }
+        }*/
 
 
     </script>
