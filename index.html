@@ -189,11 +189,14 @@
 
 
         function addTextArray() {
+            var countTask = 0;
+            errorMsg.innerHTML = "";
             var textField = document.getElementById("text-field").value;
             var priority = document.getElementById("priority").value; //Important not to set toLowercase() when strings in array have capital first letters. Doesn't need this since it's not text imput.  
 
             for (var i = 0; i < optionsArray.length; i++) {
-                if (priority === optionsArray[i].importance) {
+                if (priority === optionsArray[i].importance && textField.value != "") {
+                    countTask++;
                     taskArray.push(
                         {
                             optionChoice: optionsArray[i].importance, //adapting values from optionsArry
@@ -202,21 +205,29 @@
                             prioritizeChoice: optionsArray[i].prioritizeOrder //Not for display. Just for bubble sorting.
                         }
                     );
+
+
+                }
+                if (countTask === 0) {
+                    errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
 
             }
 
+
             printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
+
         }
 
+
+        //Make sure user needs to write something, not only choose importance, and still be able to create task. 
 
 
 
 
         function printFunc() {
             output.innerHTML = "";
-            var countTask = 0;
-            errorMsg.innerHTML = "";
+
 
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
@@ -226,7 +237,7 @@
 
 
 
-                //if (textField.value != "") { //Make sure user needs to write something, not only choose importance, and still be able to create task. 
+
                 output.innerHTML += ` <div id=$ class="columns">
                 <div class="column is-11 is-offset-1 clumnColr is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
@@ -236,7 +247,7 @@
                   </div>
                 </div>`;
                 update();
-                countTask++;
+
 
 
 
@@ -252,9 +263,7 @@
                 //taskArray = []; //Remove all items in array, to prevent duplicates if user adds another task.
 
             }
-            /*if (countTask === 0) {
-                errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
-            }*/
+            /**/
 
         }
 
