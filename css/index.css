@@ -67,7 +67,7 @@
 
         position: absolute;
         /*width: 70%;*/
-        width: 85%;
+        width: 70%;
         /*height: 124px;*/
         height: 70%;
         left: 262px;
@@ -82,7 +82,7 @@
     background-color: #252836;
     }
 
-.columns{
+.columns{ /*Because of the transparent scroll bar*/
     position: relative;
     right: 5%;
     padding-top: 1%;
@@ -100,10 +100,20 @@
     }
 
 
+    .h2Header{
+        position: absolute;
+        top: 13%;
+        left: 6%;
+        font-size: 150%;
+    }
+
        b { 
-    color: white;
+        color: white;
+        position: absolute;
+        left:97%
    
-          }
+        }
+        
 
     b:hover {
         color: #FF6F5A;
@@ -111,10 +121,11 @@
 
 
       .txtInput{
-      
         position: absolute;
-        top: 25%;
-        left: 84%;
+        /*top: 17.1%;*/
+        top: 20%;
+        /*left: 84%;*/
+        left: 15.3%;
         height: 5.7%;
         background: #1F1D2B;
         border: 1px solid #E74C3C;
@@ -124,10 +135,10 @@
       }
 
 
-      .dropdownCSS{
+      .dropdownMenuCSS{
         position: absolute;
-        top: 17.1%;
-        left: 84%;
+        top: 20%;
+        left: 25.5%;
         height: 5.7%;
         width: 9.1%;
         font-size: 100%;
@@ -138,13 +149,29 @@
         background-color: #1F1D2B;
       }
       
-      .errorOutput{
+      .errorOutput erro{
           position: absolute;
-          color:yellow;
-          top: 25%;
-          left: 16%;
+          color:#E74C3C;
+          /*top: 23%;
+          left: 35%;*/
+          top: 27%;
+          left: 17.3%;
+          
+          
+      }
+      .errorOutput p{
+          position: absolute;
+          color:red;
+          /*top: 23%;
+          left: 35%;*/
+          top: 27%;
+          left: 15.4%;
+          text-decoration: underline;
           
       }
 
       /*hover dropdown. display none på body. defalut usynlig. når man hovrer over knappen, bytter den til display -ikke hidden. */
      
+.test{
+    color: #E74C3C;
+}

@@ -66,7 +66,8 @@
 
         <header class="topbar">
             <div class="topbar-left">
-                <h1 class="topbar-title">Dashboard</h1>
+                <h1 class="topbar-title">Forside</h1>
+
                 <div class="date">
                     <span id="day-id">Day</span>,
                     <span id="day-nr-id">00</span>.
@@ -75,6 +76,11 @@
                 </div>
                 <div class="separator"></div>
             </div>
+
+            <div class="h2Header">
+                <h2>Kunngjøringer</h2>
+            </div>
+
 
             <div class="topbar-right">
                 <div class="topbar-username">
@@ -101,12 +107,12 @@
 
 
     <div>
-        <select id="priority" class="dropdownCSS">
+        <select id="priority" class="dropdownMenuCSS">
             <option>Velg en prioritet</option>
         </select>
     </div>
 
-
+    <div id="error-msg" class="errorOutput"></div>
 
 
     <main id="main" class="columnPosi">
@@ -114,27 +120,41 @@
         <div id="1" class="columns">
             <div class="column is-11
             is-offset-1 clumnColr is-multiline">
-                <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
-                is-four-fifths
+                <div class="has-text-right"><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
+                <p class="test">test</p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
             </div>
         </div>
 
         <div id="2" class="columns">
             <div class="column is-11 is-offset-1 clumnColr is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
-                is-four-fifths
+                <p class="test">test</p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum.
             </div>
         </div>
 
 
 
-        <div id="error-msg" class="errorOutput"></div>
+
 
     </main>
 
 
 
-    <p id="demo"></p>
+
 
 
 
@@ -200,8 +220,7 @@
         }
 
 
-        var d = new Date();
-        document.getElementById("demo").innerHTML = d;
+
 
 
         function printFunc() {
@@ -213,9 +232,10 @@
                 if (textField.value != "") { //Make sure user needs to write something, not only choose importance, and still be able to create task. 
                     output.innerHTML += ` <div id=$ class="columns">
                 <div class="column is-11 is-offset-1 clumnColr is-multiline">
-                <div class="has-text-right "><b class="fas fa-times fa-lg"></b></div>
+                <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
+                <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
                 <p style="word-wrap:break-word;">is-four-fifths${taskArray[i].task}</p>
-                  <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
+                  
                   </div>
                 </div>`;
                     update();
@@ -227,7 +247,7 @@
 
             }
             if (countTask === 0) {
-                errorMsg.innerHTML = `Feil! Du må både velge prioritet og skrive noe i kunngjøringen`;
+                errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen</erro>`;
             }
 
         }
