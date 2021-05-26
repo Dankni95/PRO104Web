@@ -77,7 +77,7 @@
                 <div class="dropdown-trigger">
                     <button id="activate" class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                         <i class="fas fa-angle-down" aria-hidden="true"></i>
-                        <span id="selected">Velg avdeling</span>
+                        <span id="selected">Lambertseter</span>
                         <span class="icon is-small">
                         </span>
                     </button>
@@ -115,7 +115,7 @@
                 <img class="icon-size icon-placement" src="images/money-icon.svg" alt="money icon">
                 <img class="arrow-size arrow-placement is-hidden" src="images/down-icon.svg" alt="arrow down">
                 <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
-                <p class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
+                <p id="sales-percentage" class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
                 <div class="figures-size figures-placement has-text-primary">
                     <p id="turnover">FiguresNOK</p>
                 </div>
@@ -125,7 +125,7 @@
                 <img class="icon-size icon-placement" src="/images/pizza-icon.svg" alt="placeholder icon">
                 <img class="arrow-size arrow-placement" src="images/down-icon.svg" alt="arrow down">
                 <img class="arrow-size arrow-placement is-hidden" src="images/up-icon.svg" alt="arrow up">
-                <p class="sales-percentage-size sales-percentage-placement has-text-danger">%Placeholder</p>
+                <p id="pizza-percentage" class="sales-percentage-size sales-percentage-placement has-text-danger">%Placeholder</p>
                 <div class="figures-size figures-placement has-text-danger">
                     <p id="pizza-sold">Pizza</p>
                 </div>
@@ -136,7 +136,7 @@
                 <img class="icon-size icon-placement" src="/images/customers-icon.svg" alt="cutomers icon">
                 <img class="arrow-size arrow-placement is-hidden" src="images/down-icon.svg" alt="arrow down">
                 <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
-                <p class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
+                <p id="customer-percentage" class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
                 <div class="figures-size figures-placement has-text-primary">
                     <p id="customers">Customers</p>
                 </div>
@@ -184,16 +184,14 @@
         <div class="columns mainpanel-customers">
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr class="table-title">
                         <th class="mainpanel-title"><abbr title="Hvem har bestilt">Kunde</abbr></th>
                         <th class="mainpanel-title"><abbr title="Hvem har bestilt">Kunde</abbr></th>
                         <th class="mainpanel-title"><abbr title="Hva kunden har bestilt">Meny</abbr></th>
                         <th class="mainpanel-title"></th>
                         <th class="mainpanel-title"><abbr title="Totalt bestillingen kostet">Totalt</abbr></th>
-                        <th class="mainpanel-title"><abbr title="Status på bestilling">Status</abbr></th>
+                        <th id="title-last" class="mainpanel-title"><abbr title="Status på bestilling">Status</abbr></th>
                     </tr>
-                    //need to have tr before innerhtml ........ 
-                    <tr class="table-content"></tr>
                 </thead>
             </table>
         </div>

@@ -1,59 +1,56 @@
 import DataModule from "./DataModule.js"
 
 
-const CustomersModule = (function () {
+const CustomersModule = (function () { }());
 
-
-
-
-}());
-
-
-function setDataInCustomersMainPanelLambertseter() {
-
-    alert("JUPP")
-
-    return { setDataInCustomersMainPanel };
-
-}
-
-function setDataInCustomersMainPanelFrogner() {
+function setDataInCustomersMainPanelFrogner(dynamicFranchise) {
+    const tableTitle = document.getElementsByClassName("table-title")[0].parentNode;
+    let object = DataModule.getAllData()[dynamicFranchise]?.dagensKunder.navn;
     
-    const tableContent = document.getElementById("table-content1");
+    
+    clearBeforeWritingNewCustomers(tableTitle);
+    for (const name in object) {
+        let newContentTable = document.createElement("tr");
+        newContentTable.className = "activated"
 
-    console.log(tableContent.childNodes.innerHTML);
+        let insertedNode = tableTitle.insertBefore(newContentTable, null)
 
-    let test = `<tr>
-    <th class="customer-icon"><img src="/images/pizza-california.png" alt="pizza icon"></th>
-    <th id="customer-name">Lars lolipop</th>
-    <th id="customer-meny">Pepperoni pizza</th>
-    <th>
-    <th id="customer-price">500</th>
-    <th><img id="customer-status" src="/images/avventer-icon.svg" alt="waiting icon"></th>
-</tr>`
+        let randomPizzaMenu = generateRandomCustomerMenu();
 
-    tableContent.innerHTML += test;
-
+        insertedNode.innerHTML += `<tr>
+        <th class="customer-icon"><img src="/images/${randomPizzaMenu[5].bilde}" alt="pizza icon"></th>
+        <th class="customer-name">${name}</th>
+        <th class="customer-meny">${randomPizzaMenu[0].navn}</th>
+        <th>
+        <th class="customer-price">${randomPizzaMenu[4].pris}</th>
+        <th><img class="customer-status" src="/images/${object[name][1].status}-icon.svg" alt="waiting icon"></th>
+        </tr>`;
+    }
 
     return { setDataInCustomersMainPanelFrogner };
+}
+
+function generateRandomCustomerMenu() {
+    let object = DataModule.getAllData().globalMeny.meny;
+    let allPizzas = [];
+
+    for (let name in object) {
+        allPizzas.push(object[name]);
+    }
+
+    return allPizzas[[allPizzas.length * Math.random() << 0]];
+}
+
+function clearBeforeWritingNewCustomers(tableTitle){
+    let clearAllCustomers = tableTitle.getElementsByClassName('activated');
+
+    if (clearAllCustomers.length > 0) {
+        let array = [...clearAllCustomers]
+        array.forEach(n => n.remove());
+    }
 
 }
-function setDataInCustomersMainPanelGrünnerløkka() {
 
-    alert("JUPP")
-
-    return { setDataInCustomersMainPanelGrünnerløkka };
-
-}
-function setDataInCustomersMainPanelGrønland() {
-
-    alert("JUPP")
-
-    return { setDataInCustomersMainPanelGrønland };
-
-}
 export default {
-    CustomersModule, setDataInCustomersMainPanelLambertseter,
-    setDataInCustomersMainPanelFrogner, setDataInCustomersMainPanelGrønland,
-    setDataInCustomersMainPanelGrünnerløkka
+    CustomersModule, setDataInCustomersMainPanelFrogner
 };

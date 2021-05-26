@@ -5,9 +5,9 @@ const DataModule = (window.onload = function data() {
     {
         "Lambertseter": {
             "navn": "Lambertseter",
-            "salg": "392999",
-            "kunder": "50023",
-            "pizzas": "123010",
+            "salg": "13999",
+            "kunder": "5023",
+            "pizzas": "10010",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -60,9 +60,6 @@ const DataModule = (window.onload = function data() {
                     "Naliaka Rahim": [
                         {
                             "menykjøpt": "320"
-                        },
-                        {
-                            "betalt": "avventer"
                         },
                         {
                             "status": "tilbereder"
@@ -132,9 +129,9 @@ const DataModule = (window.onload = function data() {
         },
         "Frogner": {
             "navn": "Frogner",
-            "salg": "100002",
-            "kunder": "12321",
-            "pizzas": "19212",
+            "salg": "9002",
+            "kunder": "1321",
+            "pizzas": "1212",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -232,9 +229,9 @@ const DataModule = (window.onload = function data() {
         },
         "Grønland": {
             "navn": "Grønland",
-            "salg": "200000",
-            "kunder": "5000",
-            "pizzas": "13213",
+            "salg": "5000",
+            "kunder": "1000",
+            "pizzas": "1213",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -316,9 +313,9 @@ const DataModule = (window.onload = function data() {
         },
         "Grünnerløkka": {
             "navn": "Grünnerløkka",
-            "salg": "392342",
-            "kunder": "21389",
-            "pizzas": "21399",
+            "salg": "7342",
+            "kunder": "2189",
+            "pizzas": "2399",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -392,7 +389,10 @@ const DataModule = (window.onload = function data() {
         },
         "globalMeny": {
             "meny": {
-                "California Pizza": [
+                "CaliforniaPizza": [
+                    {
+                        "navn": "California pizza"
+                    },
                     {
                         "bunn": "Amerikansk"
                     },
@@ -409,7 +409,10 @@ const DataModule = (window.onload = function data() {
                         "bilde": "pizza-california.png"
                     }
                 ],
-                "Chicken Pizza": [
+                "ChickenPizza": [
+                    {
+                        "navn": "Chicken pizza"
+                    },
                     {
                         "bunn": "Italiensk"
                     },
@@ -426,7 +429,10 @@ const DataModule = (window.onload = function data() {
                         "bilde": "pizza-chicken.png"
                     }
                 ],
-                "Pepperoni Pizza": [
+                "PepperoniPizza": [
+                    {
+                        "navn": "Pepperoni pizza"
+                    },
                     {
                         "bunn": "Amerikansk"
                     },
@@ -443,7 +449,10 @@ const DataModule = (window.onload = function data() {
                         "bilde": "pizza-pepperoni.png"
                     }
                 ],
-                "Seafood Pizza": [
+                "SeafoodPizza": [
+                    {
+                        "navn": "Seafood pizza"
+                    },
                     {
                         "bunn": "Amerikansk"
                     },
@@ -460,7 +469,10 @@ const DataModule = (window.onload = function data() {
                         "bilde": "pizza-seafood.png"
                     }
                 ],
-                "Tandoori Pizza": [
+                "TandooriPizza": [
+                    {
+                        "navn": "Tandoori pizza"
+                    },
                     {
                         "bunn": "Italiensk"
                     },
@@ -477,7 +489,10 @@ const DataModule = (window.onload = function data() {
                         "bilde": "pizza-tandoori.png"
                     }
                 ],
-                "Vegetarian Pizza": [
+                "VegetarianPizza": [
+                    {
+                        "navn": "Vegetarian pizza"
+                    },
                     {
                         "bunn": "Glutenfri"
                     },
@@ -494,8 +509,6 @@ const DataModule = (window.onload = function data() {
                         "bilde": "pizza-vegetarian.png"
                     }
                 ],
-
-
             }
         }
     }
