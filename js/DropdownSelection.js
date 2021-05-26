@@ -1,5 +1,5 @@
 import DropdownModule from "./DropdownModule.js"
-
+import RouteModule from "./RouteModule.js"
 const DropdownSelection = (function () {
     let selected = document.getElementById("selected");
     let dropdown = document.getElementsByClassName("dropdown")[0];
@@ -7,9 +7,9 @@ const DropdownSelection = (function () {
 
     
     const DropdownSelection = document.getElementById("dropdown-content").addEventListener("click", function (e) {
-        selected.innerHTML = e.target.innerHTML;
+        RouteModule.test(e.target.innerText);
+        selected.innerHTML = e.target.innerText;
         dropdown.className = "dropdown";
-        
         let array = [ ...dropdownMenu.children ];
 
         array.forEach(element => {

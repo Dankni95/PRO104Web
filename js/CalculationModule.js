@@ -1,5 +1,7 @@
 import DataModule from "./DataModule.js"
 import PaintPercentageModule from './PaintPercentageModule.js'
+import OnloadChartModule from "./ChartModule.js"
+
 
 
 
@@ -8,6 +10,7 @@ const CalculationModule = (function () { }());
 
 function calculateTodaysTurnover(dynamicFranchise) {
     let lastTurnover = parseInt(DataModule.getAllData()[dynamicFranchise]?.salg);
+    console.log(lastTurnover);
     let allPayments = 0;
     let allCustomersPayment = document.getElementsByClassName("customer-price");
 
@@ -19,7 +22,7 @@ function calculateTodaysTurnover(dynamicFranchise) {
     PaintPercentageModule.paintPercentageToSite(calculatePercentage(allPayments, lastTurnover));
     PaintPercentageModule.paintTurnoverToSite(calculateTurnover(allPayments, lastTurnover))
 
-
+    return allPayments;
 }
 function calculateTodaysPizzaTurnover(dynamicFranchise) {
     let lastTurnover = parseInt(DataModule.getAllData()[dynamicFranchise]?.pizzas);
@@ -41,19 +44,20 @@ function calculateTodaysCustomerTurnover(dynamicFranchise) {
 
     PaintPercentageModule.paintCustomerTurnoverToSite(calculateTurnover(allPayments, lastTurnover));
     PaintPercentageModule.paintCustomerPercentageToSite(calculatePercentage(allPayments, lastTurnover));
+    OnloadChartModule.paintChart();
+
 
 }
 
 
 function calculatePercentage(todaysTurnover, previousTurnover) {
     let percentage = (todaysTurnover / previousTurnover) * 100
-    console.log(percentage);
     return parseFloat(percentage.toFixed(2));
 
 }
 
 function calculateTurnover(todaysTurnover, previousTurnover) {
-    let turnover = todaysTurnover + previousTurnover;
+    let turnover = parseInt(todaysTurnover) + parseInt(previousTurnover);
     return parseInt(turnover);
 }
 

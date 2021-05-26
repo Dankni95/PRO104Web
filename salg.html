@@ -112,33 +112,40 @@
 
         <div class="sales-figures">
             <div class="sales">
+                <p class="figures-subtitle">Inntekt totalt</p>
                 <img class="icon-size icon-placement" src="images/money-icon.svg" alt="money icon">
                 <img class="arrow-size arrow-placement is-hidden" src="images/down-icon.svg" alt="arrow down">
                 <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
-                <p id="sales-percentage" class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
+                <p id="sales-percentage" class="sales-percentage-size sales-percentage-placement has-text-primary">
+                    %Placeholder</p>
                 <div class="figures-size figures-placement has-text-primary">
-                    <p id="turnover">FiguresNOK</p>
+                    <p id="turnover"></p>
                 </div>
 
             </div>
             <div class="total-pizzas">
+                <p class="figures-subtitle">Pizza solgt</p>
+
                 <img class="icon-size icon-placement" src="/images/pizza-icon.svg" alt="placeholder icon">
                 <img class="arrow-size arrow-placement" src="images/down-icon.svg" alt="arrow down">
                 <img class="arrow-size arrow-placement is-hidden" src="images/up-icon.svg" alt="arrow up">
-                <p id="pizza-percentage" class="sales-percentage-size sales-percentage-placement has-text-danger">%Placeholder</p>
+                <p id="pizza-percentage" class="sales-percentage-size sales-percentage-placement has-text-danger">
+                    %Placeholder</p>
                 <div class="figures-size figures-placement has-text-danger">
-                    <p id="pizza-sold">Pizza</p>
+                    <p id="pizza-sold"></p>
                 </div>
 
 
             </div>
             <div class="customers">
+                <p class="figures-subtitle">Kunder totalt</p>
                 <img class="icon-size icon-placement" src="/images/customers-icon.svg" alt="cutomers icon">
                 <img class="arrow-size arrow-placement is-hidden" src="images/down-icon.svg" alt="arrow down">
                 <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
-                <p id="customer-percentage" class="sales-percentage-size sales-percentage-placement has-text-primary">%Placeholder</p>
+                <p id="customer-percentage" class="sales-percentage-size sales-percentage-placement has-text-primary">
+                    %Placeholder</p>
                 <div class="figures-size figures-placement has-text-primary">
-                    <p id="customers">Customers</p>
+                    <p id="customers"></p>
                 </div>
             </div>
         </div>
@@ -170,12 +177,6 @@
         <div class="days-pizza-position days-pizza-size">
             <div class="false-For-Bottom-Text">
                 <div class="mypiechart">
-                    <pie-chart id="pieChart"">
-                        <pchart-element name=" Oslo " value=" 11000" colour="#00A676">
-                        <pchart-element name=" Fornebu " value="2100" colour="#ffffff">
-                            <pchart-element name=" Asker " value="1100" colour="#008DD5">
-                                <pchart-element name=" Holmlia  " value="1250" colour="#EA7C69">
-                    </pie-chart>
                 </div>
             </div>
         </div>
@@ -190,7 +191,8 @@
                         <th class="mainpanel-title"><abbr title="Hva kunden har bestilt">Meny</abbr></th>
                         <th class="mainpanel-title"></th>
                         <th class="mainpanel-title"><abbr title="Totalt bestillingen kostet">Totalt</abbr></th>
-                        <th id="title-last" class="mainpanel-title"><abbr title="Status på bestilling">Status</abbr></th>
+                        <th id="title-last" class="mainpanel-title"><abbr title="Status på bestilling">Status</abbr>
+                        </th>
                     </tr>
                 </thead>
             </table>
@@ -199,7 +201,6 @@
 
 
 
-    <script src="/pie-chart-js.js">
 
     </script>
     <script type="module" src="js/test.js"></script>

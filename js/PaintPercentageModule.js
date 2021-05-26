@@ -1,4 +1,3 @@
-import DataModule from "./DataModule.js"
 
 
 const PaintPercentageModule = (function () { }());

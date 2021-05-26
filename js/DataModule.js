@@ -6,8 +6,8 @@ const DataModule = (window.onload = function data() {
         "Lambertseter": {
             "navn": "Lambertseter",
             "salg": "13999",
-            "kunder": "5023",
-            "pizzas": "10010",
+            "kunder": "1223",
+            "pizzas": "1010",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -130,8 +130,8 @@ const DataModule = (window.onload = function data() {
         "Frogner": {
             "navn": "Frogner",
             "salg": "9002",
-            "kunder": "1321",
-            "pizzas": "1212",
+            "kunder": "821",
+            "pizzas": "612",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -230,8 +230,8 @@ const DataModule = (window.onload = function data() {
         "Grønland": {
             "navn": "Grønland",
             "salg": "5000",
-            "kunder": "1000",
-            "pizzas": "1213",
+            "kunder": "700",
+            "pizzas": "513",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -314,8 +314,8 @@ const DataModule = (window.onload = function data() {
         "Grünnerløkka": {
             "navn": "Grünnerløkka",
             "salg": "7342",
-            "kunder": "2189",
-            "pizzas": "2399",
+            "kunder": "889",
+            "pizzas": "799",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"

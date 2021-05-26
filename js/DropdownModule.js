@@ -6,9 +6,6 @@ const DropdownModule = (function () {
     document.getElementById("activate").addEventListener("mouseleave", function (e) {
         activateDropdownMenu();
     }, false);
-
-
-
 }());
 
 function activateDropdownMenu() {

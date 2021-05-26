@@ -53,7 +53,7 @@
 
 .arrow-placement {
     position: absolute;
-    bottom: 40%;
+    bottom: 28%;
     right: 19%
 }
 
@@ -66,13 +66,15 @@
 
 .icon-placement {
     position: absolute;
-    bottom: 66%;
+    bottom: 54%;
     right: 76%
 }
 
+
+
 .sales-percentage-placement {
     position: absolute;
-    bottom: 62%;
+    bottom: 50%;
     right: 53%
 }
 
@@ -84,9 +86,17 @@
 }
 
 .figures-placement {
+    display: inline;
+    bottom: 42%;
+    right: 66%;
+}
+
+.figures-subtitle {
     position: absolute;
-    bottom: 52%;
-    right: 72%;
+    top: 2%;
+    left: 20%;
+    font-size: 1.4vw;
+    width: 100%;
 }
 
 .figures-size {
@@ -152,7 +162,7 @@
     width: 15%;
 }
 
-.customer-icon img{
+.customer-icon img {
     position: relative;
     width: 99%;
 }
