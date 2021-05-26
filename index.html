@@ -237,9 +237,9 @@
 
         function printFunc() {
             output.innerHTML = "";
-            //var countTask = 0;
-            //errorMsg.innerHTML = "";
-            //output.innerHTML = ""; //This would delete existing tasks, already existing
+            var countTask = 0;
+            errorMsg.innerHTML = "";
+            
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
                 
@@ -258,7 +258,7 @@
                   </div>
                 </div>`;
                     update();
-                    //countTask++;
+                    countTask++;
                 
                 
                 
@@ -281,7 +281,6 @@
         }
 
         function update() {
-            
             removeButtonFunctionality();
         }
 
@@ -293,16 +292,29 @@
             for (var i = 0; i < notification.length; i++) {
 
                 notification[i].addEventListener("mousedown", function (e) {
-                    if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") {
-                        e.target.offsetParent.remove()
+                    if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") { 
+                        e.target.offsetParent.remove() //Removes the task from displaying on the web page. 
+                        
+                        //Thees two lines deletes the objectified array item by index. To make sure they do not reappear when user adds another task.
+                        var removeIndex = taskArray.map(function(item) { return item.id; }).indexOf(i);
+                         // remove object
+                        taskArray.splice(removeIndex, 1);
+
                     }
                 }, false)
+                
+
             }
         }
 
 
+
+
+
+
+
         window.unload = update();
-        window.unload = printFunc();
+        window.unload = printFunc(); //In order to always display all elements inn array. Also the ones dummy/hardcoded in before user interference.
 
 
         /*function teeeeest() {
