@@ -292,13 +292,13 @@
             for (var i = 0; i < notification.length; i++) {
 
                 notification[i].addEventListener("mousedown", function (e) {
-                    if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") { 
-                        e.target.offsetParent.remove() //Removes the task from displaying on the web page. 
+                    if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") {  //Deletes the selected index of the b class onclick. 
+                        e.target.offsetParent.remove() //Removes the parent div for the task. And prevents it from displaying on the web page. 
                         
                         //Thees two lines deletes the objectified array item by index. To make sure they do not reappear when user adds another task.
-                        var removeIndex = taskArray.map(function(item) { return item.id; }).indexOf(i);
-                         // remove object
-                        taskArray.splice(removeIndex, 1);
+                        var deleteIndex = taskArray.map(function(item) { return item.id; }).indexOf(i); //We already know the index, lets use the same index to delete from taskArray.
+                         // removes the object
+                        taskArray.splice(deleteIndex, 1);
 
                     }
                 }, false)
