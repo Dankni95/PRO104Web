@@ -102,8 +102,9 @@
 
 
 
-
-    <input id="text-field" class="txtInput" type="text">
+    <!--Can't use input tag. Need to use textarea for wrapping the user input text in multi lines.-->
+    <textarea name="text" id="text-field" class="txtInput" rows="14" cols="10" wrap="soft" maxlength="40"
+        style="overflow:hidden; resize:none;"></textarea>
 
 
     <div>
@@ -174,7 +175,7 @@
             [
                 {
                     importance: "Kritisk!",
-                    colorTxt: "red"
+                    colorTxt: "#FF6F5A"
                 },
                 {
                     importance: "Moderat",
@@ -247,7 +248,7 @@
 
             }
             if (countTask === 0) {
-                errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen</erro>`;
+                errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
             }
 
         }
