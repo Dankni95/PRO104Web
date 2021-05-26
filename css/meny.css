@@ -85,6 +85,7 @@
     background-color: #1F1D2B !important;
     padding-top: 6%;
     
+    
 }
 .title {
     color: white !important;
@@ -98,22 +99,82 @@
 .card-footer {
     /*bruk rgba. Bruker man hex og opacity arves det ned til .edit-dish klassen*/
     background-color: rgba(234, 124, 105, 0.5) !important;
-
 }
 .edit-dish {
     color: #FF4500 !important;
     text-align: center;
 }
+/*modals*/
+.modal-card-head{
+    background-color: #1F1D2B !important;
+}
+.modal-card-title{
+    color: white !important;
+    font-weight: bolder;
+}
 .modal-card {
     height: 500px;
     width: 2000px;
-    
+    /*Color her endrer kun teksten på labels.*/
+    color: white;
+    text-align: center;
+    padding: 50px 50px 50px 50px;
+}
+.modal-card-body{
+    background-color: #252836 !important;
+   
+}
+.modal-card-foot{
+    background-color: #1F1D2B !important;
 }
 
-.choose-dough {
+.test123 {
+    font-weight: bolder !important;
     
 }
-
+.button {
+    background-color: rgba(234, 124, 105, 0.4) !important;
+    border-color: black !important;
+    color: white !important;
+    font-weight: bold;
+    
+}
+.button:hover{
+    background-color: rgba(234, 124, 105) !important;
+}
+.button-save{
+    background-color: rgba(234, 124, 105, 0.7) !important;
+    border-radius: 1px;
+    border-color: black;
+    color: white !important;
+    font-weight: bold;
+    padding: 3% 3% 3% 3%;
+    border-radius: 0.5em;
+    font-size: medium;
+    
+}
+.button-save:hover{
+    background-color: rgba(234, 124, 105) !important;
+}
+/*Drop down menus*/
+.dough-div{
+    padding: 10px 10px 10px 10px;
+}
+.cheese-div{
+    padding: 10px 10px 10px 10px;
+}
+.sauce-div{
+    padding: 10px 10px 10px 10px;
+}
+.price-div{
+    padding: 10px 10px 10px 10px;
+}
+/*Removes arrows from input field*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 
 /*

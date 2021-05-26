@@ -6,6 +6,8 @@ const MainModule = (function data() {
 const editDish = document.getElementsByTagName('BUTTON');
 const modalBackground = document.querySelector('.modal-background');
 const modal = document.querySelector('.modal');
+const saveButton = document.getElementById('save-button');
+const featureAlert = document.getElementById('horizontal-id');
 
 //Adds is-active to the modal class.
 for (var i = 0; i < editDish.length; i++) {
@@ -21,6 +23,24 @@ modalBackground.addEventListener('click', () => {
 
 console.log(editDish.className);
 
+//Makes save button lock the item
+saveButton.addEventListener('click', () => {
+    modal.classList.remove('is-active');
+});
+
+featureAlert.addEventListener('click', () => {
+    alert("Denne funksjonen er enda ikke implementert, vennligst kontakt systemansvarlig for mer informasjon. ");
+});
+
+
+}());
+
+
+
+
+export default MainModule;
+
+
 
 /*
 const editDish = document.getElementById('kake');
@@ -32,8 +52,3 @@ editDish.addEventListener('click', () => {
     modal.className = "modal is-active"
 });
 */
-
-
-}());
-
-export default MainModule;

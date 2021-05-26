@@ -93,7 +93,7 @@
         </header>
          <!--Horizontal list for pizzaes-->
         
-         <nav class="horizontal-list">
+         <nav class="horizontal-list" id="horizontal-id">
             <div>
                 <div> 
                     <a class="horizontal-a">Hot Pizza</a>
@@ -135,7 +135,7 @@
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <button class="button active" id="edit-dish">Edit dish</button>
+                            <button class="button active">Rediger matrett</button>
                         </p>
                     </footer>
                 </div>
@@ -151,7 +151,7 @@
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <button class="button active"  id="nese">Edit dish</button>
+                            <button class="button active">Rediger matrett</button>
                         </p>
                     </footer>
                 </div>
@@ -167,7 +167,7 @@
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <button class="button active" id="edit-dish">Edit dish</button>
+                            <button class="button active" id="edit-dish">Rediger matrett</button>
                         </p>
                     </footer>
                 </div>
@@ -185,7 +185,7 @@
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <button class="button active" id="edit-dish">Edit dish</button>
+                            <button class="button active" id="edit-dish">Rediger matrett</button>
                         </p>
                     </footer>
                 </div>
@@ -201,7 +201,7 @@
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <button class="button active" id="edit-dish">Edit dish</button>
+                            <button class="button active" id="edit-dish">Rediger matrett</button>
                         </p>
                     </footer>
                 </div>
@@ -209,7 +209,7 @@
             <div class="column is-5-desktop">
                 <div class="card">
                     <div class="card-image px-6">
-                        <img src="./images/pizza-vegetar.png" alt="">
+                        <img src="./images/pizza-vegetarian.png" alt="">
                     </div>
                     <div class="card-content">
                         <p class="price has-text-grey">159kr</p>
@@ -217,12 +217,11 @@
                     </div>
                     <footer class="card-footer">
                         <p class="card-footer-item">
-                            <button class="button active" id="edit-dish">Edit dish</button>
+                            <button class="button active" id="edit-dish">Rediger matrett</button>
                         </p>
                     </footer>
                 </div>
             </div>
-            
         </div>
     </div>
 </section>
@@ -233,12 +232,12 @@
     <div class="modal-background"></div> 
     <div class="modal-card">
         <header class="modal-card-head">
-            <p class="modal-card-title">Rediger matretten</p>
+            <p class="modal-card-title">REDIGER MATRETTEN</p>
         </header>
         <section class="modal-card-body">
-            <p style="color: black; font-weight: bolder;">Velg ingredienser som skal endres</p>
+            <p style="color: white; font-weight: bolder;">Velg ingredienser som skal endres</p>
             
-            <div>
+            <div class="dough-div">
                 <label for="choose-dough">Velg en bunn</label>
                 <select name="pizza-dough" id="pizza-dough">
                 <option value="amerikansk">Amerikansk</option>
@@ -247,7 +246,7 @@
                 <option value="grov">Grov</option>
                 </select>
             </div>
-            <div>
+            <div class="cheese-div">
                 <label for="choose-cheese">Velg ost</label>
                 <select name="pizza-cheese" id="pizza-cheese">
                 <option value="mozarella">Mozarella</option>
@@ -255,7 +254,7 @@
                 <option value="vegansk">Vegansk</option>
                 </select>
             </div>
-            <div>
+            <div class="sauce-div">
                 <label for="choose-sauce">Velg saus</label>
                 <select name="pizza-sauce" id="pizza-sauce">
                 <option value="tomat">Tomat</option>
@@ -263,18 +262,20 @@
                 <option value="pesto">Pesto</option>
                 </select>  
             </div>
-            <div>
+            <div class="price-div">
                 <label for="choose-price">Velg pris</label>
-                <input type="number" id="price-number" min="1" max="9999">
+                <input class="price-input "type="number" id="price-number" min="1" max="9999" placeholder="Pris i kroner" style="width: 30%; padding: 5px 5px 5px 5px;">
              </div>
         </section>
         <footer class="modal-card-foot">
-            <button class="button">Lagre endringer</button>
-            <p style="color: black;position: absolute; right: 10%;">Trykk utenfor feltet for å avslutte</p>
+            <button class="button-save" id="save-button">Lagre endringer</button>
+            <p style="color: white;position: absolute; right: 5%;">Trykk utenfor vinduet for å avslutte</p>
         </footer>
         
     </div>
 </div>
+
+
 
 </body>
 <script defer type="module" src="./js/meny.js"></script>
