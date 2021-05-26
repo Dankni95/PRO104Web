@@ -205,66 +205,28 @@
                             prioritizeChoice: optionsArray[i].prioritizeOrder //Not for display. Just for bubble sorting.
                         }
                     );
-
-
                 }
-
-
             }
             if (countTask === 0) {
                 errorMsg.innerHTML += `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
             }
-
             printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
-
         }
-
-
-
-
-
 
 
         function printFunc() {
             output.innerHTML = "";
-
-
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
-
-
-
-
-
-
-
                 output.innerHTML += ` <div id=$ class="columns">
                 <div class="column is-11 is-offset-1 clumnColr is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
                 <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
                 <p style="word-wrap:break-word;">${taskArray[i].task}</p>
-                  
                   </div>
                 </div>`;
                 update();
-
-
-
-
-
-
-
-
-
-
-                /*}                     else {
-                output.innerHTML = "Error";
-            }*/
-                //taskArray = []; //Remove all items in array, to prevent duplicates if user adds another task.
-
             }
-            /**/
-
         }
 
         function update() {
