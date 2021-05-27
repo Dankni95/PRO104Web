@@ -9,7 +9,8 @@ const EmployeModule = (function () {
         name: "Geir Ludvig",
         phone: "+47 10 10 30 03",
         title: "Daglig Leder",
-        category: "Lambertseter", 
+        category: "Lambertseter",
+        all: "alle", 
     },
     
     {
@@ -18,7 +19,8 @@ const EmployeModule = (function () {
         name: "Monica Seljord",
         phone: "+47 30 30 30 03",
         title: "Avdelings Leder",
-        category: "Lambertseter"
+        category: "Lambertseter",
+        all: "alle", 
     },
 
     {
@@ -27,7 +29,8 @@ const EmployeModule = (function () {
         name: "Simen Kly",
         phone: "+47 44 00 00 01",
         title: "Ansatt",
-        category: "Lambertseter"
+        category: "Lambertseter",
+        all: "alle", 
     },
 
     {
@@ -36,7 +39,8 @@ const EmployeModule = (function () {
         name: "Heidi Blidame",
         phone: "+47 44 44 00 01",
         title: "Ansatt",
-        category: "Lambertseter"
+        category: "Lambertseter",
+        all: "alle", 
     },
 
     {
@@ -45,7 +49,8 @@ const EmployeModule = (function () {
         name: "Mona Tilgunn",
         phone: "+47 44 44 00 01",
         title: "Ansatt",
-        category: "Lambertseter"
+        category: "Lambertseter",
+        all: "alle", 
     },
     // Frogner
     {
@@ -54,7 +59,8 @@ const EmployeModule = (function () {
         name: "Morten krakk",
         phone: "+47 30 30 30 03",
         title: "Avdelings Leder",
-        category: "Frogner"
+        category: "Frogner",
+        all: "alle", 
     },
 
     {
@@ -63,7 +69,8 @@ const EmployeModule = (function () {
         name: "Henrik fluger",
         phone: "+47 42 30 30 03",
         title: "Ansatt",
-        category: "Frogner"
+        category: "Frogner",
+        all: "alle", 
     },
 
     {
@@ -73,7 +80,8 @@ const EmployeModule = (function () {
         name: "Lise Alouise",
         phone: "+47 50 30 50 03",
         title: "Ansatt",
-        category: "Frogner"
+        category: "Frogner",
+        all: "alle", 
     },
 
     {
@@ -82,7 +90,8 @@ const EmployeModule = (function () {
         name: "Margrethe landover",
         phone: "+47 30 40 40 03",
         title: "Ansatt",
-        category: "Frogner"
+        category: "Frogner",
+        all: "alle", 
     },
     // Grønland
     {
@@ -91,7 +100,8 @@ const EmployeModule = (function () {
         name: "Lise Blidfis",
         phone: "+47 20 20 30 23",
         title: "Avdelings Leder",
-        category: "Grønland"
+        category: "Grønland",
+        all: "alle", 
     },
 
     {
@@ -100,7 +110,8 @@ const EmployeModule = (function () {
         name: "Amor Lamor",
         phone: "+47 30 44 30 03",
         title: "Ansatt",
-        category: "Grønland"
+        category: "Grønland",
+        all: "alle", 
     },
 
     {
@@ -109,7 +120,8 @@ const EmployeModule = (function () {
         name: "Halgeir Lavendel",
         phone: "+47 30 30 20 03",
         title: "Ansatt",
-        category: "Grønland"
+        category: "Grønland",
+        all: "alle", 
     },
 
     {
@@ -118,7 +130,8 @@ const EmployeModule = (function () {
         name: "Susanne Fjøll",
         phone: "+47 30 55 60 03",
         title: "Ansatt",
-        category: "Grønland"
+        category: "Grønland",
+        all: "alle", 
     },
     //Grunnerløkka
     {
@@ -127,7 +140,8 @@ const EmployeModule = (function () {
         name: "Jostein Fjøll",
         phone: "+47 30 30 30 03",
         title: "Avdelings Leder",
-        category: "Grunnerløkka"
+        category: "Grunnerløkka",
+        all: "alle", 
     },
 
     {
@@ -136,7 +150,8 @@ const EmployeModule = (function () {
         name: "Miro Kaprino",
         phone: "+47 22 30 22 03",
         title: "Ansatt",
-        category: "Grunnerløkka"
+        category: "Grunnerløkka",
+        all: "alle", 
     },
 
     {
@@ -145,7 +160,8 @@ const EmployeModule = (function () {
         name: "Jasmin Lavin",
         phone: "+47 55 30 54 03",
         title: "Ansatt",
-        category: "Grunnerløkka"
+        category: "Grunnerløkka",
+        all: "alle", 
     },
 
     {
@@ -154,7 +170,8 @@ const EmployeModule = (function () {
         name: "Mai Fay",
         phone: "+47 22 22 33 03",
         title: "Ansatt",
-        category: "Grunnerløkka"
+        category: "Grunnerløkka",
+        all: "alle", 
     },
 ];
 

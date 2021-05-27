@@ -68,7 +68,7 @@ body {
 }
 
 .logo-image {
-    width: 50%;
+    width: 100%;
 }
 
 .navigation {
@@ -164,10 +164,10 @@ li:hover::after {
 /**** Header Styling ****/
 
 .main-div {
-    position: absolute;
+    position: relative;
     width: calc(100% - 200px);
     left: 200px;
-    max-width: 1600px;
+    max-width: 100%;
     min-height: 100vh;
     padding: 2rem 5rem;
 }
@@ -203,6 +203,8 @@ li:hover::after {
     font-size: 13px;
     letter-spacing: 2px;
 }
+
+
 
 
 
