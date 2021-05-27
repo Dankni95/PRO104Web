@@ -1,6 +1,7 @@
 import CustomersModule from "./CustomersModule.js"
 import CalculationModule from "./CalculationModule.js"
 import OnloadChartModule from "./ChartModule.js"
+import SoldPizzaModule from "./SoldPizzaModule.js"
 
 
 const RouteModule = (function () {}());
@@ -15,32 +16,40 @@ const RouteModule = (function () {}());
         }else{
             switch (selected) {
                 case "Lambertseter":
+                    SoldPizzaModule.clearSidepanelPizzas();
                     CustomersModule.setDataInCustomersMainPanelFrogner(selected);
                     CalculationModule.calculateTodaysTurnover(selected);
                     CalculationModule.calculateTodaysPizzaTurnover(selected);
                     CalculationModule.calculateTodaysCustomerTurnover(selected);
                     OnloadChartModule.updateChart(selected)
+                    SoldPizzaModule.writeToPizzaRightPanel()
                     break;
                 case "Frogner":
+                    SoldPizzaModule.clearSidepanelPizzas();
                     CustomersModule.setDataInCustomersMainPanelFrogner(selected);
                     CalculationModule.calculateTodaysTurnover(selected);
                     CalculationModule.calculateTodaysPizzaTurnover(selected)
                     CalculationModule.calculateTodaysCustomerTurnover(selected)
                     OnloadChartModule.updateChart(selected)
+                    SoldPizzaModule.writeToPizzaRightPanel()
                     break;
                 case "Grønland":
+                    SoldPizzaModule.clearSidepanelPizzas();
                     CustomersModule.setDataInCustomersMainPanelFrogner(selected);
                     CalculationModule.calculateTodaysTurnover(selected)
                     CalculationModule.calculateTodaysPizzaTurnover(selected)
                     CalculationModule.calculateTodaysCustomerTurnover(selected)
                     OnloadChartModule.updateChart(selected)
+                    SoldPizzaModule.writeToPizzaRightPanel()
                     break;
                 case "Grünnerløkka":
+                    SoldPizzaModule.clearSidepanelPizzas();
                     CustomersModule.setDataInCustomersMainPanelFrogner(selected);
                     CalculationModule.calculateTodaysTurnover(selected)
                     CalculationModule.calculateTodaysPizzaTurnover(selected)
                     CalculationModule.calculateTodaysCustomerTurnover(selected)
                     OnloadChartModule.updateChart(selected)
+                    SoldPizzaModule.writeToPizzaRightPanel()
                     break;
                 default:
                     let error = new Error("something went wrong! Please contact the IT department")

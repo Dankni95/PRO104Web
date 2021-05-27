@@ -41,7 +41,6 @@ function calculateTodaysCustomerTurnover(dynamicFranchise) {
     PaintPercentageModule.paintCustomerTurnoverToSite(calculateTurnover(allPayments, lastTurnover));
     PaintPercentageModule.paintCustomerPercentageToSite(calculatePercentage(allPayments, lastTurnover));
     OnloadChartModule.paintChart();
-
 }
 
 

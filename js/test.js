@@ -6,6 +6,7 @@ import CalculationModule from "./CalculationModule.js"
 import OnloadModule from "./OnloadFranchiseModule.js"
 import PieChartLibrary from "./PieChartLibrary.js"
 import OnloadChartModule from './ChartModule.js'
+import PizzaSoldModule from "./SoldPizzaModule.js"
 
 
 
