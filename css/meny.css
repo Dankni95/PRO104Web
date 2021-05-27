@@ -95,6 +95,10 @@ html::-webkit-scrollbar {
 
 }
 
+#food-container {
+    column-count: 2;
+}
+
 /* this sets color white for all h1 */
 .section h1 {
     color: white;
@@ -108,14 +112,14 @@ html::-webkit-scrollbar {
 /* no need important */
 .title {
     position: absolute;
-    top: 67%;
-    left: 30%;
+    top: 64%;
+    left: 26%;
 }
 
 .price {
     position: absolute;
     width: 100%;
-    top: 73%;
+    top: 71%;
     left: 45%;
     color: #c5bfbf;
 }
