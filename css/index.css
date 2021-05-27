@@ -82,23 +82,25 @@
     .columnPosi {
        
 
-        position: relative;
+        position: absolute;
         /*width: 70%;*/
-        /*width: 70%;
-        height: 124px;*/
+        width: 70%;
+        /*height: 124px;*/
         height: 70%;
-        /*left: 262px;*/
+        left: 262px;
         /*top: 19%;*/
         /*top: 30%;*/
-        /*top: 35%;*/
+        top: 35%;
         overflow-y: scroll;
         overflow-x:hidden;
         max-height: 65%; /*In order to not get a white line in the bottom of the html page*/
+      
         
 }
 
 .columnPosi::-webkit-scrollbar {
     background-color: #252836;
+    
     }
 
 .columns{ /*Because of the transparent scroll bar*/
@@ -107,7 +109,7 @@
     padding-top: 1%;
 }
 
-    .columnColr{
+    .columnColor{
         background: #1F1D2B;
         border: 1px solid #E74C3C;
         box-sizing: border-box;
