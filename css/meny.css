@@ -1,44 +1,54 @@
- .topbar-title{
+/* Should not override global.css!! */
+/* .topbar-title{
     font-weight: bolder;
     font-size: 30px;
+} */
+
+
+html {
+    overflow-y: hidden;
 }
 
-.edit-menu{
+html::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.edit-menu {
     position: absolute;
     top: 18%;
     left: 5%;
     font-weight: bolder;
-    font-size: 130%;
+    font-size: 1.2vw;
 }
 
-.horizontal-list{
-    display: inline;
+.horizontal-list {
     font-weight: bold;
     position: absolute;
-    left: 1%;
-    top: 10%;
-    padding: 10px 10px 10px 10px;
+    left: 1.8%;
+    top: 13%;
 }
 
-.horizontal-list div{
+.horizontal-list div {
     display: inline;
 }
 
-.horizontal-a{
+.horizontal-a {
     position: relative;
     text-align: center;
     color: white;
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 10px;
-    
+
 }
-.horizontal-a:hover{
-   color: white;
+
+.horizontal-a:hover {
+    color: white;
 }
 
 .horizontal-a::after {
-    
+
     content: "";
     position: absolute;
     left: 100%;
@@ -53,127 +63,160 @@
 
 .horizontal-a:hover::after {
     transform: translateX(-100%) scale(1);
-  
+
 }
+
 .search-bar {
     position: absolute;
     left: 74.5%;
     top: 15%;
     overflow: hidden;
     border-radius: 0.5em 0.5em 0.5em 0.5em;
-    background-color:#393C49 ;
+    background-color: #393C49;
 }
-.search-bar input[type=text]{
+
+.search-bar input[type=text] {
     color: white;
     background-color: #393C49;
     padding: 10px 10px 10px 10px;
 }
-.fa-search{
+
+.fa-search {
     position: absolute;
     left: 57%;
-    top:22%;
-}
-.section {
-    position: absolute;
-    top:15%;
-    left: 3%;
-    max-width: 65%;
-   
+    top: 22%;
 }
 
-.card {
-    background-color: #1F1D2B !important;
-    padding-top: 6%;
-    
-    
-}
-.title {
-    color: white !important;
+.section {
     position: absolute;
-    
+    top: 18%;
+    left: 13%;
+    max-width: 52%;
+
 }
+
+/* this sets color white for all h1 */
+.section h1 {
+    color: white;
+}
+
+.card div {
+    background-color: #1F1D2B;
+    padding-top: 5%;
+}
+
+/* no need important */
+.title {
+    position: absolute;
+    top: 67%;
+    left: 30%;
+}
+
 .price {
-    position:absolute;
+    position: absolute;
+    width: 100%;
+    top: 73%;
     left: 45%;
+    color: #c5bfbf;
 }
-.card-footer {
-    /*bruk rgba. Bruker man hex og opacity arves det ned til .edit-dish klassen*/
-    background-color: rgba(234, 124, 105, 0.5) !important;
+
+.card-footer,
+.card-footer-item {
+    background-color: #EA7C69;
 }
-.edit-dish {
-    color: #FF4500 !important;
+
+.button,
+.active {
+    width: 100%;
     text-align: center;
 }
-/*modals*/
-.modal-card-head{
-    background-color: #1F1D2B !important;
-}
-.modal-card-title{
-    color: white !important;
+
+.card-footer-item button {
+    background-color: transparent;
+    border-style: none;
+    color: white;
     font-weight: bolder;
 }
-.modal-card {
-    height: 500px;
-    width: 2000px;
+
+
+.modal .active {
+    border-style: none;
+}
+
+.button:hover {
+    background-color: #ea7c69;
+}
+
+.button-save {
+    background-color: #ea7c69b3;
+    border-radius: 1px;
+    border-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 3% 3% 3% 3%;
+    border-radius: 0.5em;
+    font-size: medium;
+
+}
+
+.button-save:hover {
+    background-color: #ea7c69;
+    cursor: pointer;
+}
+
+/*modals*/
+.modal .modal-card-head {
+    background-color: #1F1D2B;
+}
+
+.modal .modal-card-title {
+    color: white;
+    font-weight: bolder;
+}
+
+.modal .modal-card {
+    height: 60%;
+    width: 50%;
     /*Color her endrer kun teksten på labels.*/
     color: white;
     text-align: center;
     padding: 50px 50px 50px 50px;
 }
-.modal-card-body{
-    background-color: #252836 !important;
-   
-}
-.modal-card-foot{
-    background-color: #1F1D2B !important;
+
+.modal .modal-card-body {
+
+    background-color: #252836;
+
+
 }
 
-.test123 {
-    font-weight: bolder !important;
-    
+.modal .modal-card-foot {
+    background-color: #1F1D2B;
 }
-.button {
-    background-color: rgba(234, 124, 105, 0.4) !important;
-    border-color: black !important;
-    color: white !important;
-    font-weight: bold;
-    
-}
-.button:hover{
-    background-color: rgba(234, 124, 105) !important;
-}
-.button-save{
-    background-color: rgba(234, 124, 105, 0.7) !important;
-    border-radius: 1px;
-    border-color: black;
-    color: white !important;
-    font-weight: bold;
-    padding: 3% 3% 3% 3%;
-    border-radius: 0.5em;
-    font-size: medium;
-    
-}
-.button-save:hover{
-    background-color: rgba(234, 124, 105) !important;
-}
+
+
 /*Drop down menus*/
-.dough-div{
+.dough-div {
     padding: 10px 10px 10px 10px;
 }
-.cheese-div{
+
+.cheese-div {
     padding: 10px 10px 10px 10px;
 }
-.sauce-div{
+
+.sauce-div {
     padding: 10px 10px 10px 10px;
 }
-.price-div{
+
+.price-div {
     padding: 10px 10px 10px 10px;
 }
+
 /*Removes arrows from input field*/
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 
