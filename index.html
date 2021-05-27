@@ -112,6 +112,17 @@
                 </div>
                 -->
             </div>
+            <!--DROPDOWN MENU ONLY ONE TASK DISPLAY-->
+            <div>
+                <select id="priorityTest" class="dropdownMenuCSS">
+                    <option>Velg en prioritet</option>
+                    <option value="Kritisk!">test1</option>
+                    <option value="2" selected="selected">test2</option>
+                    <option value="3">test3</option>
+                </select>
+                <input type="button" id="teeeeeest" value="hei" />
+            </div>
+
         </main>
 
 
@@ -150,8 +161,9 @@
 Can't use input tag. Need to use textarea for wrapping the user input text in multi lines.-->
                 <textarea id="text-field" class="txtInput" rows="14" cols="10" wrap="soft" maxlength="1000"
                     style="overflow:hidden; resize:none;"></textarea>
+
+                <!--DROPDOWN MENU CREATE-->
                 <div>
-                    <!--DROPDOWN MENU-->
                     <select id="priority" class="dropdownMenuCSS">
                         <option>Velg en prioritet</option>
                     </select>
@@ -186,6 +198,12 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var errorMsg = document.getElementById("error-msg");
 
+
+        var priorityTest = document.getElementById("priority-test");
+        var teeeeeest = document.getElementById("teeeeeest");
+        teeeeeest.onclick = addTextArrayTEST;
+
+
         function test3() {
             var test = document.getElementById("test");
 
@@ -215,6 +233,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         console.info(output.childNodes);
 
         var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
+        var selectTEST = document.getElementById("priorityTest"); /*Has to be named select, in order to function.*/
 
         var optionsArray =
             [
@@ -246,6 +265,16 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             elem.textContent = optMenu;
             elem.value = optMenu;
             select.appendChild(elem);
+        }
+
+
+
+        for (var i = 0; i < optionsArray.length; i++) {
+            var optMenuTEST = optionsArray[i].importance;
+            var elemTEST = document.createElement("option");
+            elemTEST.textContent = optMenuTEST;
+            elemTEST.value = optMenuTEST;
+            selectTEST.appendChild(elemTEST);
         }
 
 
@@ -336,6 +365,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         window.unload = printFunc(); //In order to always display all elements inn array. Also the ones dummy/hardcoded in before user interference.
 
 
+
         function sortByImportance(a, b) { //Always change the crocodile mouth, when reversing the sorting. 
             if (a.prioritizeChoice < b.prioritizeChoice) {
                 return -1;
@@ -345,6 +375,34 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             }
             return 0;
         }
+
+
+
+        function addTextArrayTEST() {
+
+            output.innerHTML = "";
+            var priorityTest = document.getElementById("priorityTest");
+            var teeeest = priorityTest.options[priorityTest.selectedIndex].value;
+
+            for (var i = 0; i < optionsArray.length; i++) {
+                if (teeeest === optionsArray[i].importance) {
+
+                    for (var i = 0; i < taskArray.length; i++) {
+                        output.innerHTML += ` <div class="columns">
+                <div class="column is-12-mobile is-11-tablet is-offset-1-tablet clumnColr is-multiline">
+                <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
+                <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
+                <p style="word-wrap:break-word;">${taskArray[i].task}</p>
+                  </div>
+                </div>`;
+                        update();
+                    }
+                }
+            }
+
+
+        }
+
 
 
     </script>
