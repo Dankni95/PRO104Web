@@ -133,7 +133,7 @@
                     <option value="3">test3</option>
                 </select>
 
-                <input type="button" class="displayChosenBtn" id="teeeeeest" value="Sorter viktighet" />
+                <input type="button" class="displayChosenBtn" id="teeeeeest" value="Sorter beskjeder" />
             </div>
         </main>
 
@@ -145,8 +145,8 @@
                 <div class="column is-11
                 is-offset-1 columnColor is-multiline">
                     <div class="has-text-right"><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
+
                 </div>
-            </div>
         </main>
     </main>
 
@@ -169,8 +169,8 @@
 
                 <!--           INPUT TXT             
 Can't use input tag. Need to use textarea for wrapping the user input text in multi lines.-->
-                <textarea id="text-field" class="txtInput" rows="14" cols="10" wrap="soft" maxlength="1000"
-                    style="overflow:hidden; resize:none;"></textarea>
+                <textarea id="text-field" placeholder="Skriv kunngjøringen her:" class="txtInput" rows="14" cols="10"
+                    wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
 
                 <!--DROPDOWN MENU CREATE-->
                 <div>
@@ -180,8 +180,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 </div>
                 <!--End of dropdown menu-->
 
-                <textarea id="headline-txt" class="headlineCSS" rows="14" cols="10" wrap="soft" maxlength="1000"
-                    style="overflow:hidden; resize:none;"></textarea>
+                <textarea id="headline-txt" placeholder="Skriv overskriften her:" class="headlineCSS" rows="14"
+                    cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
 
 
 
@@ -211,6 +211,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var output = document.getElementsByClassName("columnPosi")[0];
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
+        var headlineTxt = document.getElementById("headline-txt") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var errorMsg = document.getElementById("error-msg");
 
 
@@ -255,18 +256,21 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 {
                     importance: "Kritisk!",
                     colorTxt: "#FF6F5A",
-                    prioritizeOrder: 1
+                    prioritizeOrder: 1,
+                    icon: "fas fa-exclamation-circle"
 
                 },
                 {
                     importance: "Moderat",
                     colorTxt: "violet",
-                    prioritizeOrder: 2
+                    prioritizeOrder: 2,
+                    icon: "fas fa-exclamation-circle"
                 },
                 {
                     importance: "Uformelt",
                     colorTxt: "yellow",
-                    prioritizeOrder: 3
+                    prioritizeOrder: 3,
+                    icon: "fas fa-exclamation-circle"
 
                 }
 
@@ -298,111 +302,26 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 optionChoice: "Kritisk!",
                 colorChoice: "#FF6F5A",
                 task: "Pizzaovn 2 på Lambertseter delvis i ustand",
+                headline: "Vedlikeholdsbehov pizzaovn",
                 prioritizeChoice: 1
             },
             {
                 optionChoice: "Moderat",
                 colorChoice: "violet",
                 task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
+                headline: "EU kontroll",
                 prioritizeChoice: 2
             },
             {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
-            {
-                optionChoice: "Moderat",
-                colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
-                prioritizeChoice: 2
-            },
+                optionChoice: "Kritisk!",
+                colorChoice: "#FF6F5A",
+                task: "Lambertseter er helt tomme for små pizzabunner. Det har skjedd en alvorlig feil med bestillingen av hvetemel.",
+                headline: "Har ikke flere små pizzabunn",
+                prioritizeChoice: 1
+            }
 
+            /*https://fontawesome.com/v5.15/icons/business-time?style=solid
+            https://fontawesome.com/v5.15/icons/cogs?style=solid*/
 
         ];
 
@@ -411,17 +330,20 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             var countTask = 0;
             errorMsg.innerHTML = "";
             var textField = document.getElementById("text-field").value;
+            var headlineTxt = document.getElementById("headline-txt").value;
             var priority = document.getElementById("priority").value; //Important not to set toLowercase() when strings in array have capital first letters. Doesn't need this since it's not text imput.  
 
             for (var i = 0; i < optionsArray.length; i++) {
-                if (priority === optionsArray[i].importance && textField != "") {
+                if (priority === optionsArray[i].importance && textField != "" && headlineTxt != "") {
                     countTask++;
                     taskArray.push(
                         {
                             optionChoice: optionsArray[i].importance, //adapting values from optionsArry
                             task: textField,
+                            headline: headlineTxt,
                             colorChoice: optionsArray[i].colorTxt, //adapting values from optionsArry
-                            prioritizeChoice: optionsArray[i].prioritizeOrder //Not for display. Just for bubble sorting.
+                            prioritizeChoice: optionsArray[i].prioritizeOrder, //Not for display. Just for bubble sorting.
+                            iconSign: optionsArray[i].icon
                         }
                     );
                 }
@@ -440,6 +362,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 output.innerHTML += ` <div class="columns">
                     <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
+                <p class="${taskArray[i].headline};"></p>
+                <p style="font-size:35px;">${taskArray[i].headline}</p>
                 <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
                 
                 <p style="word-wrap:break-word;">${taskArray[i].task}</p>
