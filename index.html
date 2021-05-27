@@ -80,6 +80,8 @@
 
             <div class="h2Header">
                 <h2>Kunngjøringer</h2>
+
+
             </div>
 
 
@@ -97,11 +99,14 @@
 
 
         <main>
-            <div class="divTop">
+            <div class="divTopRight">
                 <button href="#" id="test2" class="addBtn" onclick="test3()">
-
                     <p><strong>+</strong> Legg til kunngjøring</p>
                 </button>
+
+
+
+
                 <!-- 
                 <div class="column  is-4-tablet is-offset-8-tablet is-offset-9-desktop is-3-desktop is-12-mobile "
                     style=" margin: 0 auto;">
@@ -111,21 +116,26 @@
                 </div>
                 -->
             </div>
-            <!--DROPDOWN MENU ONLY ONE TASK DISPLAY-->
-            <div>
-                <select id="priority-test" class="dropdownMenuCSS">
-                    <option>Velg en prioritet</option>
-                    <option value="Kritisk!">test1</option>
-                    <option value="2" selected="selected">test2</option>
-                    <option value="3">test3</option>
-                </select>
-                <input type="button" class="displayChosenBtn" id="teeeeeest" value="hei" />
-            </div>
+
+
 
         </main>
 
 
 
+        <!--DROPDOWN MENU ONLY ONE TASK DISPLAY-->
+        <main>
+            <div class="divTopLeft">
+                <select id="priority-test" class="dropdownChoiceDisplay">
+                    <option>Velg en prioritet</option>
+                    <option value="Kritisk!">test1</option>
+                    <option value="2">test2</option>
+                    <option value="3">test3</option>
+                </select>
+
+                <input type="button" class="displayChosenBtn" id="teeeeeest" value="Sorter viktighet" />
+            </div>
+        </main>
 
 
         <main id="main" class="columnPosi">
@@ -149,11 +159,12 @@
 
         <div class="modal-card">
             <header class="modal-card-head">
-                <p class="modal-card-title">Modal title</p>
+                <p class="modal-card-title">
+                    Legg til en beskjed til de ansatte</p>
                 <button class="delete" aria-label="close" onclick="test5()"></button>
             </header>
             <section class="modal-card-body">
-                <p style="color: white; font-weight: bolder;">Velg ingredienser som skal endres</p>
+
 
 
                 <!--           INPUT TXT             
@@ -163,19 +174,24 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
                 <!--DROPDOWN MENU CREATE-->
                 <div>
-                    <select id="priority" class="dropdownMenuCSS">
+                    <select id="priority" class="dropdownCSSModal">
                         <option>Velg en prioritet</option>
                     </select>
                 </div>
                 <!--End of dropdown menu-->
 
+                <textarea id="headline-txt" class="headlineCSS" rows="14" cols="10" wrap="soft" maxlength="1000"
+                    style="overflow:hidden; resize:none;"></textarea>
+
+
+
 
 
             </section>
             <footer class="modal-card-foot">
-                <button class="button-save" onclick="test90()">Save changes</button>
+                <button class="button-save" onclick="test90()">Lagre endringer</button>
                 <p style="color: white;position: absolute; right: 5%;">Trykk utenfor vinduet for å avslutte</p>
-                <button class="button" onclick="test5()">Cancel</button>
+                <button id="cancelModal" class="button" onclick="test5()">Avbryt</button>
             </footer>
         </div>
     </div>
