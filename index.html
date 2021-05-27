@@ -62,7 +62,7 @@
         </div>
     </nav>
 
-    <main style="background-color: blue;" class="main-div">
+    <main class="main-div">
 
         <header class="topbar">
             <div class="topbar-left">
@@ -96,10 +96,10 @@
 
 
         <main>
-            <div class="divMain">
+            <div class="divTop">
                 <button href="#" id="test2" class="addBtn" onclick="test3()">
 
-                    <p>+Legg til kunngjøring</p>
+                    <p><strong>+</strong> Legg til kunngjøring</p>
                 </button>
                 <!-- 
                 <div class="column  is-4-tablet is-offset-8-tablet is-offset-9-desktop is-3-desktop is-12-mobile "
@@ -114,7 +114,7 @@
         </main>
 
 
-        <!--onclick="addTextArray()"-->
+
 
 
         <main id="main" class="columnPosi">
@@ -131,28 +131,10 @@
 
 
 
-
-
-
-
-
-    <!--Can't use input tag. Need to use textarea for wrapping the user input text in multi lines.-->
-    <textarea id="text-field" class="txtInput" rows="14" cols="10" wrap="soft" maxlength="1000"
-        style="overflow:hidden; resize:none;"></textarea>
-
-
-    <div>
-        <select id="priority" class="dropdownMenuCSS">
-            <option>Velg en prioritet</option>
-        </select>
-    </div>
-
-    <div id="error-msg" class="errorOutput"></div>
-
-
+    <!-- MODAL BOX-->
     <div id="test" class="modal">
         <div class="modal-background" onclick="test5()"></div>
-        <!--Outside the modal. Click outside the modal box, and -->
+        <!--Outside the modal. Click outside the modal box, and modal exits -->
 
         <div class="modal-card">
             <header class="modal-card-head">
@@ -160,14 +142,40 @@
                 <button class="delete" aria-label="close" onclick="test5()"></button>
             </header>
             <section class="modal-card-body">
-                Content ...
+
+
+                <!--           INPUT TXT             
+Can't use input tag. Need to use textarea for wrapping the user input text in multi lines.-->
+                <textarea id="text-field" class="txtInput" rows="14" cols="10" wrap="soft" maxlength="1000"
+                    style="overflow:hidden; resize:none;"></textarea>
+                <div>
+                    <!--DROPDOWN MENU-->
+                    <select id="priority" class="dropdownMenuCSS">
+                        <option>Velg en prioritet</option>
+                    </select>
+                </div>
+                <!--End of dropdown menu-->
+
+
+
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success">Save changes</button>
-                <button class="button">Cancel</button>
+                <button class="button is-success" onclick="test90()">Save changes</button>
+                <button class="button" onclick="test5()">Cancel</button>
             </footer>
         </div>
     </div>
+    <!--End of modal box-->
+
+
+
+
+
+
+
+
+
+
 
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
@@ -186,6 +194,11 @@
 
         }
 
+
+        function test90() {
+            addTextArray();
+            test5();
+        }
 
         function test5() {
             var test5 = document.getElementById("test");

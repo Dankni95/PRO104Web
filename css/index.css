@@ -24,11 +24,13 @@
     cursor: pointer;
     font-family: "Times New Roman", Times, serif;
     /*All text on same line*/
+    white-space: nowrap;  
+
      
 }
 
 
-.divMain{
+.divTop{
     width: 100%;
     height: 100px;
     display: flex;
@@ -197,5 +199,5 @@
           
       }
 
-      /*hover dropdown. display none på body. defalut usynlig. når man hovrer over knappen, bytter den til display -ikke hidden. */
+     
      
