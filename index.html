@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/modal.css">
 
     <title>Gyldene Pizza</title>
     <!--Font awesome-->
@@ -142,6 +143,7 @@
                 <button class="delete" aria-label="close" onclick="test5()"></button>
             </header>
             <section class="modal-card-body">
+                <p style="color: white; font-weight: bolder;">Velg ingredienser som skal endres</p>
 
 
                 <!--           INPUT TXT             
@@ -160,7 +162,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
             </section>
             <footer class="modal-card-foot">
-                <button class="button is-success" onclick="test90()">Save changes</button>
+                <button class="button-save" onclick="test90()">Save changes</button>
+                <p style="color: white;position: absolute; right: 5%;">Trykk utenfor vinduet for å avslutte</p>
                 <button class="button" onclick="test5()">Cancel</button>
             </footer>
         </div>

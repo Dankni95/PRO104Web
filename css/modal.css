@@ -1,0 +1,56 @@
+.button-save {
+    background-color: #ea7c69b3;
+    border-radius: 1px;
+    border-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 3% 3% 3% 3%;
+    border-radius: 0.5em;
+    font-size: medium;
+
+}
+
+.button-save:hover {
+    background-color: #ea7c69;
+    cursor: pointer;
+}
+
+/*modals*/
+.modal .modal-card-head {
+    background-color: #1F1D2B;
+}
+
+.modal .modal-card-title {
+    color: white;
+    font-weight: bolder;
+}
+
+.modal .modal-card {
+    height: 60%;
+    width: 50%;
+    /*Color her endrer kun teksten på labels.*/
+    color: white;
+    text-align: center;
+    padding: 50px 50px 50px 50px;
+}
+
+.modal .modal-card-body {
+
+    background-color: #252836;
+
+
+}
+
+.modal .modal-card-foot {
+    background-color: #1F1D2B;
+}
+
+.button:hover {
+    background-color: #ea7c69;
+}
+
+
+/*Close modal*/
+.delete:hover {
+    background-color: #ea7c69 !important;
+}
