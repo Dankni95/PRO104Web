@@ -114,13 +114,13 @@
             </div>
             <!--DROPDOWN MENU ONLY ONE TASK DISPLAY-->
             <div>
-                <select id="priorityTest" class="dropdownMenuCSS">
+                <select id="priority-test" class="dropdownMenuCSS">
                     <option>Velg en prioritet</option>
                     <option value="Kritisk!">test1</option>
                     <option value="2" selected="selected">test2</option>
                     <option value="3">test3</option>
                 </select>
-                <input type="button" id="teeeeeest" value="hei" />
+                <input type="button" class="displayChosenBtn" id="teeeeeest" value="hei" />
             </div>
 
         </main>
@@ -134,7 +134,7 @@
             <div id="1" class="columns">
                 <!--Columns used for tasks/announcements-->
                 <div class="column is-11
-                is-offset-1 clumnColr is-multiline">
+                is-offset-1 columnColr is-multiline">
                     <div class="has-text-right"><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
                 </div>
             </div>
@@ -233,7 +233,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         console.info(output.childNodes);
 
         var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
-        var selectTEST = document.getElementById("priorityTest"); /*Has to be named select, in order to function.*/
+        var selectTEST = document.getElementById("priority-test"); /*Has to be named select, in order to function.*/
 
         var optionsArray =
             [
@@ -325,7 +325,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
                 output.innerHTML += ` <div class="columns">
-                <div class="column is-12-mobile is-11-tablet is-offset-1-tablet clumnColr is-multiline">
+                <div class="column is-11-mobile is-10-tablet is-offset-1-tablet columnColr is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
                 <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
                 <p style="word-wrap:break-word;">${taskArray[i].task}</p>
@@ -381,15 +381,15 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         function addTextArrayTEST() {
 
             output.innerHTML = "";
-            var priorityTest = document.getElementById("priorityTest");
-            var teeeest = priorityTest.options[priorityTest.selectedIndex].value;
+            var priorityTest = document.getElementById("priority-test");
+            var teeeest = priorityTest.options[priorityTest.selectedIndex].text;
 
             for (var i = 0; i < optionsArray.length; i++) {
                 if (teeeest === optionsArray[i].importance) {
 
                     for (var i = 0; i < taskArray.length; i++) {
                         output.innerHTML += ` <div class="columns">
-                <div class="column is-12-mobile is-11-tablet is-offset-1-tablet clumnColr is-multiline">
+                <div class="column is-11-mobile is-10-tablet is-offset-1-tablet columnColr is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
                 <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
                 <p style="word-wrap:break-word;">${taskArray[i].task}</p>
@@ -399,11 +399,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     }
                 }
             }
-
-
         }
-
-
 
     </script>
 </body>
