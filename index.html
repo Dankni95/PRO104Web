@@ -106,7 +106,6 @@
                 <div class="column  is-4-tablet is-offset-8-tablet is-offset-9-desktop is-3-desktop is-12-mobile "
                     style=" margin: 0 auto;">
                     <button href="#" id="test2" class="addBtn" onclick="test3()">
-
                         <p><strong>+</strong> Legg til kunngjøring</p>
                     </button>
                 </div>
@@ -423,10 +422,10 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
                 output.innerHTML += ` <div class="columns">
-                <div class="column is-11
-                is-offset-1 columnColor is-multiline">
+                    <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
                 <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
+                
                 <p style="word-wrap:break-word;">${taskArray[i].task}</p>
                   </div>
                 </div>`;

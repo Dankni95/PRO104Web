@@ -17,6 +17,7 @@
     width:auto; /*auto makes sure the box adjust to the size of the content (in this case, p tag with "+ Legg til kunngjøringer")*/
     
     
+    
     /*top: 10%;*/
     /*top: 17%;*/
     
@@ -84,24 +85,27 @@
 
         position: absolute;
         /*width: 70%;*/
-        width: 70%;
+        width: 97%;
         /*height: 124px;*/
-        height: 70%;
-        left: 262px;
+        
+        left: -57px;
         /*top: 19%;*/
         /*top: 30%;*/
-        top: 35%;
+        top: 25%;
         overflow-y: scroll;
         overflow-x:hidden;
         max-height: 65%; /*In order to not get a white line in the bottom of the html page*/
-      
+        font-size: 1.5rem;
         
 }
 
 .columnPosi::-webkit-scrollbar {
-    background-color: #252836;
+    /*background-color: #252836;*/
+    background-color: #1F1D2B;
     
     }
+
+   
 
 .columns{ /*Because of the transparent scroll bar*/
     position: relative;
