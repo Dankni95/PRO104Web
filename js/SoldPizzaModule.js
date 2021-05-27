@@ -1,5 +1,5 @@
 
-// This was overcomplicated and half-work, i am not statisfied
+// This was overcomplicated and half-working, i am not statisfied
 // with the outcome of this module, but do not have time to fix it more.
 
 const SoldPizzaModule = (function () { }());
