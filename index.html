@@ -62,7 +62,7 @@
         </div>
     </nav>
 
-    <main class="main-div">
+    <main style="background-color: blue;" class="main-div">
 
         <header class="topbar">
             <div class="topbar-left">
@@ -92,12 +92,34 @@
 
             </div>
         </header>
+        <main>
+            <div class="columns" style="background-color: red; padding-top: 16px;">
+
+                <div class="column is-4-tablet is-3-desktop is-12-mobile ">
+                    <button href="#" class="addBtn" onclick="addTextArray()">
+
+                        <p><strong>+</strong> Legg til kunngjøring</p>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+
+        <main id="main" class="columnPosi">
+
+            <div id="1" class="columns">
+                <!--Columns used for tasks/announcements-->
+                <div class="column is-11
+                is-offset-1 clumnColr is-multiline">
+                    <div class="has-text-right"><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
+                </div>
+            </div>
+        </main>
     </main>
 
-    <button href="#" class="addBtn" onclick="addTextArray()">
 
-        <p><strong>+</strong> Legg til kunngjøring</p>
-    </button>
+
+
 
 
 
@@ -116,16 +138,7 @@
     <div id="error-msg" class="errorOutput"></div>
 
 
-    <main id="main" class="columnPosi">
 
-        <div id="1" class="columns">
-            <!--Columns used for tasks/announcements-->
-            <div class="column is-11
-            is-offset-1 clumnColr is-multiline">
-                <div class="has-text-right"><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
-            </div>
-        </div>
-    </main>
 
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
@@ -218,8 +231,8 @@
             output.innerHTML = "";
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
-                output.innerHTML += ` <div id=$ class="columns">
-                <div class="column is-11 is-offset-1 clumnColr is-multiline">
+                output.innerHTML += ` <div class="columns">
+                <div class="column is-12-mobile is-11-tablet is-offset-1-tablet clumnColr is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
                 <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
                 <p style="word-wrap:break-word;">${taskArray[i].task}</p>
