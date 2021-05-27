@@ -16,7 +16,7 @@
     margin-left: 50%;*/
     
     
-    /*left: 75%;*/
+    /*left: 760px;*/
     text-decoration: none;
     
     
@@ -28,6 +28,12 @@
     font-family: "Times New Roman", Times, serif;
     /*All text on same line*/
     white-space: nowrap;  
+}
+
+
+.test100{
+display: flex;
+justify-content: flex-end;
 }
 
 
