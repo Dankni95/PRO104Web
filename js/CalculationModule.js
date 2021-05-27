@@ -3,11 +3,7 @@ import PaintPercentageModule from './PaintPercentageModule.js'
 import OnloadChartModule from "./ChartModule.js"
 
 
-
-
 const CalculationModule = (function () { }());
-
-
 function calculateTodaysTurnover(dynamicFranchise) {
     let lastTurnover = parseInt(DataModule.getAllData()[dynamicFranchise]?.salg);
     console.log(lastTurnover);
@@ -46,7 +42,6 @@ function calculateTodaysCustomerTurnover(dynamicFranchise) {
     PaintPercentageModule.paintCustomerPercentageToSite(calculatePercentage(allPayments, lastTurnover));
     OnloadChartModule.paintChart();
 
-
 }
 
 
@@ -60,8 +55,6 @@ function calculateTurnover(todaysTurnover, previousTurnover) {
     let turnover = parseInt(todaysTurnover) + parseInt(previousTurnover);
     return parseInt(turnover);
 }
-
-
 
 
 export default {

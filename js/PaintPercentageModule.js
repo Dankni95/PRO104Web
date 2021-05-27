@@ -32,10 +32,6 @@ function paintCustomerTurnoverToSite(turnoverTotal) {
     lastCustomersContent.innerText = turnoverTotal;
 }
 
-
-
-
-
 export default {
     PaintPercentageModule, paintPercentageToSite,
     paintTurnoverToSite, paintPizzaPercentageToSite: paintPizzaPercentageToSite,

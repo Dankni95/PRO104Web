@@ -8,11 +8,11 @@ const RouteModule = (function () {}());
     function test(selected){
         let previousSelection = document.getElementById("selected").innerText;
     
-        console.log(`selected: `+selected, `previous: `,previousSelection);
         if (selected.trim() === previousSelection) {
-            // do nothing if franchise already selected ... or else it randomzises the customers while clicking
+            // do nothing if franchise already selected ... 
+            //or else it randomzises the customers while clicking same franchise
+            //over and over
         }else{
-            console.log(selected)
             switch (selected) {
                 case "Lambertseter":
                     CustomersModule.setDataInCustomersMainPanelFrogner(selected);
@@ -48,8 +48,5 @@ const RouteModule = (function () {}());
             }
         }
     }
-
-    // changeFranchise.observe(franchise, { subtree: true, childList: true });
-
 
 export default { RouteModule, test }

@@ -2,7 +2,6 @@ import CalculationModule from "./CalculationModule.js"
 import DataModule from "./DataModule.js"
 
 
-
 // Since all customers menus including prices are randomized when clicking different franchises
 // the graphs values move everytime new franchise is generated, at least the prices stay consistent when
 // on screen :)

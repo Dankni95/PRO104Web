@@ -20,5 +20,4 @@ function activateDropdownMenu() {
     return { activateDropdownMenu }
 }
 
-
 export default { DropdownModule, activateDropdownMenu };
