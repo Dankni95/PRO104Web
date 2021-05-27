@@ -264,13 +264,13 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     importance: "Moderat",
                     colorTxt: "violet",
                     prioritizeOrder: 2,
-                    icon: "fas fa-exclamation-circle"
+                    icon: "fas fa-cogs"
                 },
                 {
                     importance: "Uformelt",
                     colorTxt: "yellow",
                     prioritizeOrder: 3,
-                    icon: "fas fa-exclamation-circle"
+                    icon: "fas fa-briefcase"
 
                 }
 
@@ -301,27 +301,38 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             {
                 optionChoice: "Kritisk!",
                 colorChoice: "#FF6F5A",
-                task: "Pizzaovn 2 på Lambertseter delvis i ustand",
+                task: "Pizzaovn 2 på Lambertseter delvis i ustand. Dette skylles en vikar som kom til skade for å etterlate plastrester i ovnen. I forbindelse med at han glemte å ta av plasten på grandiosaen han skulle steke på vareopptellingen sist mandag morgen.",
                 headline: "Vedlikeholdsbehov pizzaovn",
-                prioritizeChoice: 1
+                prioritizeChoice: 1,
+                iconSign: "fas fa-exclamation-circle"
             },
             {
                 optionChoice: "Moderat",
                 colorChoice: "violet",
-                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni",
+                task: "Delivery bil nummer 4 skal på EU kontroll 1.juni!",
                 headline: "EU kontroll",
-                prioritizeChoice: 2
+                prioritizeChoice: 2,
+                iconSign: "fas fa-cogs"
             },
             {
                 optionChoice: "Kritisk!",
                 colorChoice: "#FF6F5A",
-                task: "Lambertseter er helt tomme for små pizzabunner. Det har skjedd en alvorlig feil med bestillingen av hvetemel.",
-                headline: "Har ikke flere små pizzabunn",
-                prioritizeChoice: 1
+                task: "Lambertseter er helt tomme for fersk gjær. Det har skjedd en alvorlig feil med bestillingen av gjær. Dette er heller ikke mulig å oppdrive i matbutikkene i nærheten.",
+                headline: "Lambertseter helt tomme for gjær",
+                prioritizeChoice: 1,
+                iconSign: "fas fa-exclamation-circle"
+            },
+            {
+                optionChoice: "Uformelt",
+                colorChoice: "yellow",
+                task: "Send gjerne en hilsen til vår kjære daglig leder på avdeling Lambertseter, til uka. Ønsker du å sende en blomst, så ryktes det at han er veldig glad i tulipaner :D",
+                headline: "Daniel har bursdag på onsdag!",
+                prioritizeChoice: 3,
+                iconSign: "fas fa-briefcase"
             }
 
-            /*https://fontawesome.com/v5.15/icons/business-time?style=solid
-            https://fontawesome.com/v5.15/icons/cogs?style=solid*/
+
+
 
         ];
 
@@ -362,11 +373,11 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 output.innerHTML += ` <div class="columns">
                     <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
-                <p class="${taskArray[i].headline};"></p>
-                <p style="font-size:35px;">${taskArray[i].headline}</p>
-                <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
+                <p style="color:${taskArray[i].colorChoice}; float: left;" class="${taskArray[i].iconSign}" ></p>
+                <p style="margin-left:50px; font-size:35px;">${taskArray[i].headline}</p>
+                <p style="margin-left:50px; color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
                 
-                <p style="word-wrap:break-word;">${taskArray[i].task}</p>
+                <p style="margin-left:50px; word-wrap:break-word;">${taskArray[i].task}</p>
                   </div>
                 </div>`;
                 update();
