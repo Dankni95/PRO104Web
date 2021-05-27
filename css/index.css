@@ -15,7 +15,7 @@
     /*margin-top: 20px;
     margin-left: 50%;*/
     
-    /*left: 72%;*/
+    
     /*left: 75%;*/
     text-decoration: none;
     
@@ -90,7 +90,7 @@
 
 .columns{ /*Because of the transparent scroll bar*/
     position: relative;
-    right: 5%;
+    /*right: 5%;*/
     padding-top: 1%;
 }
 
@@ -193,6 +193,3 @@
 
       /*hover dropdown. display none på body. defalut usynlig. når man hovrer over knappen, bytter den til display -ikke hidden. */
      
-.test{
-    color: #FF6F5A;
-}

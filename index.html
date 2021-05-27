@@ -92,17 +92,24 @@
 
             </div>
         </header>
+
+
+
         <main>
             <div class="columns" style="background-color: red; padding-top: 16px;">
 
-                <div class="column is-4-tablet is-3-desktop is-12-mobile ">
-                    <button href="#" class="addBtn" onclick="addTextArray()">
+                <div class="column is-4-tablet is-offset-8-tablet is-offset-9-desktop is-3-desktop is-12-mobile "
+                    style="background-color: green; margin: 0 auto;">
+                    <button href="#" id="test2" class="addBtn" onclick="test3()">
 
                         <p><strong>+</strong> Legg til kunngjøring</p>
                     </button>
                 </div>
             </div>
         </main>
+
+
+        <!--onclick="addTextArray()"-->
 
 
         <main id="main" class="columnPosi">
@@ -138,13 +145,49 @@
     <div id="error-msg" class="errorOutput"></div>
 
 
+    <div id="test" class="modal">
+        <div class="modal-background" onclick="test5()"></div>
+        <!--Outside the modal. Click outside the modal box, and -->
 
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Modal title</p>
+                <button class="delete" aria-label="close" onclick="test5()"></button>
+            </header>
+            <section class="modal-card-body">
+                Content ...
+            </section>
+            <footer class="modal-card-foot">
+                <button class="button is-success">Save changes</button>
+                <button class="button">Cancel</button>
+            </footer>
+        </div>
+    </div>
 
     <script>
         var output = document.getElementsByClassName("columnPosi")[0];
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var errorMsg = document.getElementById("error-msg");
+
+        function test3() {
+            var test = document.getElementById("test");
+
+            test.classList.toggle("is-active");
+
+            /*if (!test.classList.contains("is-active")){
+                 test.classList.add("is-active");
+            }*/
+
+        }
+
+
+        function test5() {
+            var test5 = document.getElementById("test");
+
+            test5.classList.remove("is-active");
+        }
+
 
 
 
