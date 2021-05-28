@@ -137,7 +137,7 @@
 
                 </select>
 
-                <input type="button" class="displayChosenBtn" id="teeeeeest" value="Sorter beskjeder" />
+                <input type="button" class="displayChosenBtn" id="teeeeeest" value="Grupper" />
             </div>
         </main>
 
@@ -302,7 +302,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             select.appendChild(elem);
         }
 
-
+        //Needed a separate for loop for organizing different tasks
         for (var i = 0; i < optionsArray.length; i++) {
             var optMenu = optionsArray[i].importance;
             var elem = document.createElement("option");
@@ -310,9 +310,6 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             elem.value = optMenu;
             selectTest.appendChild(elem);
         }
-
-
-
 
 
 
