@@ -340,11 +340,11 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
         ];
 
-        var defaultPriorityDropdownMenu = document.getElementById("priority").value;
+        var defaultPriorityDropdownMenu = document.getElementById("priority").value; /**If "priority" in the if statement in addTextArray() still is defaultPriorityDropdownMenu, it means "priority" does not have an value, indicating user did not choose an priority **/
 
         function addTextArray() {
 
-            //var countTask = 0;
+
             errorMsg.innerHTML = "";
             var textField = document.getElementById("text-field").value;
             var headlineTxt = document.getElementById("headline-txt").value;
@@ -356,10 +356,10 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
 
-            /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running sphagetti switch case etc.**/
+            /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running spaghetti switch case etc.**/
             for (var i = 0; i < optionsArray.length; i++) {
                 if (priority != defaultPriorityDropdownMenu && textField != "" && headlineTxt != "") {
-                    //countTask++;
+
                     taskArray.push(
                         {
                             optionChoice: optionsArray[i].importance, //adapting values from optionsArry
@@ -377,9 +377,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
 
-                /*if (countTask === 0) {
-                    errorMsg.innerHTML += `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
-                }*/
+
 
 
             }
@@ -448,8 +446,9 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
 
-        function addTextArrayTEST() {
 
+        function addTextArrayTEST() {
+            var countTask = 0;
             output.innerHTML = "";
             var priorityTest = document.getElementById("priority-test");
             var teeeest = priorityTest.options[priorityTest.selectedIndex].text;
@@ -459,6 +458,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
             for (var i = 0; i < taskArray.length; i++) {
+                countTask++;
                 if (teeeest === taskArray[i].optionChoice) {
 
                     output.innerHTML += ` <div class="columns">
@@ -470,13 +470,15 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                   </div>
                 </div>`;
                     update();
-                } else {
-                    alert = ("hei");
-                    //errorMsg.innerHTML = "Error";
                 }
             }
-
+            if (countTask === 0) {
+                errorMsg.innerHTML = `error`;
+            }
         }
+
+
+
 
     </script>
 </body>
