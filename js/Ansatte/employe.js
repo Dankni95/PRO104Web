@@ -5,6 +5,12 @@ const selector = document.querySelector("#card-section");
 const outputDiv = document.querySelector("#cardsId");
 const modalDiv = document.querySelector('#modal-box');
 
+
+
+
+
+
+// Showing All Employees right away
 const showAll = () => {
     const showAllFilter = EmployeModule.getAllEmployees();
     let showAllHtml = "";
@@ -26,6 +32,34 @@ const showAll = () => {
         `;
     })
     outputDiv.innerHTML = showAllHtml;
+    let modalBg = document.querySelector('.modal-bg');
+    
+    document.querySelectorAll('#section-btn-info').forEach( button => {
+        button.addEventListener('click', (e) => {
+
+            const foundEmployee = showAllFilter.find( employe =>  employe.name === e.target.name);
+            modalBg.classList.add('bg-active');
+            modalDiv.innerHTML = `
+                <div class="modal-box">
+                    <h1 class="modal-category">Avdeling: ${foundEmployee.category}</h1>
+                    <h2>Arbeids Stilling: ${foundEmployee.title}</h2>
+                    <h2>Navn: ${foundEmployee.name}</h2>
+                    <p>Telefonnummer: ${foundEmployee.phone}</p>
+                    <div class="p-wrapper">
+                        <p style="font-style: italic;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, amet reprehenderit! Voluptate nam exercitationem recusandae cupiditate! Necessitatibus nemo fuga provident totam libero eaque quae debitis vel corrupti laudantium tempora, id quas quam officia consectetur quod quaerat incidunt sequi sit. Perspiciatis laudantium alias distinctio aperiam placeat numquam? Debitis dolorem expedita rerum maxime quod repudiandae delectus labore ullam, sed, rem, autem iusto dignissimos quasi iste! Dicta a, expedita rem eligendi est autem, deserunt accusantium labore, velit quaerat neque. Assumenda similique pariatur, ipsam modi quia hic suscipit unde obcaecati praesentium tempore, eum quasi vitae iusto totam recusandae? In ex placeat dolor soluta error?</p>
+                    </div>
+                    
+                </div>
+            `;
+            
+
+        })
+    })
+
+    modalBg.addEventListener('click', () => {
+        modalBg.classList.remove('bg-active');
+   })  
+
 }
 
 showAll();

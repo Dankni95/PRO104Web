@@ -1,5 +1,5 @@
 body {
-    height: 250vh;
+    height: 100%;
     
 }
 
@@ -147,3 +147,17 @@ body {
     font-size: 16px;
 }
 
+.search-label {
+    font-size: 24px;
+    color: #fff ;
+}
+
+
+.search-input {
+    background: #1F1D2B ;
+    border: none; 
+    outline: none ;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.7rem 4rem ;
+}
