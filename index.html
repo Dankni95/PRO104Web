@@ -219,6 +219,9 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         teeeeeest.onclick = addTextArrayTEST;
 
 
+
+
+
         function test3() {
             var test = document.getElementById("test");
 
@@ -287,7 +290,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             select.appendChild(elem);
         }
 
-
+        //Needed a separate for loop for organizing different tasks
         for (var i = 0; i < optionsArray.length; i++) {
             var optMenu = optionsArray[i].importance;
             var elem = document.createElement("option");
@@ -350,15 +353,14 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             var headlineTxt = document.getElementById("headline-txt").value;
             var priority = document.getElementById("priority").value; //Important not to set toLowercase() when strings in array have capital first letters. Doesn't need this since it's not text imput.  
             console.log(optionsArray.length);
-
+            //console.log(optionsArray.length);
             /*alert(priority);
             alert(defaultPriorityDropdownMenu);*/
 
+            /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running spaghetti switch case etc.**/
             for (var i = 0; i < optionsArray.length; i++) {
-
-
                 if (priority != defaultPriorityDropdownMenu && textField != "" && headlineTxt != "") {
-                    //countTask++;
+
                     taskArray.push(
                         {
                             optionChoice: optionsArray[i].importance, //adapting values from optionsArry
@@ -376,9 +378,6 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
 
-                /*if (countTask === 0) {
-                    errorMsg.innerHTML += `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
-                }*/
 
 
             }
@@ -415,17 +414,18 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             for (var i = 0; i < notification.length; i++) {
                 notification[i].addEventListener("mousedown", function (e) {
                     if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") {  //Deletes the selected index of the b class onclick. 
-                        e.target.offsetParent.remove() //Removes the parent div for the task. And prevents it from displaying on the web page. 
+                        var confirmDiv = document.getElementById("confirm-div");
 
-                        //Thees two lines deletes the objectified array item by index. To make sure they do not reappear when user adds another task.
-                        var deleteIndex = taskArray.map(function (item) { return item.id; }).indexOf(i); //We already know the index, lets use the same index to delete from taskArray.
-                        // removes the object
-                        taskArray.splice(deleteIndex, 1);
+                        if (confirm('Er du sikker på at du ønsker å slette kunngjøringen?')) {
+                            e.target.offsetParent.remove() //Removes the parent div for the task. And prevents it from displaying on the web page. 
 
+                            //Thees two lines deletes the objectified array item by index. To make sure they do not reappear when user adds another task.
+                            var deleteIndex = taskArray.map(function (item) { return item.id; }).indexOf(i); //We already know the index, lets use the same index to delete from taskArray.
+                            // removes the object
+                            taskArray.splice(deleteIndex, 1);
+                        }
                     }
                 }, false)
-
-
             }
         }
 
