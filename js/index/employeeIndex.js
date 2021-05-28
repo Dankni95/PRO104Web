@@ -1,0 +1,5 @@
+import DateModule from "../globalModules/DateModule.js" 
+import EmployeeData from "../ansatteModules/EmployeeData.js"
+import EventModule from "../ansatteModules/EventModule.js"
+import DataModule from "../globalModules/DataModule.js"
+import SearchModule from "../ansatteModules/SearchModule.js"

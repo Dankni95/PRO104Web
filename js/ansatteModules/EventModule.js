@@ -1,5 +1,8 @@
-import EmployeModule from './EmployeModule.js';
-import WriteDataModule from './WriteDataModule.js';
+import EmployeModule from './EmployeeData.js';
+
+
+const EventModule = (window.onload = function data() {
+}());
 
 const selector = document.querySelector("#card-section");
 const outputDiv = document.querySelector("#cardsId");
@@ -8,13 +11,12 @@ const modalDiv = document.querySelector('#modal-box');
 
 
 
-
-// Showing All Employees right away
+    // Showing All Employees right away
 const showAll = () => {
     const showAllFilter = EmployeModule.getAllEmployees();
     let showAllHtml = "";
-    
-    showAllFilter.forEach( employe => {
+
+    showAllFilter.forEach(employe => {
         showAllHtml += `
             <div class="cardo" >
                 <div class="cardo-content-wrapper">
@@ -32,11 +34,11 @@ const showAll = () => {
     })
     outputDiv.innerHTML = showAllHtml;
     let modalBg = document.querySelector('.modal-bg');
-    
-    document.querySelectorAll('#section-btn-info').forEach( button => {
+
+    document.querySelectorAll('#section-btn-info').forEach(button => {
         button.addEventListener('click', (e) => {
 
-            const foundEmployee = showAllFilter.find( employe =>  employe.name === e.target.name);
+            const foundEmployee = showAllFilter.find(employe => employe.name === e.target.name);
             modalBg.classList.add('bg-active');
             modalDiv.innerHTML = `
                 <div class="modal-box">
@@ -50,29 +52,30 @@ const showAll = () => {
                     
                 </div>
             `;
-            
+
 
         })
     })
 
     modalBg.addEventListener('click', () => {
         modalBg.classList.remove('bg-active');
-   })  
+    })
 
 }
 
 showAll();
 
 
+
 // Showing Employees
 selector.addEventListener('change', (e) => {
-    
+
     const filterCategory = EmployeModule.getAllEmployees().filter(item => item.category === e.target.value);
     const filterAll = EmployeModule.getAllEmployees().filter(item => item.all === e.target.value);
-    
+
     let html = "";
     // Showing Employees based on chosen department
-    filterCategory.forEach( employe => {
+    filterCategory.forEach(employe => {
         html += `
             <div class="cardo" >
                 <div class="cardo-content-wrapper">
@@ -89,7 +92,7 @@ selector.addEventListener('change', (e) => {
         `;
     })
     // Showing all employees based on the choice "Alle avdelinger"
-    filterAll.forEach( employe => {
+    filterAll.forEach(employe => {
         html += `
             <div class="cardo" >
                 <div class="cardo-content-wrapper">
@@ -105,16 +108,16 @@ selector.addEventListener('change', (e) => {
             </div>
         `;
     })
-    outputDiv.innerHTML = html; 
+    outputDiv.innerHTML = html;
 
 
     // Showing extended information on indidvidual employees
     let modalBg = document.querySelector('.modal-bg');
-    
-    document.querySelectorAll('#section-btn-info').forEach( button => {
+
+    document.querySelectorAll('#section-btn-info').forEach(button => {
         button.addEventListener('click', (e) => {
 
-            const foundEmployee = filterCategory.find( employe =>  employe.name === e.target.name);
+            const foundEmployee = filterCategory.find(employe => employe.name === e.target.name);
             modalBg.classList.add('bg-active');
             modalDiv.innerHTML = `
                 <div class="modal-box">
@@ -128,15 +131,15 @@ selector.addEventListener('change', (e) => {
                     
                 </div>
             `;
-            
+
 
         })
     })
 
-    document.querySelectorAll('#section-btn-info').forEach( button => {
+    document.querySelectorAll('#section-btn-info').forEach(button => {
         button.addEventListener('click', (e) => {
 
-            const foundAllEmployee = filterAll.find( employe => employe.name === e.target.name);
+            const foundAllEmployee = filterAll.find(employe => employe.name === e.target.name);
             modalBg.classList.add('bg-active');
             console.log(foundAllEmployee)
             modalDiv.innerHTML = `
@@ -151,19 +154,24 @@ selector.addEventListener('change', (e) => {
                     
                 </div>
             `;
-            
+
 
         })
     })
-        
+
     modalBg.addEventListener('click', () => {
-         modalBg.classList.remove('bg-active');
-    })  
-})
+        modalBg.classList.remove('bg-active');
+    })
+});
 
 
- 
 
+
+
+
+
+
+export default {EventModule, showAll};
 
 
 

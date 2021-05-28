@@ -17,12 +17,11 @@
     <!--Bulma-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma-rtl.min.css">
     <!--Scripts-->
-    <script defer type="module" src="/js/Ansatte/employe.js"></script>
-    <script defer type="module" src="/js/Ansatte/searchEmploye.js"></script>
+    <script defer type="module" src="/js/index/employeeIndex.js"></script>
     
 </head>
 
-<body onload="initialDate()">
+<body>
    <!--Left Navbar-->
     <nav class="navigation">
         <div class="logo">
@@ -133,35 +132,6 @@
         
    </main>
     
-
-   <script type="text/javascript">
-        const updateDate = () => {
-            let now = new Date();
-            let day = now.getDay(),
-                dayNr = now.getDate(),
-                month = now.getMonth(),
-                year = now.getFullYear();
-
-            let months = ["Januar", "Februar", "Mars", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Desember"];
-            let week = ["Søndag", "Mandag", "Tirsdag", "Onsdag", "Torsdag", "Fredag", "Lørdag"];
-            let id = ["day-id", "day-nr-id", "month-id", "year-id"];
-            let values = [week[day], dayNr, months[month], year];
-
-            for(let i = 0; i < id.length; i++) {
-                document.getElementById(id[i]).firstChild.nodeValue = values[i];
-            };
-        };
-
-        const initialDate = () => {
-            updateDate();
-            window.setInterval("updateDate()", 1);
-        };
-
-       const ul = document.querySelector('ul');
-       const a = document.querySelectorAll('a');
-
-      
-    </script>
 </body>
 
 </html>
