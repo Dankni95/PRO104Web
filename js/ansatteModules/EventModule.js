@@ -57,9 +57,12 @@ const showAll = () => {
         })
     })
 
-    modalBg.addEventListener('click', () => {
-        modalBg.classList.remove('bg-active');
+    document.addEventListener("click", (e) => {
+        if(e.target.closest(".modal-bg")) return;
+        modalBg.classlist.add("bg-hidden");
     })
+
+   
 
 }
 

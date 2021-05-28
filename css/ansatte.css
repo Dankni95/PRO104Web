@@ -118,6 +118,10 @@ body {
  
 }
 
+.bg-hidden {
+    display: none;
+}
+
 .modal-box {
    background-color: #2528368a;
    width: 40%;
