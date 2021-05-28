@@ -243,7 +243,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             var test5 = document.getElementById("test");
 
             test5.classList.remove("is-active");
-            alert("hello");
+
         }
 
 
@@ -343,7 +343,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
         ];
 
-        var defaultPriorityDropdownMenu = document.getElementById("priority").value;
+
 
         function addTextArray() {
 
@@ -359,7 +359,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
             /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running spaghetti switch case etc.**/
             for (var i = 0; i < optionsArray.length; i++) {
-                if (priority != defaultPriorityDropdownMenu && textField != "" && headlineTxt != "") {
+                if (priority === optionsArray[i].importance && textField != "" && headlineTxt != "") {
 
                     taskArray.push(
                         {
