@@ -1,7 +1,7 @@
-import CustomersModule from "./CustomersModule.js"
-import CalculationModule from "./CalculationModule.js"
-import OnloadChartModule from "./ChartModule.js"
-import SoldPizzaModule from "./SoldPizzaModule.js"
+import CustomersModule from "../salgModules/CustomersModule.js"
+import CalculationModule from "../salgModules/CalculationModule.js"
+import OnloadChartModule from "../salgModules/ChartModule.js"
+import SoldPizzaModule from "../salgModules/SoldPizzaModule.js"
 
 
 const RouteModule = (function () {}());

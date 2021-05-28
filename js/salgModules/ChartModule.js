@@ -1,5 +1,5 @@
-import CalculationModule from "./CalculationModule.js"
-import DataModule from "./DataModule.js"
+import CalculationModule from "../salgModules/CalculationModule.js"
+import DataModule from "../globalModules/DataModule.js"
 
 
 // Since all customers menus including prices are randomized when clicking different franchises

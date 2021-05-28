@@ -1,5 +1,5 @@
-import DropdownModule from "./DropdownModule.js"
-import RouteModule from "./RouteModule.js"
+import DropdownModule from "../salgModules/DropdownModule.js"
+import RouteModule from "../salgModules/RouteModule.js"
 
 
 const DropdownSelection = (function () {

@@ -1,4 +1,4 @@
-import DataModule from "./DataModule.js"
+import DataModule from "../globalModules/DataModule.js"
 
 
 const CustomersModule = (function () { }());

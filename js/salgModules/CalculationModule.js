@@ -1,6 +1,6 @@
-import DataModule from "./DataModule.js"
-import PaintPercentageModule from './PaintPercentageModule.js'
-import OnloadChartModule from "./ChartModule.js"
+import DataModule from "../globalModules/DataModule.js"
+import PaintPercentageModule from '../salgModules/PaintPercentageModule.js'
+import OnloadChartModule from "../salgModules/ChartModule.js"
 
 
 const CalculationModule = (function () { }());
