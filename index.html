@@ -394,7 +394,6 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 <p style="color:${taskArray[i].colorChoice}; float: left;" class="${taskArray[i].iconSign}" ></p>
                 <p style="margin-left:50px; font-size:35px;">${taskArray[i].headline}</p>
                 <p style="margin-left:50px; color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
-                
                 <p style="margin-left:50px; word-wrap:break-word;">${taskArray[i].task}</p>
                   </div>
                 </div>`;
@@ -455,23 +454,26 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             //alert(taskArray[1].optionChoice);
             //alert(test);
 
-
-
             for (var i = 0; i < taskArray.length; i++) {
+
                 if (teeeest === taskArray[i].optionChoice) {
 
                     output.innerHTML += ` <div class="columns">
-                <div class="column is-11
-                is-offset-1 columnColor is-multiline">
+                    <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
-                <p style="color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
-                <p style="word-wrap:break-word;">${taskArray[i].task}</p>
+                <p style="color:${taskArray[i].colorChoice}; float: left;" class="${taskArray[i].iconSign}" ></p>
+                <p style="margin-left:50px; font-size:35px;">${taskArray[i].headline}</p>
+                <p style="margin-left:50px; color:${taskArray[i].colorChoice};">Viktighetsgrad: ${taskArray[i].optionChoice}</p>
+                <p style="margin-left:50px; word-wrap:break-word;">${taskArray[i].task}</p>
                   </div>
                 </div>`;
-                    update();
                 }
-            }
 
+            }
+            if (output.innerHTML === "") {
+                printFunc();
+            }
+            update();
         }
 
     </script>
