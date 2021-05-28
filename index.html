@@ -127,7 +127,7 @@
         <main>
             <div class="divTopLeft">
                 <select id="priority-test" class="dropdownChoiceDisplay">
-                    <option>Velg en prioritet</option>
+                    <option>Viser alle</option>
 
                 </select>
 
@@ -375,7 +375,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
                     //break; DO NOT BREAK!! Then the choosen index will always be 0 (in this case the string "Viktig")
                 } else {
-                    errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
+                    errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
 
 
