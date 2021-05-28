@@ -128,9 +128,7 @@
             <div class="divTopLeft">
                 <select id="priority-test" class="dropdownChoiceDisplay">
                     <option>Velg en prioritet</option>
-                    <option value="Kritisk!">test1</option>
-                    <option value="2">test2</option>
-                    <option value="3">test3</option>
+
                 </select>
 
                 <input type="button" class="displayChosenBtn" id="teeeeeest" value="Sorter beskjeder" />
@@ -249,7 +247,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         console.info(output.childNodes);
 
         var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
-        var selectTEST = document.getElementById("priority-test"); /*Has to be named select, in order to function.*/
+        var selectTest = document.getElementById("priority-test");
+
 
         var optionsArray =
             [
@@ -287,14 +286,17 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         }
 
 
-
         for (var i = 0; i < optionsArray.length; i++) {
-            var optMenuTEST = optionsArray[i].importance;
-            var elemTEST = document.createElement("option");
-            elemTEST.textContent = optMenuTEST;
-            elemTEST.value = optMenuTEST;
-            selectTEST.appendChild(elemTEST);
+            var optMenu = optionsArray[i].importance;
+            var elem = document.createElement("option");
+            elem.textContent = optMenu;
+            elem.value = optMenu;
+            selectTest.appendChild(elem);
         }
+
+
+
+
 
 
         var taskArray = [

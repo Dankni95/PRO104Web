@@ -36,7 +36,7 @@
     
     
     /*font-size: 1.05rem;*/
-    font-size: 1rem;
+    font-size: 2rem;
     
     
     cursor: pointer;
@@ -48,16 +48,12 @@
 }
 
 
-
-
-
 /*The first letter in p tag will change color*/
 .addBtn p::first-letter {
     font-size: 1.7rem;
     color: white;
     text-align:center;
-    /*display: flex;
-    align-items: center;*/
+    
     cursor: pointer;
     }
 
@@ -68,6 +64,7 @@
         margin: 0 auto; /*Placing the content in the middle. Centering the contenct relative for the box its in.*/
         /*top: 17%;
         right: 8.5%;*/
+        color:#FF6F5A;
      }
 
 /*
@@ -137,7 +134,7 @@
         left: 6%;
         font-size: 150%;
     }
-
+          /*b tag for the X sympol for deleting task*/
        b { 
         color: white;
         position: absolute;
@@ -150,6 +147,19 @@
         color: #FF6F5A;
       }
 
+      .displayChosenBtn:hover{
+        color:#FF6F5A;
+      }
+
+
+      .addBtn p:hover{
+        color:white;
+    }
+
+
+    .addBtn p:hover:first-letter {
+        color: #FF6F5A;
+    }
 
       /*.txtInput{
         position: absolute;
@@ -235,6 +245,7 @@
         top: -5.5rem;
     }
 
+    
 
 
       .errorOutput erro{
