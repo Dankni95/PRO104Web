@@ -1,5 +1,5 @@
-import EmployeModule from './EmployeModule.js'
-
+import EmployeModule from './EmployeModule.js';
+import WriteDataModule from './WriteDataModule.js';
 
 const selector = document.querySelector("#card-section");
 const outputDiv = document.querySelector("#cardsId");
@@ -9,12 +9,11 @@ const modalDiv = document.querySelector('#modal-box');
 
 
 
-
 // Showing All Employees right away
 const showAll = () => {
     const showAllFilter = EmployeModule.getAllEmployees();
     let showAllHtml = "";
-
+    
     showAllFilter.forEach( employe => {
         showAllHtml += `
             <div class="cardo" >
