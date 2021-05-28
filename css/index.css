@@ -234,7 +234,7 @@
       .dropdownChoiceDisplay{
          
         position: absolute;
-        top: 9rem;
+        top: 7.9rem;
         left: 13%;
         
         height: 4.5%;
@@ -259,7 +259,7 @@
         font-family: "Times New Roman", Times, serif;
         border-radius: 10px;
         border: none; 
-        top: -5.5rem;
+        top: -6.5rem;
         font-size: 1.5rem;
     }
 
