@@ -18,6 +18,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 
+
+    <script type="application/javascript" defer src="../scripts/index.js">
+
+    </script>
+
 </head>
 
 <body>
@@ -128,6 +133,7 @@
             <div class="divTopLeft">
                 <select id="priority-test" class="dropdownChoiceDisplay">
                     <option>Velg en prioritet</option>
+                    <!--<option value="1">Volvo</option>-->
 
                 </select>
 
@@ -201,12 +207,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
 
-
-
-
-
-
     <script>
+
         var output = document.getElementsByClassName("columnPosi")[0];
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
@@ -217,6 +219,19 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var priorityTest = document.getElementById("priority-test");
         var teeeeeest = document.getElementById("teeeeeest");
         teeeeeest.onclick = addTextArrayTEST;
+
+
+
+        /*var menu = document.getElementById("change_chart");
+        menu.addEventListener("change", generateData);
+        
+        function generateData(event) {
+            if (menu.value == '1') {
+                alert(hei);
+                alert(1);
+            }
+        }*/
+
 
 
         function test3() {
@@ -343,18 +358,13 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var defaultPriorityDropdownMenu = document.getElementById("priority").value; /**If "priority" in the if statement in addTextArray() still is defaultPriorityDropdownMenu, it means "priority" does not have an value, indicating user did not choose an priority **/
 
         function addTextArray() {
-
-
             errorMsg.innerHTML = "";
             var textField = document.getElementById("text-field").value;
             var headlineTxt = document.getElementById("headline-txt").value;
             var priority = document.getElementById("priority").value; //Important not to set toLowercase() when strings in array have capital first letters. Doesn't need this since it's not text imput.  
-            console.log(optionsArray.length);
-
+            //console.log(optionsArray.length);
             /*alert(priority);
-            alert(defaultPriorityDropdownMenu);*/
-
-
+           alert(defaultPriorityDropdownMenu);*/
 
             /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running spaghetti switch case etc.**/
             for (var i = 0; i < optionsArray.length; i++) {
@@ -376,10 +386,6 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 } else {
                     errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
-
-
-
-
             }
         }
 
@@ -448,8 +454,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
         function addTextArrayTEST() {
-            var countTask = 0;
-            output.innerHTML = "";
+            //var countTask = 0;
+
             var priorityTest = document.getElementById("priority-test");
             var teeeest = priorityTest.options[priorityTest.selectedIndex].text;
             //alert(taskArray[1].optionChoice);
@@ -458,9 +464,10 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
             for (var i = 0; i < taskArray.length; i++) {
-                countTask++;
-                if (teeeest === taskArray[i].optionChoice) {
+                //countTask++;
 
+                if (teeeest === taskArray[i].optionChoice) {
+                    output.innerHTML = "";
                     output.innerHTML += ` <div class="columns">
                 <div class="column is-11
                 is-offset-1 columnColor is-multiline">
@@ -471,16 +478,17 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 </div>`;
                     update();
                 }
-            }
-            if (countTask === 0) {
-                errorMsg.innerHTML = `error`;
-            }
+            }/*if (countTask === 0) {
+                    errorMsg.innerHTML = `error`;
+                }*/
+
         }
-
-
-
-
     </script>
+
+
+
+
+
 </body>
 
 </html>
