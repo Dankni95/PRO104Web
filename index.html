@@ -137,7 +137,7 @@
 
                 </select>
 
-                <input type="button" class="displayChosenBtn" id="teeeeeest" value="Grupper" />
+                <input type="button" class="displayChosenBtn" id="teeeeeest" value="Organiser" />
             </div>
         </main>
 
@@ -194,7 +194,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
             </section>
             <footer class="modal-card-foot">
-                <button class="button-save" onclick="addTextArray()">Lagre endringer</button>
+                <button id="button-save-enter" class="button-save" onclick="addTextArray()">Lagre endringer</button>
                 <erro class="errorOutput" id="error-msg"></erro>
 
             </footer>
@@ -209,6 +209,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
     <script>
 
+
         var output = document.getElementsByClassName("columnPosi")[0];
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
@@ -219,6 +220,30 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var priorityTest = document.getElementById("priority-test");
         var teeeeeest = document.getElementById("teeeeeest");
         teeeeeest.onclick = addTextArrayTEST;
+
+
+        //Makes it possible to use enter key after writing in the text fields in the modal.                    
+        var enterKey1 = document.getElementById('button-save-enter');
+        var enterKey2 = document.getElementById('headline-txt');
+        var enterKey3 = document.getElementById('teeeeeest');
+
+
+
+        enterKey1.addEventListener('keydown', function (event) {
+            if (event.keyCode === 13) {
+                handleInput()
+            }
+        })
+        enterKey2.addEventListener('keydown', function (event) {
+            if (event.keyCode === 13) {
+                handleInput()
+            }
+        })
+        enterKey3.addEventListener('keydown', function (event) {
+            if (event.keyCode === 13) {
+                handleInput()
+            }
+        })
 
 
 
