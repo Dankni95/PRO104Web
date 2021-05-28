@@ -8,6 +8,7 @@
 }
 
 .divTopLeft{
+    
     width: 100%;
     height: 100px;
     display: flex;
@@ -99,14 +100,25 @@
         overflow-x:hidden;
         max-height: 65%; /*In order to not get a white line in the bottom of the html page*/
         font-size: 1.5rem;
+        /*margin-left: 3rem;*/
+        
         
 }
 
 .columnPosi::-webkit-scrollbar {
     /*background-color: #252836;*/
     background-color: #1F1D2B;
+    margin-left: 3rem;
+    width: 14px;
     
     }
+
+    .columnPosi::-webkit-scrollbar-thumb {
+        border: 4px solid rgba(0, 0, 0, 0); /*Transparent color to make the egdes dissapair*/
+        background-clip: padding-box; /*Slim thumb*/
+        border-radius: 999px; /*Round egdes*/
+        background-color: #E74C3C;
+      }
 
    
 
@@ -114,6 +126,7 @@
     position: relative;
     /*right: 5%;*/
     padding-top: 1%;
+    
 }
 
     .columnColor{

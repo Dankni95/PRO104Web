@@ -178,16 +178,17 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 </div>
                 <!--End of dropdown menu-->
 
+
                 <textarea id="headline-txt" placeholder="Skriv overskriften her:" class="headlineCSS" rows="14"
                     cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
 
 
-
+                <div id="error-msg"></div>
 
 
             </section>
             <footer class="modal-card-foot">
-                <button class="button-save" onclick="test90()">Lagre endringer</button>
+                <button class="button-save" onclick="addTextArray()">Lagre endringer</button>
                 <p style="color: white;position: absolute; right: 5%;">Trykk utenfor vinduet for å avslutte</p>
                 <button id="cancelModal" class="button" onclick="test5()">Avbryt</button>
             </footer>
@@ -230,15 +231,16 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         }
 
 
-        function test90() {
-            addTextArray();
-            test5();
-        }
+
+
+
+
 
         function test5() {
             var test5 = document.getElementById("test");
 
             test5.classList.remove("is-active");
+            alert("hello");
         }
 
 
@@ -338,17 +340,25 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
         ];
 
+        var defaultPriorityDropdownMenu = document.getElementById("priority").value;
 
         function addTextArray() {
-            var countTask = 0;
+
+            //var countTask = 0;
             errorMsg.innerHTML = "";
             var textField = document.getElementById("text-field").value;
             var headlineTxt = document.getElementById("headline-txt").value;
             var priority = document.getElementById("priority").value; //Important not to set toLowercase() when strings in array have capital first letters. Doesn't need this since it's not text imput.  
+            console.log(optionsArray.length);
+
+            /*alert(priority);
+            alert(defaultPriorityDropdownMenu);*/
 
             for (var i = 0; i < optionsArray.length; i++) {
-                if (priority === optionsArray[i].importance && textField != "" && headlineTxt != "") {
-                    countTask++;
+
+
+                if (priority != defaultPriorityDropdownMenu && textField != "" && headlineTxt != "") {
+                    //countTask++;
                     taskArray.push(
                         {
                             optionChoice: optionsArray[i].importance, //adapting values from optionsArry
@@ -359,16 +369,23 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                             iconSign: optionsArray[i].icon
                         }
                     );
+                    test5();
+                    printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
+                    break;
+                } else {
+                    errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
+
+                /*if (countTask === 0) {
+                    errorMsg.innerHTML += `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
+                }*/
+
+
             }
-            if (countTask === 0) {
-                errorMsg.innerHTML += `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
-            }
-            printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
         }
 
-
         function printFunc() {
+
             output.innerHTML = "";
             document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
@@ -383,6 +400,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                   </div>
                 </div>`;
                 update();
+                taskArray.sort(sortByImportance)
             }
         }
 
@@ -434,12 +452,15 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             output.innerHTML = "";
             var priorityTest = document.getElementById("priority-test");
             var teeeest = priorityTest.options[priorityTest.selectedIndex].text;
+            //alert(taskArray[1].optionChoice);
+            //alert(test);
 
-            for (var i = 0; i < optionsArray.length; i++) {
-                if (teeeest === optionsArray[i].importance) {
 
-                    for (var i = 0; i < taskArray.length; i++) {
-                        output.innerHTML += ` <div class="columns">
+
+            for (var i = 0; i < taskArray.length; i++) {
+                if (teeeest === taskArray[i].optionChoice) {
+
+                    output.innerHTML += ` <div class="columns">
                 <div class="column is-11
                 is-offset-1 columnColor is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
@@ -447,10 +468,10 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 <p style="word-wrap:break-word;">${taskArray[i].task}</p>
                   </div>
                 </div>`;
-                        update();
-                    }
+                    update();
                 }
             }
+
         }
 
     </script>
