@@ -1,5 +1,5 @@
-import EmployeModule from './EmployeModule.js';
-import WriteDataModule from './WriteDataModule.js';
+import EmployeModule from '../Ansatte/EmployeModule.js';
+
 
 const selector = document.querySelector("#card-section");
 const outputDiv = document.querySelector("#cardsId");
