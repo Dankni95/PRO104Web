@@ -147,18 +147,25 @@
 
     background: #1F1D2B;
     border-radius: 10px;
+}
+
+.activated {
     overflow-y: scroll;
     scrollbar-color: #ffffffa9 #1F1D2B;
 }
 
-
-.mainpanel-title {
+.mainpanel-title{
     background-color: #15131dee;
 }
+.mainpanel-title abbr{
+    background-color: #15131dee;
+    color: white ;
+}
 
-.customer-icon {
+.customer-icon  {
     position: relative;
     width: 15%;
+    border-style: none;
 }
 
 .customer-icon img {
@@ -166,10 +173,15 @@
     width: 99%;
 }
 
-th {
+.activated th {
     background-color: #1F1D2B;
-    border-color: transparent !important;
+    border-style: none;
     color: white !important;
+
+}
+
+.customer-name {
+    color: white ;
 }
 
 .table th {
@@ -238,6 +250,8 @@ th {
 #pieChart {
     position: absolute;
     display: block;
+    top: 5%;
+    bottom: 0%;
     width: 100%;
     height: 100%;
 }
@@ -246,10 +260,6 @@ th {
     width: 37.5%;
     height: 36%;
 }
-
-
-
-
 
 html {
     overflow-y: hidden;

@@ -6,7 +6,7 @@ import SoldPizzaModule from "../salgModules/SoldPizzaModule.js"
 
 const RouteModule = (function () {}());
             
-    function test(selected){
+    function changeRoute(selected){
         let previousSelection = document.getElementById("selected").innerText;
     
         if (selected.trim() === previousSelection) {
@@ -58,4 +58,4 @@ const RouteModule = (function () {}());
         }
     }
 
-export default { RouteModule, test }
+export default { RouteModule, changeRoute }

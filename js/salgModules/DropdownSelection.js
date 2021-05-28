@@ -8,7 +8,7 @@ const DropdownSelection = (function () {
     let dropdownMenu = document.getElementById("dropdown-menu");
 
     const DropdownSelection = document.getElementById("dropdown-content").addEventListener("click", function (e) {
-        RouteModule.test(e.target.innerText);
+        RouteModule.changeRoute(e.target.innerText);
         selected.innerHTML = e.target.innerText;
         dropdown.className = "dropdown";
         let array = [...dropdownMenu.children];

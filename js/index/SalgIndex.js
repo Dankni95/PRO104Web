@@ -7,6 +7,7 @@ import OnloadModule from "../salgModules/OnloadFranchiseModule.js"
 import PieChartLibrary from "../salgModules/PieChartLibrary.js"
 import OnloadChartModule from '../salgModules/ChartModule.js'
 import PizzaSoldModule from "../salgModules/SoldPizzaModule.js"
+import DateModule from "../globalModules/DateModule.js"
 
 
 
