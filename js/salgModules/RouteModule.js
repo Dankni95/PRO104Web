@@ -9,6 +9,7 @@ const RouteModule = (function () {}());
     function changeRoute(selected){
         let previousSelection = document.getElementById("selected").innerText;
     
+        console.log(previousSelection, selected);
         if (selected.trim() === previousSelection) {
             // do nothing if franchise already selected ... 
             //or else it randomzises the customers while clicking same franchise

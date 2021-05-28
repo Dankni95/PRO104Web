@@ -351,7 +351,7 @@ const DataModule = (window.onload = function data() {
                     ],
                     "Lành Hamed": [
                         {
-                            "menykjøpt": "320"
+                            "menykjøpt": "350"
                         },
                         {
                             "status": "ferdig"
@@ -363,6 +363,22 @@ const DataModule = (window.onload = function data() {
                         },
                         {
                             "status": "tilbereder"
+                        }
+                    ], 
+                    "Daniel Standal": [
+                        {
+                            "menykjøpt": "310"
+                        },
+                        {
+                            "status": "tilbereder"
+                        }
+                    ],
+                    "Bob Lazar": [
+                        {
+                            "menykjøpt": "320"
+                        },
+                        {
+                            "status": "ferdig"
                         }
                     ]
                 }
