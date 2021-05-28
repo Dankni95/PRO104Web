@@ -183,14 +183,14 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
 
 
-                <div id="error-msg"></div>
+                <!--<button id="cancelModal" class="button" onclick="test5()">Avbryt</button>-->
 
 
             </section>
             <footer class="modal-card-foot">
                 <button class="button-save" onclick="addTextArray()">Lagre endringer</button>
-                <p style="color: white;position: absolute; right: 5%;">Trykk utenfor vinduet for å avslutte</p>
-                <button id="cancelModal" class="button" onclick="test5()">Avbryt</button>
+                <erro class="errorOutput" id="error-msg"></erro>
+
             </footer>
         </div>
     </div>
@@ -240,7 +240,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             var test5 = document.getElementById("test");
 
             test5.classList.remove("is-active");
-            alert("hello");
+
         }
 
 
@@ -354,9 +354,10 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             /*alert(priority);
             alert(defaultPriorityDropdownMenu);*/
 
+
+
+            /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running sphagetti switch case etc.**/
             for (var i = 0; i < optionsArray.length; i++) {
-
-
                 if (priority != defaultPriorityDropdownMenu && textField != "" && headlineTxt != "") {
                     //countTask++;
                     taskArray.push(
@@ -373,7 +374,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
                     break;
                 } else {
-                    errorMsg.innerHTML = `<p>Feil!</p> <erro>Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
+                    errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
 
                 /*if (countTask === 0) {
@@ -469,6 +470,9 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                   </div>
                 </div>`;
                     update();
+                } else {
+                    alert = ("hei");
+                    //errorMsg.innerHTML = "Error";
                 }
             }
 

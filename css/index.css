@@ -263,28 +263,29 @@
     }
 
     
-
+    
 
       .errorOutput erro{
-          position: absolute;
+        position:relative;
           color:#FF6F5A;
           /*top: 23%;
           left: 35%;*/
-          top: 30%;
-          left: 17.3%;
           
+          margin-left:50px;
           
       }
-      .errorOutput p{
-          position: absolute;
+
+
+      .errorOutput erro p{
+          position:absolute;
           color:yellow;
-          /*top: 23%;
-          left: 35%;*/
-          top: 30%;
-          left: 15.4%;
-          text-decoration: underline;
+         
+          right: 101%;
+          
           
       }
+     
+      
 
      
 
