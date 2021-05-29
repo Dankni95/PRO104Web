@@ -224,6 +224,7 @@
         box-sizing: border-box;
         color: white;
         font-size: 1.5rem;
+        right: 5%;
         }
 
        .headlineCSS{
@@ -235,17 +236,19 @@
         box-sizing: border-box;
         color: white;
         font-size: 1.5rem;
-        left:-27.5%
+        right: 32.5%;
+      
        }
 
       .dropdownCSSModal{
           /*left: 84%;*/
           /*top: 17.1%;*/
-        position: absolute;
-        top: 58.5%;
-        left: 42%;
+        position: relative;
+        /*top: 58.5%;*/
+        top: -77px;
+        left: -2%;
         /*left: 25.5%;*/
-        height: 10%;
+        height: 70px;
         width: 18%;
         font-size: 100%;
         text-align-last:center; /*A way to center text in dropdown menu. Only works in chrome*/

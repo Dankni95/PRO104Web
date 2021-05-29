@@ -202,7 +202,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
                 <div>
                     <select id="headline-choose" class="dropdownCSSModal">
-                        <option>Beskjed å endre</option>
+                        <option>Kunngjøring</option>
                     </select>
                 </div>
 
@@ -211,7 +211,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
             </section>
             <footer class="modal-card-foot">
-                <button id="button-save-enter" class="button-save" onclick="editTask()">Lagre endringer</button>
+                <button id="button-save-enter" class="button-save" onclick="editTask()">Lagre
+                    endringer</button>
                 <erro class="errorOutput" id="error-msg2"></erro>
 
             </footer>
@@ -588,7 +589,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     printFunc();
                     test5();
                 } else {
-                    errorMsg2.innerHTML = `<erro><p>Feil!</p> Velg beskjed å endre, skriv ny overskrift og melding.</erro>`;
+                    errorMsg2.innerHTML = `<erro><p>Feil!</p> Velg kunngjøring. Skriv så ny overskrift og melding.</erro>`;
                 }
 
             }
