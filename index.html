@@ -147,8 +147,7 @@
 
 
 
-                <!--           INPUT TXT             
-Can't use input tag. Need to use textarea for wrapping the user input text in multi lines.-->
+                <!--           INPUT TXT             -->
                 <textarea id="text-field" placeholder="Skriv kunngjøringen her:" class="txtInput" rows="14" cols="10"
                     wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
 
@@ -210,8 +209,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
     <script>
         var output = document.getElementsByClassName("columnPosition")[0];
         var priority = document.getElementById("priority");
-        var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
-        var headlineTxt = document.getElementById("headline-txt") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
+        var textField = document.getElementById("text-field")
+        var headlineTxt = document.getElementById("headline-txt")
         var errorMsg = document.getElementById("error-msg");
         var errorMsg2 = document.getElementById("error-msg2");
         var priorityOrganize = document.getElementById("priority-organize");
@@ -246,11 +245,6 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             var modalAdd = document.getElementById("modalAdd");
             modalAdd.classList.toggle("is-active");
             errorMsg.innerHTML = "";
-
-            /*if (!modalAdd.classList.contains("is-active")){
-                 modalAdd.classList.add("is-active");
-            }*/
-
         }
 
         /*Using "option" on diffrent array. Need to put the dropdown array chooser inside function*/
@@ -275,8 +269,6 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             renderB.classList.remove("is-active");
 
         }
-
-        //console.info(output.childNodes);
 
         var optionsArray =
             [
@@ -303,7 +295,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
             ];
 
-        var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
+        var select = document.getElementById("priority");
         var selectOrg = document.getElementById("priority-organize");
         var selectEdit = document.getElementById("headline-choose");
 
@@ -373,11 +365,9 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             errorMsg.innerHTML = "";
             var textField = document.getElementById("text-field").value;
             var headlineTxt = document.getElementById("headline-txt").value;
-            var priority = document.getElementById("priority").value; //Important not to set toLowercase() when strings in array have capital first letters. Doesn't need this since it's not text imput.  
+            var priority = document.getElementById("priority").value;
             console.log(optionsArray.length);
-            //console.log(optionsArray.length);
-            /*alert(priority);
-            alert(defaultPriorityDropdownMenu);*/
+
 
             /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running spaghetti switch case etc.**/
             for (var i = 0; i < optionsArray.length; i++) {
@@ -388,14 +378,14 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                             optionChoice: optionsArray[i].importance, //adapting values from optionsArry
                             task: textField,
                             headline: headlineTxt,
-                            colorChoice: optionsArray[i].colorTxt, //adapting values from optionsArry
+                            colorChoice: optionsArray[i].colorTxt,
                             prioritizeChoice: optionsArray[i].prioritizeOrder, //Not for display. Just for bubble sorting.
                             iconSign: optionsArray[i].icon
                         }
                     );
                     modalsClose();
                     printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
-                    //break; DO NOT BREAK!! Then the choosen index will always be 0 (in this case the string "Viktig")
+
                 } else {
                     errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
@@ -449,15 +439,14 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
 
-        /**IMPORTANT!! Theese need to be kept down here. Updating website.**/
-        window.unload = update();
-        window.unload = printFunc(); //In order to always display all elements inn array. Also the ones dummy/hardcoded in before user interference.
+
+        window.unload = update();  /** Updating website. Needs to be kept direcly under delete func**/
+        window.unload = printFunc(); //In order to always display all elements inn array. 
 
         function printSelected() {
             output.innerHTML = "";
             var priorityOrganize = document.getElementById("priority-organize");
             var dropDownV = priorityOrganize.options[priorityOrganize.selectedIndex].text;
-            //alert(taskArray[1].optionChoice);
             for (var i = 0; i < taskArray.length; i++) {
                 if (dropDownV === taskArray[i].optionChoice) {
                     output.innerHTML += ` <div class="columns">
@@ -477,17 +466,6 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             }
             update();
         }
-
-
-        /*function findIndex() {
-            for (var i = 0; i < taskArray.length; i++) {
-                if (ChooseFromArray === taskArray[i].headline) {
-                    return i;
-                }
-            }
-        }*/
-
-
 
         function editTask() {
             errorMsg2.innerHTML = "";

@@ -8,7 +8,6 @@
 }
 
 .divTopLeft{
-
     width: 100%;
     height: 100px;
     display: flex;
@@ -22,7 +21,6 @@
     background-color: #50343A;
     padding: 10px;
     width:auto; 
-    
     top: 7.8rem;
     right: 26%;
     text-decoration: none;
@@ -36,34 +34,16 @@
 .addBtn{
     border-radius: 10px;
     background-color: #50343A;
-    /*color:#FF6F5A !important;*/
     padding: 10px;
-    width:auto; /*auto makes sure the box adjust to the size of the content (in this case, p tag with "+ Legg til kunngjøringer")*/
-    
-    
-    
+    width:auto; 
     top: 10%;
-    /*top: 17%;*/
-    
-    /*margin-top: 200px;*/
     margin-left: 50%;
-    
-    
-    /*left: 760px;*/
     text-decoration: none;
-    
-    
-    /*font-size: 1.05rem;*/
     font-size: 2rem;
-    
-    
     cursor: pointer;
     font-family: "Times New Roman", Times, serif;
-    /*All text on same line*/
     white-space: nowrap;  
-
-     
-}
+ }
 
 
 /*The first letter in p tag will change color*/
@@ -71,7 +51,6 @@
     font-size: 1.7rem;
     color: #FF6F5A;
     text-align:center;
-    
     cursor: pointer;
     }
 
@@ -80,19 +59,8 @@
         text-align:center;
         position: relative;
         margin: 0 auto; /*Placing the content in the middle. Centering the contenct relative for the box its in.*/
-        /*top: 17%;
-        right: 8.5%;*/
         color:white;
      }
-
-/*
- .addBtn p strong{
-    text-align:center;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    z-index: 2;
- }*/
 
 
 /*Prevent buttons from displaying shadow visually */
@@ -102,46 +70,32 @@
 
   
     .columnPosition  {
-       
-
         position: absolute;
-        /*width: 70%;*/
         width: 100%;
-        /*height: 124px;*/
-        
         left: -57px;
-        /*top: 19%;*/
-        /*top: 30%;*/
         top: 25%;
         overflow-y: scroll;
         overflow-x: hidden;
         max-height: 75%; /*In order to not get a white line in the bottom of the html page*/
         font-size: 1.5rem;
-        /*margin-left: 3rem;*/
-
         display: flex;     
         flex-direction: column;
         padding-bottom: 20px;
         padding-right: 15px;
-        
-}
+         }
 
 .columnPosition::-webkit-scrollbar {
-    /*background-color: #252836;*/
     background-color: transparent;
     margin-left: 3rem;
     width: 14px;
-    
-    
-    }
+  }
 
     .columnPosition::-webkit-scrollbar-thumb {
         border: 4px solid rgba(0, 0, 0, 0); /*Transparent color to make the egdes dissapair*/
         background-clip: padding-box; /*Slim thumb*/
         border-radius: 999px; /*Round egdes*/
         background-color: #E74C3C;
-        
-      }
+    }
 
    
 
@@ -149,17 +103,14 @@
     position: relative;
     /*right: 5%;*/
     padding-top: 1%;
-    
-}
+  }
 
     .columnColor{
         background: #1F1D2B;
         border: 1px solid #E74C3C;
         box-sizing: border-box;
         color: white;
-
-        /* Notification shadow */
-        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2); /* Notification shadow */
         border-radius: 1%;
     }
 
@@ -175,18 +126,16 @@
         color: white;
         position: absolute;
         left:97%
-   
-        }
+       }
         
 
     b:hover {
         color: #FF6F5A;
       }
-
+      /**************Hovers******************/
       .displayChosenBtn:hover{
         color:#FF6F5A;
       }
-
 
       .addBtn p:hover{
         color:#FF6F5A;
@@ -201,22 +150,8 @@
       color:#FF6F5A;
     }
 
-      /*.txtInput{
-        position: absolute;
-        top: 20%;
-        left: 15.3%;
-        height: 5.7%;
-        background: #1F1D2B;
-        border: 1px solid #FF6F5A;
-        box-sizing: border-box;
-        color: white;
-    }*/
-
-   
-      .txtInput{
+    .txtInput{
         position: relative;
-        /*top: 1%;*/
-        /*left: 5%;*/
         height: 70%;
         width: 100%;
         background: #1F1D2B;
@@ -225,7 +160,7 @@
         color: white;
         font-size: 1.5rem;
         right: 0.35%;
-        }
+      }
 
        .headlineCSS{
         position: relative;
@@ -253,57 +188,42 @@
       
        }
 
-       
-
-      .dropdownCSSModal{
-          /*left: 84%;*/
-          /*top: 17.1%;*/
+       .dropdownCSSModal{
         position: relative;
-        /*top: 58.5%;*/
         top: -77px;
         left: -4%;
-        /*left: 25.5%;*/
         height: 70px;
         width: 18%;
         font-size: 100%;
         text-align-last:center; /*A way to center text in dropdown menu. Only works in chrome*/
         border: 1px solid #FF6F5A;
-        /*box-sizing: border-box;*/
         color:white;
         background-color: #1F1D2B;
         cursor: pointer;
       }
 
       .dropdownCSSModalAdd{
-          /*left: 84%;*/
-          /*top: 17.1%;*/
-        position: relative;
-        /*top: 58.5%;*/
+         position: relative;
         top: 7px;
         left: -4%;
-        /*left: 25.5%;*/
         height: 70px;
         width: 18%;
         font-size: 100%;
-        text-align-last:center; /*A way to center text in dropdown menu. Only works in chrome*/
+        text-align-last:center; 
         border: 1px solid #FF6F5A;
-        /*box-sizing: border-box;*/
         color:white;
         background-color: #1F1D2B;
         cursor: pointer;
       }
       .dropdownChoiceDisplay{
-         
         position: absolute;
         top: 7.9rem;
         left: 13%;
-        
         height: 4.5%;
         width: 9.1%;
         font-size: 100%;
         text-align-last:center; 
         border: 1px solid #FF6F5A;
-        
         color:white;
         background-color: #1F1D2B;
         cursor: pointer;
@@ -326,26 +246,17 @@
     }
 
     
-    
-
       .errorOutput erro{
         position:relative;
           color:#FF6F5A;
-          /*top: 23%;
-          left: 35%;*/
-          
-          margin-left:50px;
-          
-      }
+         margin-left:50px;
+    }
 
 
       .errorOutput erro p{
           position:absolute;
           color:yellow;
-         
           right: 101%;
-          
-          
       }
      
       
