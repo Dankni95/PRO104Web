@@ -218,13 +218,13 @@
         /*top: 1%;*/
         /*left: 5%;*/
         height: 70%;
-        width: 90%;
+        width: 100%;
         background: #1F1D2B;
         border: 1px solid #FF6F5A;
         box-sizing: border-box;
         color: white;
         font-size: 1.5rem;
-        right: 5%;
+        right: 0.35%;
         }
 
        .headlineCSS{
@@ -239,6 +239,21 @@
         right: 32.5%;
       
        }
+       .headlineCSSAdd{
+        position: relative;
+        height: 30%;
+        width: 35%;
+        background: #1F1D2B;
+        border: 1px solid #FF6F5A;
+        box-sizing: border-box;
+        color: white;
+        font-size: 1.5rem;
+        right: 32.5%;
+        top: -4rem;
+      
+       }
+
+       
 
       .dropdownCSSModal{
           /*left: 84%;*/
@@ -246,7 +261,26 @@
         position: relative;
         /*top: 58.5%;*/
         top: -77px;
-        left: -2%;
+        left: -4%;
+        /*left: 25.5%;*/
+        height: 70px;
+        width: 18%;
+        font-size: 100%;
+        text-align-last:center; /*A way to center text in dropdown menu. Only works in chrome*/
+        border: 1px solid #FF6F5A;
+        /*box-sizing: border-box;*/
+        color:white;
+        background-color: #1F1D2B;
+        cursor: pointer;
+      }
+
+      .dropdownCSSModalAdd{
+          /*left: 84%;*/
+          /*top: 17.1%;*/
+        position: relative;
+        /*top: 58.5%;*/
+        top: 7px;
+        left: -4%;
         /*left: 25.5%;*/
         height: 70px;
         width: 18%;
