@@ -133,15 +133,15 @@
 
 
     <!-- MODAL BOX-->
-    <div id="test" class="modal">
-        <div class="modal-background" onclick="test5()"></div>
+    <div id="modalAdd" class="modal">
+        <div class="modal-background" onclick="modalsClose()"></div>
         <!--Outside the modal. Click outside the modal box, and modal exits -->
 
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">
                     Legg til en beskjed til de ansatte</p>
-                <button class="delete" aria-label="close" onclick="test5()"></button>
+                <button class="delete" aria-label="close" onclick="modalsClose()"></button>
             </header>
             <section class="modal-card-body">
 
@@ -178,12 +178,12 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
     <!-- MODAL BOX-->
     <div id="render-b" class="modal">
-        <div class="modal-background" onclick="test5()"></div>
+        <div class="modal-background" onclick="modalsClose()"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">
                     Rediger en beskjed</p>
-                <button class="delete" aria-label="close" onclick="test5()"></button>
+                <button class="delete" aria-label="close" onclick="modalsClose()"></button>
             </header>
             <section class="modal-card-body">
                 <textarea id="text-field-edit" placeholder="Rediger kunngjøringen her:" class="txtInput" rows="14"
@@ -243,8 +243,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
         function openModalCreate() {
-            var test = document.getElementById("test");
-            test.classList.toggle("is-active");
+            var modalAdd = document.getElementById("modalAdd");
+            modalAdd.classList.toggle("is-active");
             errorMsg.innerHTML = "";
 
             /*if (!test.classList.contains("is-active")){
@@ -268,9 +268,9 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             }
         }
 
-        function test5() {
-            var test5 = document.getElementById("test");
-            test5.classList.remove("is-active");
+        function modalsClose() {
+            var modalsClose = document.getElementById("modalAdd");
+            modalsClose.classList.remove("is-active");
             var renderB = document.getElementById("render-b");
             renderB.classList.remove("is-active");
 
@@ -393,7 +393,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                             iconSign: optionsArray[i].icon
                         }
                     );
-                    test5();
+                    modalsClose();
                     printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
                     //break; DO NOT BREAK!! Then the choosen index will always be 0 (in this case the string "Viktig")
                 } else {
@@ -503,7 +503,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     taskArray[i].task = textFieldEdit;
                     taskArray[i].headline = headlineTxtEdit;
                     printFunc();
-                    test5();
+                    modalsClose();
                 } else {
                     errorMsg2.innerHTML = `<erro><p>Feil!</p> Velg kunngjøring. Skriv så ny overskrift og melding.</erro>`;
                 }
