@@ -203,6 +203,12 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     </select>
                 </div>
 
+                <div>
+                    <select id="importance-edit">
+                        <option>Velg prioritet</option>
+                    </select>
+                </div>
+
 
             </section>
             <footer class="modal-card-foot">
@@ -230,6 +236,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var teeeeeest = document.getElementById("teeeeeest");
 
         var textFieldEdit = document.getElementById("text-field-edit");
+
 
 
 
@@ -337,6 +344,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
         var selectTest = document.getElementById("priority-test");
         var selectEdit = document.getElementById("headline-choose");
+        var importanceSelectEdit = document.getElementById("importance-edit");
 
         //Check what importance option user have selected in the drop down menu. Theese options are generated from the strings of .importance index in optionsArray   
         for (var i = 0; i < optionsArray.length; i++) {
@@ -354,6 +362,15 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             elem.textContent = optMenu;
             elem.value = optMenu;
             selectTest.appendChild(elem);
+        }
+
+
+        for (var i = 0; i < optionsArray.length; i++) {
+            var optMenu = optionsArray[i].importance;
+            var elem = document.createElement("option");
+            elem.textContent = optMenu;
+            elem.value = optMenu;
+            importanceSelectEdit.appendChild(elem);
         }
 
 
@@ -557,15 +574,36 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
             var headlineChoose = document.getElementById("headline-choose");
             var ChooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
-
+            var textFieldEdit = document.getElementById("text-field-edit").value;
+            var importanceEdit = document.getElementById("importance-edit");
+            var ChooseFromArrayImportance = importanceEdit.options[importanceEdit.selectedIndex].text;
 
             for (var i = 0; i < taskArray.length; i++) {
                 if (ChooseFromArray === taskArray[i].headline) {
+
                     //objIndex = taskArray.findIndex((obj => obj.id === taskArray[i].headline))
-                    taskArray[i].headline = "Laila";
+                    taskArray[i].headline = textFieldEdit;
+                    //taskArray[i].optionChoice = importanceEdit;
+
+
+
+
+
+
+
+
+
+
+
                     alert("hei");
                     printFunc();
                     test5();
+                }
+                for (var i = 0; i < optionsArray.length; i++) {
+                    if (importanceEdit === optionsArray[i].importance) {
+                        taskArray[i].optionChoice = optionsArray[i].importance
+
+                    }
                 }
             }
 
