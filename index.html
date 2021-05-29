@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="/css/global.css">-->
+    <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/modal.css">
 
@@ -107,8 +107,8 @@
 
         <main>
             <div class="divTopRight">
-                <button href="#" onclick="renderModal()">
-                    <p><strong>+</strong> Rediger</p>
+                <button href="#" class="editBtn" onclick="renderModal()">
+                    <p>Rediger</p>
                 </button>
             </div>
         </main>
@@ -212,7 +212,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             </section>
             <footer class="modal-card-foot">
                 <button id="button-save-enter" class="button-save" onclick="editTask()">Lagre endringer</button>
-                <erro class="errorOutput" id="error-msg"></erro>
+                <erro class="errorOutput" id="error-msg2"></erro>
 
             </footer>
         </div>
@@ -231,6 +231,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var headlineTxt = document.getElementById("headline-txt") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var errorMsg = document.getElementById("error-msg");
+        var errorMsg2 = document.getElementById("error-msg2");
         var priorityTest = document.getElementById("priority-test");
         var teeeeeest = document.getElementById("teeeeeest");
 
@@ -284,6 +285,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         function renderModal() {
             var renderB = document.getElementById("render-b");
             renderB.classList.toggle("is-active");
+            errorMsg2.innerHTML = "";
 
             for (var i = 0; i < taskArray.length; i++) {
                 var optMenu = taskArray[i].headline;
@@ -558,7 +560,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
         function editTask() {
             var countP = 0;
-            errorMsg.innerHTML = "";
+            errorMsg2.innerHTML = "";
             var headlineChoose = document.getElementById("headline-choose");
             var ChooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
             var textFieldEdit = document.getElementById("text-field-edit").value;
@@ -566,14 +568,14 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
             for (var i = 0; i < taskArray.length; i++) {
-                if (ChooseFromArray === taskArray[i].headline) {
+                if (ChooseFromArray === taskArray[i].headline && textFieldEdit != "" && headlineTxtEdit != "") {
 
 
                     taskArray[i].task = textFieldEdit;
                     taskArray[i].headline = headlineTxtEdit;
 
 
-
+                    countP++;
 
 
 
@@ -586,7 +588,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     printFunc();
                     test5();
                 } else {
-                    errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
+                    errorMsg2.innerHTML = `<erro><p>Feil!</p> Velg beskjed å endre, skriv ny overskrift og melding.</erro>`;
                 }
 
             }
