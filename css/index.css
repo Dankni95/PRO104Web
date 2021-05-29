@@ -115,6 +115,7 @@
     margin-left: 3rem;
     width: 14px;
     
+    
     }
 
     .columnPosi::-webkit-scrollbar-thumb {
@@ -122,6 +123,7 @@
         background-clip: padding-box; /*Slim thumb*/
         border-radius: 999px; /*Round egdes*/
         background-color: #E74C3C;
+        
       }
 
    
@@ -230,6 +232,7 @@
         /*box-sizing: border-box;*/
         color:white;
         background-color: #1F1D2B;
+        cursor: pointer;
       }
       .dropdownChoiceDisplay{
          
@@ -245,6 +248,7 @@
         
         color:white;
         background-color: #1F1D2B;
+        cursor: pointer;
       }
       
 
