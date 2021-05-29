@@ -6,20 +6,12 @@
 
 
 html {
-    overflow-y: hidden;
+    overflow: hidden
 }
 
 html::-webkit-scrollbar {
     width: 0px;
     background: transparent;
-}
-
-.edit-menu {
-    position: absolute;
-    top: 18%;
-    left: 5%;
-    font-weight: bolder;
-    font-size: 1.2vw;
 }
 
 .horizontal-list {
@@ -66,37 +58,57 @@ html::-webkit-scrollbar {
 
 }
 
-.search-bar {
-    position: absolute;
-    left: 74.5%;
-    top: 15%;
-    overflow: hidden;
-    border-radius: 0.5em 0.5em 0.5em 0.5em;
-    background-color: #393C49;
-}
-
-.search-bar input[type=text] {
-    color: white;
-    background-color: #393C49;
-    padding: 10px 10px 10px 10px;
-}
-
-.fa-search {
-    position: absolute;
-    left: 57%;
-    top: 22%;
-}
 
 .section {
-    position: absolute;
-    top: 18%;
-    left: 13%;
-    max-width: 52%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    overflow-y: hidden;
+}
+
+.section div {}
+
+#food-container,
+#second-food-container {
+    
+    padding-top: 1%;
+    left: 10%;
+    position: relative;
+    max-width: 60%;
+}
+
+#food-container img,
+#second-food-container img {
+    width: 70%;
+}
+
+.card {
+    position: relative;
+    top: 5%;
+    height: 105%;
+    background-color: #1F1D2B !important;
+}
+
+#pizza-type {
+    background-color: #00b12c;
+    color: white;
+    font-size: 0.7vw;
+    font-weight: bold;
 
 }
 
-#food-container {
-    column-count: 2;
+#cheese-type {
+    background-color: grey;
+    color: white;
+    font-size: 0.7vw;
+    font-weight: bold;
+}
+
+#sauce-type {
+    background-color: mediumblue;
+    color: white;
+    font-size: 0.7vw;
+    font-weight: bold;
 }
 
 /* this sets color white for all h1 */
@@ -105,32 +117,27 @@ html::-webkit-scrollbar {
 }
 
 .card div {
-    background-color: #1F1D2B;
-    padding-top: 5%;
-}
-
-/* no need important */
-.title {
-    position: absolute;
-    top: 64%;
-    left: 26%;
+    padding: 1%;
 }
 
 .price {
     position: absolute;
     width: 100%;
-    top: 71%;
-    left: 45%;
+    top: 74%;
+    left: 0%;
     color: #c5bfbf;
 }
 
 .card-footer,
 .card-footer-item {
+    position: relative;
+    top: 7%;
     background-color: #EA7C69;
 }
 
 .button,
 .active {
+    position: relatabive;
     width: 100%;
     text-align: center;
 }
@@ -223,6 +230,9 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+.tags {
+    display: inline;
+}
 
 /*
 .containers{

@@ -21,12 +21,6 @@
 
 <body>
 
-    <!--Input field for pizza-->
-    <img class="fas fa-search"></i>
-    <div class="search-bar">
-        <input type="text" placeholder="Søk på pizza">
-    </div>
-
     <nav class="navigation">
         <div class="logo">
             <img class="logo-image" src="/images/Logo.svg" alt="A chef logo">
@@ -97,41 +91,31 @@
         <nav class="horizontal-list" id="horizontal-id">
             <div>
                 <div>
-                    <a class="horizontal-a">Hot Pizza</a>
+                    <a href="#" class="horizontal-a">Amerikansk</a>
                 </div>
                 <div>
-                    <a class="horizontal-a">Mild Pizza</a>
+                    <a href="#" class="horizontal-a">Italiensk</a>
                 </div>
                 <div>
-                    <a class="horizontal-a">Vegetariansk</a>
+                    <a href="#" class="horizontal-a">Vegetariansk</a>
                 </div>
                 <div>
-                    <a class="horizontal-a">BBQ</a>
-                </div>
-
-                <div>
-                    <a class="horizontal-a">Forretter</a>
-                </div>
-                <div>
-                    <a class="horizontal-a">Desserter</a>
+                    <a href="#" class="horizontal-a">Glutenfri</a>
                 </div>
             </div>
         </nav>
 
-        <!--Rediger meny-->
-        <h3 class="edit-menu">Rediger meny</h3>
-        <!--Kort elementer-->
-
         <section class="section">
             <div class="container">
-                <div id="food-container" class="columns is-8 is-variable">
+                <div id="food-container" class="columns ">
                 </div>
-                <div id="second-food-container" class="columns mt-5 is-8 is-variable">
+                <div id="second-food-container" class="columns">
                 </div>
             </div>
         </section>
 
     </main>
+
     <!--Modal for å redigere matvarer.-->
     <div class="modal">
         <div class="modal-background"></div>
@@ -141,7 +125,7 @@
             </header>
             <section class="modal-card-body">
                 <p style="color: white; font-weight: bolder;">Velg ingredienser som skal endres</p>
-
+                
                 <div class="dough-div">
                     <label for="choose-dough">Velg en bunn</label>
                     <select name="pizza-dough" id="pizza-dough">
@@ -178,12 +162,11 @@
                 <p style="color: white;position: absolute; right: 5%;">Trykk utenfor vinduet for å avslutte</p>
             </footer>
 
-        </div>
     </div>
 
 
 
 </body>
-<script defer type="module" src="./js/menyModules/indexMeny.js"></script>
+<script defer type="module" src="./js/index/menyIndex.js"></script>
 
 </html>

@@ -400,7 +400,7 @@ const DataModule = (window.onload = function data() {
                         "bunn": "Amerikansk"
                     },
                     {
-                        "ostetype": "Mozerella"
+                        "ostetype": "Cheddar"
                     },
                     {
                         "saus": "Tomat"
