@@ -196,18 +196,17 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
                 <textarea id="text-field-edit" placeholder="Rediger kunngjøringen her:" class="txtInput" rows="14"
                     cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
+                <!--   INPUT TXT  -->
+                <textarea id="headline-txt-edit" placeholder="Endre overskriften her:" class="headlineCSS" rows="14"
+                    cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
 
                 <div>
                     <select id="headline-choose" class="dropdownCSSModal">
-                        <option>Velg en overskrift</option>
+                        <option>Beskjed å endre</option>
                     </select>
                 </div>
 
-                <div>
-                    <select id="importance-edit">
-                        <option>Velg prioritet</option>
-                    </select>
-                </div>
+
 
 
             </section>
@@ -236,6 +235,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var teeeeeest = document.getElementById("teeeeeest");
 
         var textFieldEdit = document.getElementById("text-field-edit");
+        var headlineTxtEdit = document.getElementById("headline-txt-edit");
 
 
 
@@ -344,7 +344,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
         var selectTest = document.getElementById("priority-test");
         var selectEdit = document.getElementById("headline-choose");
-        var importanceSelectEdit = document.getElementById("importance-edit");
+
 
         //Check what importance option user have selected in the drop down menu. Theese options are generated from the strings of .importance index in optionsArray   
         for (var i = 0; i < optionsArray.length; i++) {
@@ -363,20 +363,6 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             elem.value = optMenu;
             selectTest.appendChild(elem);
         }
-
-
-        for (var i = 0; i < optionsArray.length; i++) {
-            var optMenu = optionsArray[i].importance;
-            var elem = document.createElement("option");
-            elem.textContent = optMenu;
-            elem.value = optMenu;
-            importanceSelectEdit.appendChild(elem);
-        }
-
-
-
-
-
 
 
 
@@ -571,19 +557,20 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
         function editTask() {
-
+            var countP = 0;
+            errorMsg.innerHTML = "";
             var headlineChoose = document.getElementById("headline-choose");
             var ChooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
             var textFieldEdit = document.getElementById("text-field-edit").value;
-            var importanceEdit = document.getElementById("importance-edit");
-            var ChooseFromArrayImportance = importanceEdit.options[importanceEdit.selectedIndex].text;
+            var headlineTxtEdit = document.getElementById("headline-txt-edit").value;
+
 
             for (var i = 0; i < taskArray.length; i++) {
                 if (ChooseFromArray === taskArray[i].headline) {
 
-                    //objIndex = taskArray.findIndex((obj => obj.id === taskArray[i].headline))
-                    taskArray[i].headline = textFieldEdit;
-                    //taskArray[i].optionChoice = importanceEdit;
+
+                    taskArray[i].task = textFieldEdit;
+                    taskArray[i].headline = headlineTxtEdit;
 
 
 
@@ -598,13 +585,10 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                     alert("hei");
                     printFunc();
                     test5();
+                } else {
+                    errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
-                for (var i = 0; i < optionsArray.length; i++) {
-                    if (importanceEdit === optionsArray[i].importance) {
-                        taskArray[i].optionChoice = optionsArray[i].importance
 
-                    }
-                }
             }
 
 
