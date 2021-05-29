@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/global.css">
+    <!--<link rel="stylesheet" href="/css/global.css">-->
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/modal.css">
 
@@ -98,8 +98,17 @@
 
         <main>
             <div class="divTopRight">
-                <button href="#" id="test2" class="addBtn" onclick="test3()">
+                <button href="#" class="addBtn" onclick="test3()">
                     <p><strong>+</strong> Legg til kunngjøring</p>
+                </button>
+            </div>
+        </main>
+
+
+        <main>
+            <div class="divTopRight">
+                <button href="#" onclick="renderModal()">
+                    <p><strong>+</strong> Rediger</p>
                 </button>
             </div>
         </main>
@@ -172,10 +181,46 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
 
+    <!-- MODAL BOX-->
+    <div id="render-b" class="modal">
+        <div class="modal-background" onclick="test5()"></div>
+
+
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">
+                    Rediger en beskjed</p>
+                <button class="delete" aria-label="close" onclick="test5()"></button>
+            </header>
+            <section class="modal-card-body">
+
+                <textarea id="text-field-edit" placeholder="Rediger kunngjøringen her:" class="txtInput" rows="14"
+                    cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
+
+                <div>
+                    <select id="headline-choose" class="dropdownCSSModal">
+                        <option>Velg en overskrift</option>
+                    </select>
+                </div>
+
+
+            </section>
+            <footer class="modal-card-foot">
+                <button id="button-save-enter" class="button-save" onclick="editTask()">Lagre endringer</button>
+                <erro class="errorOutput" id="error-msg"></erro>
+
+            </footer>
+        </div>
+    </div>
+    <!--End of modal box-->
+
+
+
 
 
 
     <script>
+
         var output = document.getElementsByClassName("columnPosi")[0];
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
@@ -183,6 +228,12 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var errorMsg = document.getElementById("error-msg");
         var priorityTest = document.getElementById("priority-test");
         var teeeeeest = document.getElementById("teeeeeest");
+
+        var textFieldEdit = document.getElementById("text-field-edit");
+
+
+
+
         teeeeeest.onclick = addTextArrayTEST;
 
 
@@ -213,13 +264,27 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
         function test3() {
             var test = document.getElementById("test");
-
             test.classList.toggle("is-active");
             errorMsg.innerHTML = "";
+
             /*if (!test.classList.contains("is-active")){
                  test.classList.add("is-active");
             }*/
 
+        }
+
+        /*Using "option" on diffrent array. Need to put the dropdown array chooser inside function*/
+        function renderModal() {
+            var renderB = document.getElementById("render-b");
+            renderB.classList.toggle("is-active");
+
+            for (var i = 0; i < taskArray.length; i++) {
+                var optMenu = taskArray[i].headline;
+                var elem = document.createElement("option");
+                elem.textContent = optMenu;
+                elem.value = optMenu;
+                selectEdit.appendChild(elem);
+            }
         }
 
 
@@ -230,8 +295,9 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
         function test5() {
             var test5 = document.getElementById("test");
-
             test5.classList.remove("is-active");
+            var renderB = document.getElementById("render-b");
+            renderB.classList.remove("is-active");
 
         }
 
@@ -240,8 +306,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
         console.info(output.childNodes);
 
-        var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
-        var selectTest = document.getElementById("priority-test");
+
 
 
         var optionsArray =
@@ -269,6 +334,9 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
             ];
 
+        var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
+        var selectTest = document.getElementById("priority-test");
+        var selectEdit = document.getElementById("headline-choose");
 
         //Check what importance option user have selected in the drop down menu. Theese options are generated from the strings of .importance index in optionsArray   
         for (var i = 0; i < optionsArray.length; i++) {
@@ -287,6 +355,9 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             elem.value = optMenu;
             selectTest.appendChild(elem);
         }
+
+
+
 
 
 
@@ -468,6 +539,37 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 printFunc();
             }
             update();
+        }
+
+
+        /*function findIndex() {
+            for (var i = 0; i < taskArray.length; i++) {
+                if (ChooseFromArray === taskArray[i].headline) {
+
+                    return i;
+                }
+            }
+        }*/
+
+
+
+        function editTask() {
+
+            var headlineChoose = document.getElementById("headline-choose");
+            var ChooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
+
+
+            for (var i = 0; i < taskArray.length; i++) {
+                if (ChooseFromArray === taskArray[i].headline) {
+                    //objIndex = taskArray.findIndex((obj => obj.id === taskArray[i].headline))
+                    taskArray[i].headline = "Laila";
+                    alert("hei");
+                    printFunc();
+                    test5();
+                }
+            }
+
+
         }
 
     </script>
