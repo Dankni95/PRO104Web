@@ -93,7 +93,7 @@
 
         <main>
             <div class="divTopRight">
-                <button href="#" class="addBtn" onclick="test3()">
+                <button href="#" class="addBtn" onclick="openModalCreate()">
                     <p><strong>+</strong> Legg til kunngjøring</p>
                 </button>
             </div>
@@ -111,12 +111,12 @@
         <!--DROPDOWN MENU ONLY ONE TASK DISPLAY-->
         <main>
             <div class="divTopLeft">
-                <select id="priority-test" class="dropdownChoiceDisplay">
+                <select id="priority-organize" class="dropdownChoiceDisplay">
                     <option>Viser alle</option>
 
                 </select>
 
-                <input type="button" class="displayChosenBtn" id="teeeeeest" value="Filtrer" />
+                <input type="button" class="displayChosenBtn" id="organizeBtn" value="Filtrer" />
             </div>
         </main>
 
@@ -214,17 +214,17 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var headlineTxt = document.getElementById("headline-txt") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var errorMsg = document.getElementById("error-msg");
         var errorMsg2 = document.getElementById("error-msg2");
-        var priorityTest = document.getElementById("priority-test");
-        var teeeeeest = document.getElementById("teeeeeest");
+        var priorityOrganize = document.getElementById("priority-organize");
+        var organizeBtn = document.getElementById("organizeBtn");
         var textFieldEdit = document.getElementById("text-field-edit");
         var headlineTxtEdit = document.getElementById("headline-txt-edit");
-        teeeeeest.onclick = addTextArrayTEST;
+        organizeBtn.onclick = addTextArrayTEST;
 
 
         //Makes it possible to use enter key after writing in the text fields in the modal.                    
         var enterKey1 = document.getElementById('button-save-enter');
         var enterKey2 = document.getElementById('headline-txt');
-        var enterKey3 = document.getElementById('teeeeeest');
+        var enterKey3 = document.getElementById('organizeBtn');
         enterKey1.addEventListener('keydown', function (event) {
             if (event.keyCode === 13) {
                 handleInput()
@@ -242,7 +242,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         })
 
 
-        function test3() {
+        function openModalCreate() {
             var test = document.getElementById("test");
             test.classList.toggle("is-active");
             errorMsg.innerHTML = "";
@@ -304,7 +304,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             ];
 
         var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
-        var selectTest = document.getElementById("priority-test");
+        var selectTest = document.getElementById("priority-organize");
         var selectEdit = document.getElementById("headline-choose");
 
 
@@ -457,8 +457,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
         function addTextArrayTEST() {
             output.innerHTML = "";
-            var priorityTest = document.getElementById("priority-test");
-            var teeeest = priorityTest.options[priorityTest.selectedIndex].text;
+            var priorityOrganize = document.getElementById("priority-organize");
+            var teeeest = priorityOrganize.options[priorityOrganize.selectedIndex].text;
             //alert(taskArray[1].optionChoice);
             //alert(test);
             for (var i = 0; i < taskArray.length; i++) {
