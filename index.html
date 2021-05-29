@@ -121,7 +121,7 @@
         </main>
 
         <!--Columns Bulma-->
-        <main id="main" class="columnPosi">
+        <main id="main" class="columnPosition">
             <div id="1" class="columns">
                 <div class="column is-11
                 is-offset-1 columnColor is-multiline">
@@ -166,7 +166,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
             </section>
             <footer class="modal-card-foot">
-                <button id="button-save-enter" class="button-save" onclick="addTextArray()">Lagre endringer</button>
+                <button id="button-save-enter" class="button-save" onclick="addToArry()">Lagre endringer</button>
                 <erro class="errorOutput" id="error-msg"></erro>
 
             </footer>
@@ -208,7 +208,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
 
 
     <script>
-        var output = document.getElementsByClassName("columnPosi")[0];
+        var output = document.getElementsByClassName("columnPosition")[0];
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var headlineTxt = document.getElementById("headline-txt") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
@@ -218,7 +218,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var organizeBtn = document.getElementById("organizeBtn");
         var textFieldEdit = document.getElementById("text-field-edit");
         var headlineTxtEdit = document.getElementById("headline-txt-edit");
-        organizeBtn.onclick = addTextArrayTEST;
+        organizeBtn.onclick = printSelected;
 
 
         //Makes it possible to use enter key after writing in the text fields in the modal.                    
@@ -247,8 +247,8 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             modalAdd.classList.toggle("is-active");
             errorMsg.innerHTML = "";
 
-            /*if (!test.classList.contains("is-active")){
-                 test.classList.add("is-active");
+            /*if (!modalAdd.classList.contains("is-active")){
+                 modalAdd.classList.add("is-active");
             }*/
 
         }
@@ -304,7 +304,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             ];
 
         var select = document.getElementById("priority"); /*Has to be named select, in order to function.*/
-        var selectTest = document.getElementById("priority-organize");
+        var selectOrg = document.getElementById("priority-organize");
         var selectEdit = document.getElementById("headline-choose");
 
 
@@ -323,7 +323,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             var elem = document.createElement("option");
             elem.textContent = optMenu;
             elem.value = optMenu;
-            selectTest.appendChild(elem);
+            selectOrg.appendChild(elem);
         }
 
 
@@ -369,7 +369,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         ];
 
 
-        function addTextArray() {
+        function addToArry() {
             errorMsg.innerHTML = "";
             var textField = document.getElementById("text-field").value;
             var headlineTxt = document.getElementById("headline-txt").value;
@@ -431,8 +431,6 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             for (var i = 0; i < notification.length; i++) {
                 notification[i].addEventListener("mousedown", function (e) {
                     if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") {  //Deletes the selected index of the b class onclick. 
-
-
                         if (confirm('Er du sikker på at du ønsker å slette kunngjøringen?')) {
                             e.target.offsetParent.remove() //Removes the parent div for the task. And prevents it from displaying on the web page. 
 
@@ -455,14 +453,13 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         window.unload = update();
         window.unload = printFunc(); //In order to always display all elements inn array. Also the ones dummy/hardcoded in before user interference.
 
-        function addTextArrayTEST() {
+        function printSelected() {
             output.innerHTML = "";
             var priorityOrganize = document.getElementById("priority-organize");
-            var teeeest = priorityOrganize.options[priorityOrganize.selectedIndex].text;
+            var dropDownV = priorityOrganize.options[priorityOrganize.selectedIndex].text;
             //alert(taskArray[1].optionChoice);
-            //alert(test);
             for (var i = 0; i < taskArray.length; i++) {
-                if (teeeest === taskArray[i].optionChoice) {
+                if (dropDownV === taskArray[i].optionChoice) {
                     output.innerHTML += ` <div class="columns">
                     <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
                 <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>

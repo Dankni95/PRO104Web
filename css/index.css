@@ -101,7 +101,7 @@
     }
 
   
-    .columnPosi {
+    .columnPosition  {
        
 
         position: absolute;
@@ -126,7 +126,7 @@
         
 }
 
-.columnPosi::-webkit-scrollbar {
+.columnPosition::-webkit-scrollbar {
     /*background-color: #252836;*/
     background-color: transparent;
     margin-left: 3rem;
@@ -135,7 +135,7 @@
     
     }
 
-    .columnPosi::-webkit-scrollbar-thumb {
+    .columnPosition::-webkit-scrollbar-thumb {
         border: 4px solid rgba(0, 0, 0, 0); /*Transparent color to make the egdes dissapair*/
         background-clip: padding-box; /*Slim thumb*/
         border-radius: 999px; /*Round egdes*/
