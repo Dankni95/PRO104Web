@@ -96,32 +96,13 @@
             </div>
         </header>
 
-
-
         <main>
             <div class="divTopRight">
                 <button href="#" id="test2" class="addBtn" onclick="test3()">
                     <p><strong>+</strong> Legg til kunngjøring</p>
                 </button>
-
-
-
-
-                <!-- 
-                <div class="column  is-4-tablet is-offset-8-tablet is-offset-9-desktop is-3-desktop is-12-mobile "
-                    style=" margin: 0 auto;">
-                    <button href="#" id="test2" class="addBtn" onclick="test3()">
-                        <p><strong>+</strong> Legg til kunngjøring</p>
-                    </button>
-                </div>
-                -->
             </div>
-
-
-
         </main>
-
-
 
         <!--DROPDOWN MENU ONLY ONE TASK DISPLAY-->
         <main>
@@ -135,15 +116,12 @@
             </div>
         </main>
 
-
+        <!--Columns Bulma-->
         <main id="main" class="columnPosi">
-
             <div id="1" class="columns">
-                <!--Columns used for tasks/announcements-->
                 <div class="column is-11
                 is-offset-1 columnColor is-multiline">
                     <div class="has-text-right"><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
-
                 </div>
         </main>
     </main>
@@ -178,17 +156,13 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 </div>
                 <!--End of dropdown menu-->
 
-
+                <!--   INPUT TXT  -->
                 <textarea id="headline-txt" placeholder="Skriv overskriften her:" class="headlineCSS" rows="14"
                     cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
 
-
-
-
-
             </section>
             <footer class="modal-card-foot">
-                <button class="button-save" onclick="addTextArray()">Lagre endringer</button>
+                <button id="button-save-enter" class="button-save" onclick="addTextArray()">Lagre endringer</button>
                 <erro class="errorOutput" id="error-msg"></erro>
 
             </footer>
@@ -207,14 +181,34 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
         var textField = document.getElementById("text-field") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var headlineTxt = document.getElementById("headline-txt") //Tried to style font size .style.fontSize = "12pt"; This would bug up the if statement in printFunc() textField.value would no longer be an empty string. 
         var errorMsg = document.getElementById("error-msg");
-
-
         var priorityTest = document.getElementById("priority-test");
         var teeeeeest = document.getElementById("teeeeeest");
         teeeeeest.onclick = addTextArrayTEST;
 
 
+        //Makes it possible to use enter key after writing in the text fields in the modal.                    
+        var enterKey1 = document.getElementById('button-save-enter');
+        var enterKey2 = document.getElementById('headline-txt');
+        var enterKey3 = document.getElementById('teeeeeest');
 
+
+
+
+        enterKey1.addEventListener('keydown', function (event) {
+            if (event.keyCode === 13) {
+                handleInput()
+            }
+        })
+        enterKey2.addEventListener('keydown', function (event) {
+            if (event.keyCode === 13) {
+                handleInput()
+            }
+        })
+        enterKey3.addEventListener('keydown', function (event) {
+            if (event.keyCode === 13) {
+                handleInput()
+            }
+        })
 
 
         function test3() {
