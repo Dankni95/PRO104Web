@@ -111,7 +111,7 @@
 
 .columnPosi::-webkit-scrollbar {
     /*background-color: #252836;*/
-    background-color: #1F1D2B;
+    background-color: transparent;
     margin-left: 3rem;
     width: 14px;
     
