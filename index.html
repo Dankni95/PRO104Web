@@ -413,7 +413,7 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
             for (var i = 0; i < notification.length; i++) {
                 notification[i].addEventListener("mousedown", function (e) {
                     if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") {  //Deletes the selected index of the b class onclick. 
-                        var confirmDiv = document.getElementById("confirm-div");
+
 
                         if (confirm('Er du sikker på at du ønsker å slette kunngjøringen?')) {
                             e.target.offsetParent.remove() //Removes the parent div for the task. And prevents it from displaying on the web page. 
@@ -427,6 +427,10 @@ Can't use input tag. Need to use textarea for wrapping the user input text in mu
                 }, false)
             }
         }
+
+
+
+
 
         /**IMPORTANT!! Theese need to be kept down here. Updating website.**/
         window.unload = update();
