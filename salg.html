@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/global.css">
     <title>Gyldene Pizza</title>
     <!--Font awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -13,76 +13,181 @@
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma-rtl.min.css">
+    <link rel="stylesheet" href="css/salg.css">
 </head>
 
 <body>
 
-    <header class="topbar">
-        <div class="topbar-left">
-            <h1 class="topbar-title">Salg</h1>
-            <div class="date" style="color: white;">
-                <span id="day-id">Day</span>,
-                <span id="day-nr-id">00</span>.
-                <span id="month-id">Month</span>
-                <span id="year-id">Year</span>
-            </div>
-            <div class="separator"></div>
-        </div>
-        <div class="user-name">Daniel Lysak</div>
-        <div class="user-buttons">
-            <div class="fas fa-angle-down" style="position:relative; right: 50%;"></div>
-            <div class="active-underline rotate"></div>
-            <div class="far fa-bell" style="position:relative; left: 50%;"></div>
-        </div>
-        <div class="separator"></div>
-        </div>
-    </header>
-
-
-    <nav>
+    <nav class="navigation">
         <div class="logo">
             <img class="logo-image" src="/images/Logo.svg" alt="A chef logo">
         </div>
-        <ul>
-            <li>
+        <ul class="nav-links-wrapper">
+            <li class="nav-links">
                 <i class="far fa-bell"></i>
-                <a href="/index.html">Forside</a>
+                <a class="nav-link " href="/index.html">Forside</a>
             </li>
 
-            <li>
+            <li class="nav-links active">
                 <i class="fas fa-wallet"></i>
-                <a href="/salg.html">Salg</a>
+                <a class="nav-link" href="/salg.html">Salg</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="far fa-map"></i>
-                <a href="/meny.html">Meny</a>
+                <a class="nav-link" href="/meny.html">Meny</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="fas fa-users"></i>
-                <a href="/ansatte.html">Ansatte</a>
+                <a class="nav-link " href="/ansatte.html">Ansatte</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="fas fa-utensils"></i>
-                <a href="/restauranter.html">Restauranter</a>
+                <a class="nav-link" href="/restauranter.html">Restauranter</a>
             </li>
         </ul>
 
         <div class="seperator"></div>
 
-        <div class="nav-logout">
+        <div class="nav-logout-div">
             <button class="nav-logout-button">
                 <i class="fas fa-sign-out-alt"></i>
                 Logout
-            </button>   
+            </button>
         </div>
-
     </nav>
 
+    <main class="main-div">
+
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="topbar-title">Ansatte</h1>
+                <div class="date">
+                    <span id="day-id">Day</span>,
+                    <span id="day-nr-id">00</span>.
+                    <span id="month-id">Month</span>
+                    <span id="year-id">Year</span>
+                </div>
+                <div class="separator"></div>
+            </div>
+            <div class="dropdown">
+                <div class="dropdown-trigger">
+                    <button id="activate" class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        <span id="selected">Lambertseter</span>
+                        <span class="icon is-small">
+                        </span>
+                    </button>
+
+                </div>
+                <div id="dropdown-content" class="dropdown-menu">
+                    <div id="dropdown-menu" class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                            Lambertseter
+                        </a>
+                        <a id="frogner" href="#" class="dropdown-item">
+                            Frogner
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Grønland
+                        </a>
+                        <a href="#" class="dropdown-item">
+                            Grünnerløkka
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-username">
+                    <h4>Daniel Lysak</h4>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="topbar-line"></div>
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+            </div>
+        </header>
+
+        <div class="sales-figures">
+            <div class="sales">
+                <p class="figures-subtitle">Inntekt totalt</p>
+                <img class="icon-size icon-placement" src="images/money-icon.svg" alt="money icon">
+                <img class="arrow-size arrow-placement is-hidden" src="images/down-icon.svg" alt="arrow down">
+                <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
+                <p id="sales-percentage" class="sales-percentage-size sales-percentage-placement has-text-primary">
+                    %Placeholder</p>
+                <div class="figures-size figures-placement has-text-primary">
+                    <p id="turnover"></p>
+                </div>
+
+            </div>
+            <div class="total-pizzas">
+                <p class="figures-subtitle">Pizza solgt</p>
+
+                <img class="icon-size icon-placement" src="/images/pizza-icon.svg" alt="placeholder icon">
+                <img class="arrow-size arrow-placement" src="images/down-icon.svg" alt="arrow down">
+                <img class="arrow-size arrow-placement is-hidden" src="images/up-icon.svg" alt="arrow up">
+                <p id="pizza-percentage" class="sales-percentage-size sales-percentage-placement has-text-danger">
+                    %Placeholder</p>
+                <div class="figures-size figures-placement has-text-danger">
+                    <p id="pizza-sold"></p>
+                </div>
 
 
+            </div>
+            <div class="customers">
+                <p class="figures-subtitle">Kunder totalt</p>
+                <img class="icon-size icon-placement" src="/images/customers-icon.svg" alt="cutomers icon">
+                <img class="arrow-size arrow-placement is-hidden" src="images/down-icon.svg" alt="arrow down">
+                <img class="arrow-size arrow-placement" src="images/up-icon.svg" alt="arrow up">
+                <p id="customer-percentage" class="sales-percentage-size sales-percentage-placement has-text-primary">
+                    %Placeholder</p>
+                <div class="figures-size figures-placement has-text-primary">
+                    <p id="customers"></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidepanel-pizzas">
+            <h1 class="sidepanel-title">Solgte pizza</h1>
+            <div class="separator" style="position:absolute; top: 21%; width: 100% "></div>
+            <div class="sidepanel-content">
+            </div>
+        </div>
+
+        <div class="days-pizza-position days-pizza-size">
+            <h1 class="title-graph">Inntekt totalt alle avdelinger</h1>
+            <div class="false-For-Bottom-Text">
+                <div class="mypiechart">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mainpanel-customers">
+            <table class="table">
+                <thead>
+                    <tr class="table-title">
+                        <th class="mainpanel-title"><abbr title="Hvem har bestilt">Pizza</abbr></th>
+                        <th class="mainpanel-title"><abbr title="Hvem har bestilt">Kunde</abbr></th>
+                        <th class="mainpanel-title"><abbr title="Hva kunden har bestilt">Meny</abbr></th>
+                        <th class="mainpanel-title"></th>
+                        <th class="mainpanel-title"><abbr title="Totalt bestillingen kostet">Totalt</abbr></th>
+                        <th id="title-last" class="mainpanel-title"><abbr title="Status på bestilling">Status</abbr>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </main>
+
+
+
+
+    </script>
+    <script type="module" src="js/index/SalgIndex.js"></script>
 </body>
 
 </html>
