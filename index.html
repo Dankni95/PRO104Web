@@ -206,51 +206,10 @@
     <!--End of modal box-->
 
     <input id="sortingBtn" type="button" value="Sorter">
-    <input id="sortingBtnIndex" type="button" value="SorterIndex">
+
 
 
     <script>
-
-        var sortingBtn = document.getElementById("sortingBtn")
-        var sortingBtnIndex = document.getElementById("sortingBtnIndex")
-
-        var isSorted = false;
-        var isSortedIndex = false;
-        var isSortedIndexChecker = false;
-
-
-
-        sortingBtn.addEventListener('click', sortingOnClick);
-        sortingBtnIndex.addEventListener('click', sortingIndexOnClick);
-
-        function sortingOnClick() {
-            isSorted = !isSorted;
-            isSortedIndexChecker = false;
-            sortingOnLoad();
-        }
-
-        function sortingIndexOnClick() {
-            isSortedIndex = !isSortedIndex;
-            isSortedIndexChecker = true;
-            sortingOnLoad();
-        }
-
-        function sortingOnLoad() {
-            if (isSorted && !isSortedIndexChecker) {
-                printFunc(taskArray.sort(sortByImportanceReverse));
-            }
-            if (!isSorted && !isSortedIndexChecker) {
-                printFunc(taskArray.sort(sortByImportance));
-            }
-            else if (isSortedIndex) { //Important to use else if. Simple if statement would be true on window.unload
-                alert("nei")
-            }
-            else if (!isSortedIndex) {
-                alert("ja")
-            }
-        }
-
-
         var output = document.getElementsByClassName("columnPosition")[0];
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field")
@@ -261,6 +220,8 @@
         var organizeBtn = document.getElementById("organizeBtn");
         var textFieldEdit = document.getElementById("text-field-edit");
         var headlineTxtEdit = document.getElementById("headline-txt-edit");
+        var sortingBtn = document.getElementById("sortingBtn")
+        sortingBtn.addEventListener('click', sortingOnClick);
         organizeBtn.onclick = printSelected;
 
 
@@ -376,6 +337,7 @@
                 headline: "Vedlikeholdsbehov pizzaovn",
                 prioritizeChoice: 1,
                 iconSign: "fas fa-exclamation-circle"
+
             },
             {
                 optionChoice: "Moderat",
@@ -413,7 +375,7 @@
             var textField = document.getElementById("text-field").value;
             var headlineTxt = document.getElementById("headline-txt").value;
             var priority = document.getElementById("priority").value;
-            console.log(optionsArray.length);
+            //console.log(optionsArray.length);
 
 
             /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running spaghetti switch case etc.**/
@@ -432,7 +394,7 @@
                     );
                     modalsClose();
                     sortingOnLoad()
-                    printFunc();
+
 
 
                 } else {
@@ -488,6 +450,11 @@
         window.unload = printFunc(); //In order to always display all elements inn array. 
         window.unload = sortingOnLoad();
 
+
+
+
+
+
         function printSelected() {
             output.innerHTML = "";
             var priorityOrganize = document.getElementById("priority-organize");
@@ -530,6 +497,28 @@
             }
         }
 
+        /****************BUBBLE SORT SWITCH ONCLICK*****************/
+        var isSorted = false; //Turns true/false onClick
+
+        function sortingOnClick() {
+            isSorted = !isSorted;
+            sortingOnLoad();
+        }
+
+        function sortingOnLoad() { //Split in own function. Not only in use onClick.  
+            isSortedIndexChecker = false;
+
+            if (isSorted) {
+                printFunc()
+                taskArray.sort(sortByImportanceReverse)
+
+            }
+            else if (!isSorted) {
+                printFunc(taskArray.sort(sortByImportance))
+            }
+        }
+
+        /****************BUBBLE SORTING*****************/
         function sortByImportance(a, b) { //Always change the crocodile mouth, when reversing the sorting.
             if (a.prioritizeChoice < b.prioritizeChoice) {
                 return -1;
@@ -541,7 +530,7 @@
         }
 
 
-        function sortByImportanceReverse(a, b) { //Always change the crocodile mouth, when reversing the sorting.
+        function sortByImportanceReverse(a, b) {
             if (a.prioritizeChoice > b.prioritizeChoice) {
                 return -1;
                 if (a.prioritizeChoice < b.prioritizeChoice) {
@@ -550,6 +539,7 @@
             }
             return 0;
         }
+
     </script>
 </body>
 
