@@ -206,31 +206,48 @@
     <!--End of modal box-->
 
     <input id="sortingBtn" type="button" value="Sorter">
+    <input id="sortingBtnIndex" type="button" value="SorterIndex">
 
 
     <script>
 
         var sortingBtn = document.getElementById("sortingBtn")
+        var sortingBtnIndex = document.getElementById("sortingBtnIndex")
 
         var isSorted = false;
+        var isSortedIndex = false;
+        var isSortedIndexChecker = false;
+
+
+
         sortingBtn.addEventListener('click', sortingOnClick);
+        sortingBtnIndex.addEventListener('click', sortingIndexOnClick);
 
         function sortingOnClick() {
-
             isSorted = !isSorted;
-
-
+            isSortedIndexChecker = false;
             sortingOnLoad();
+        }
 
+        function sortingIndexOnClick() {
+            isSortedIndex = !isSortedIndex;
+            isSortedIndexChecker = true;
+            sortingOnLoad();
         }
 
         function sortingOnLoad() {
-            if (isSorted) {
+            if (isSorted && !isSortedIndexChecker) {
                 printFunc(taskArray.sort(sortByImportanceReverse));
-            } else {
+            }
+            if (!isSorted && !isSortedIndexChecker) {
                 printFunc(taskArray.sort(sortByImportance));
             }
-
+            else if (isSortedIndex) { //Important to use else if. Simple if statement would be true on window.unload
+                alert("nei")
+            }
+            else if (!isSortedIndex) {
+                alert("ja")
+            }
         }
 
 
@@ -385,9 +402,6 @@
                 iconSign: "fas fa-briefcase"
             }
 
-
-
-
         ];
 
 
@@ -429,7 +443,7 @@
 
         function printFunc() {
             output.innerHTML = "";
-            document.getElementById("text-field").value;
+            //document.getElementById("text-field").value;
             for (var i = 0; i < taskArray.length; i++) {
                 output.innerHTML += ` <div class="columns">
                     <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
@@ -441,16 +455,6 @@
                   </div>
                 </div>`;
                 update();
-                //taskArray.sort(sortByImportance)
-
-                /*     isSorted = !isSorted;
-                 if (isSorted) {
-                     taskArray.sort(sortByImportance);
-                 } else {
-                     taskArray.sort(sortByImportanceReverse);
-                 }*/
-
-
             }
         }
 
