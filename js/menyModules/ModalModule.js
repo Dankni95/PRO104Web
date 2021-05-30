@@ -3,6 +3,7 @@ let doughType = document.getElementById("pizza-dough");
 let cheeseType = document.getElementById("pizza-cheese");
 let sauceType = document.getElementById("pizza-sauce");
 let priceInput = document.getElementById("price-number");
+let successNotification = document.getElementById("success-save")
 
 
 function setPreExistingValues(element) {
@@ -51,6 +52,13 @@ function setUpdatedValues(element) {
 
 }
 
+function showSuccessMessage(element){
+    console.log(element.parentNode.parentNode.children[2].lastChild);
+    successNotification.className = "notification"
+    document.getElementById("notification-text").innerHTML = "Endringene på <strong>" +element.parentNode.parentNode.children[2].lastChild.previousSibling.innerText + "</strong> er endret.";
+    setTimeout(() => { successNotification.classList = "notification is-hidden"; }, 3000);
+}
 
 
-export default { ModalModule, setPreExistingValues, setUpdatedValues };
+
+export default { ModalModule, setPreExistingValues, setUpdatedValues, showSuccessMessage };
