@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/global.css">
+    <!--<link rel="stylesheet" href="/css/global.css">-->
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/modal.css">
 
@@ -205,8 +205,35 @@
     </div>
     <!--End of modal box-->
 
+    <input id="sortingBtn" type="button" value="Sorter">
+
 
     <script>
+
+        var sortingBtn = document.getElementById("sortingBtn")
+
+        var isSorted = false;
+        sortingBtn.addEventListener('click', sortingOnClick);
+
+        function sortingOnClick() {
+
+            isSorted = !isSorted;
+
+
+            sortingOnLoad();
+
+        }
+
+        function sortingOnLoad() {
+            if (isSorted) {
+                printFunc(taskArray.sort(sortByImportanceReverse));
+            } else {
+                printFunc(taskArray.sort(sortByImportance));
+            }
+
+        }
+
+
         var output = document.getElementsByClassName("columnPosition")[0];
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field")
@@ -253,6 +280,8 @@
             renderB.classList.toggle("is-active");
             errorMsg2.innerHTML = "";
 
+
+
             for (var i = 0; i < taskArray.length; i++) {
                 var optMenu = taskArray[i].headline;
                 var elem = document.createElement("option");
@@ -298,6 +327,7 @@
         var select = document.getElementById("priority");
         var selectOrg = document.getElementById("priority-organize");
         var selectEdit = document.getElementById("headline-choose");
+
 
 
         //Check what importance option user have selected in the drop down menu. Theese options are generated from the strings of .importance index in optionsArray   
@@ -361,6 +391,9 @@
         ];
 
 
+
+
+
         function addToArry() {
             errorMsg.innerHTML = "";
             var textField = document.getElementById("text-field").value;
@@ -384,7 +417,9 @@
                         }
                     );
                     modalsClose();
-                    printFunc(taskArray.sort(sortByImportance)); //Bubblesorting all tasks by importance
+                    sortingOnLoad()
+                    printFunc();
+
 
                 } else {
                     errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
@@ -406,7 +441,16 @@
                   </div>
                 </div>`;
                 update();
-                taskArray.sort(sortByImportance)
+                //taskArray.sort(sortByImportance)
+
+                /*     isSorted = !isSorted;
+                 if (isSorted) {
+                     taskArray.sort(sortByImportance);
+                 } else {
+                     taskArray.sort(sortByImportanceReverse);
+                 }*/
+
+
             }
         }
 
@@ -436,12 +480,9 @@
 
 
 
-
-
-
-
         window.unload = update();  /** Updating website. Needs to be kept direcly under delete func**/
         window.unload = printFunc(); //In order to always display all elements inn array. 
+        window.unload = sortingOnLoad();
 
         function printSelected() {
             output.innerHTML = "";
@@ -459,7 +500,6 @@
                   </div>
                 </div>`;
                 }
-
             }
             if (output.innerHTML === "") {
                 printFunc();
@@ -468,13 +508,14 @@
         }
 
         function editTask() {
+
             errorMsg2.innerHTML = "";
             var headlineChoose = document.getElementById("headline-choose");
-            var ChooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
+            var chooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
             var textFieldEdit = document.getElementById("text-field-edit").value;
             var headlineTxtEdit = document.getElementById("headline-txt-edit").value;
             for (var i = 0; i < taskArray.length; i++) {
-                if (ChooseFromArray === taskArray[i].headline && textFieldEdit != "" && headlineTxtEdit != "") {
+                if (chooseFromArray === taskArray[i].headline && textFieldEdit != "" && headlineTxtEdit != "") {
                     taskArray[i].task = textFieldEdit;
                     taskArray[i].headline = headlineTxtEdit;
                     printFunc();
@@ -485,10 +526,21 @@
             }
         }
 
-        function sortByImportance(a, b) { //Always change the crocodile mouth, when reversing the sorting. 
+        function sortByImportance(a, b) { //Always change the crocodile mouth, when reversing the sorting.
             if (a.prioritizeChoice < b.prioritizeChoice) {
                 return -1;
                 if (a.prioritizeChoice > b.prioritizeChoice) {
+                    return 1;
+                }
+            }
+            return 0;
+        }
+
+
+        function sortByImportanceReverse(a, b) { //Always change the crocodile mouth, when reversing the sorting.
+            if (a.prioritizeChoice > b.prioritizeChoice) {
+                return -1;
+                if (a.prioritizeChoice < b.prioritizeChoice) {
                     return 1;
                 }
             }
