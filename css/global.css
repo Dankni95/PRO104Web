@@ -24,6 +24,8 @@ i {
 }
 
 
+
+
 /**** Log ut ikon ****/
 .fa-sign-out-alt {
     margin: 0;
@@ -187,6 +189,7 @@ li:hover::after {
 .topbar-username {
     display: flex;
     align-items: center;
+
 }
 
 .topbar-line {
