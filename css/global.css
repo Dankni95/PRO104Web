@@ -18,7 +18,6 @@ i {
     position: absolute;
     width: 90%;
     height: 0%;
-
     border: 1px solid #393C49;
     z-index: 1;
 }
@@ -96,9 +95,7 @@ body {
     align-items: center;
     width: 200px;
     height: 56px;
-    overflow: hidden;
-
-}
+    overflow: hidden; 
 
 .nav-link {
     text-decoration: none;
@@ -106,7 +103,7 @@ body {
     width: 100%;
     text-align: start;
     font-family: 'Barlow', sans-serif;
-    cursor: pointer;
+    cursor: pointer; 
     z-index: 1;
 }
 
@@ -130,12 +127,10 @@ li::after {
 
 li:hover::after {
     transform: translateX(-100%) scale(1);
-
 }
 
 .active {
     background-color: #ea7c694f;
-
 }
 
 .active:hover::after {
@@ -144,7 +139,7 @@ li:hover::after {
 
 .nav-logout-div {
     position: absolute;
-    top: 90%;
+    top: 90%;  
 }
 
 .nav-logout-button {
@@ -156,7 +151,7 @@ li:hover::after {
     color: #FFFFFF;
     border-radius: 50px;
     cursor: pointer;
-    display: flex;
+    display: flex; 
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
@@ -189,7 +184,10 @@ li:hover::after {
 .topbar-username {
     display: flex;
     align-items: center;
+}
 
+.topbar-line {
+    width: 0.5px;
 }
 
 .topbar-line {
