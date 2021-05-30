@@ -150,6 +150,10 @@
       color:#FF6F5A;
     }
 
+    .sortingBtnStyle button:hover{
+      color: #FF6F5A;
+    }
+
     .txtInput{
         position: relative;
         height: 70%;
@@ -258,10 +262,24 @@
           color:yellow;
           right: 101%;
       }
-     
-      
 
-     
+   .sortingBtnStyle button{
+  background-color: #50343A;
+  color: white;
+  position: relative;
+  font-size: 1rem;
+  padding: 15px;
+  width:auto;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none; 
+  top: -12.7rem;
+  font-size: 1.5rem;
+}
+
+
+
+
 
 
 
