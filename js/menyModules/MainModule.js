@@ -1,9 +1,6 @@
-import DataModule from "../globalModules/DataModule.js";
-const MainModule = (function data() {
+import ModalModule from "./ModalModule.js"
 
-
-
-}());
+const MainModule = (function () { }());
 
 function addEventsToButtons() {
 
@@ -18,8 +15,16 @@ function addEventsToButtons() {
     //Adds is-active to the modal class.
     for (var i = 0; i < editDish.length; i++) {
         if (editDish[i].className === 'button active') {
-            editDish[i].addEventListener('click', function (e) {
+            editDish[i].addEventListener('click', function (el) {
                 modal.classList.add('is-active');
+                ModalModule.setPreExistingValues(el.target.parentNode.parentNode);
+
+
+                //Makes save button lock the item
+                saveButton.addEventListener('click', function() {
+                    ModalModule.setUpdatedValues(el.target.parentNode.parentNode);
+                    modal.classList.remove('is-active');
+                });
             });
         }
     };
@@ -30,30 +35,11 @@ function addEventsToButtons() {
     });
 
 
-    //Makes save button lock the item
-    saveButton.addEventListener('click', () => {
-        modal.classList.remove('is-active');
-    });
 
     featureAlert.addEventListener('click', () => {
         alert("Denne funksjonen er enda ikke implementert, vennligst kontakt systemansvarlig for mer informasjon. ");
     });
 }
 
+export default { MainModule, addEventsToButtons };
 
-
-
-export default {MainModule, addEventsToButtons};
-
-
-
-/*
-const editDish = document.getElementById('kake');
-console.log(editDish.innerHTML);
-const modalBg = document.querySelector('.modal-background');
-const modal = document.getElementsByClassName('modal')[0];
-
-editDish.addEventListener('click', () => {
-    modal.className = "modal is-active"
-});
-*/

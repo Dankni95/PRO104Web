@@ -66,11 +66,9 @@ html::-webkit-scrollbar {
     overflow-y: hidden;
 }
 
-.section div {}
-
 #food-container,
 #second-food-container {
-    
+
     padding-top: 1%;
     left: 10%;
     position: relative;
@@ -195,16 +193,12 @@ html::-webkit-scrollbar {
 }
 
 .modal .modal-card-body {
-
     background-color: #252836;
-
-
 }
 
 .modal .modal-card-foot {
     background-color: #1F1D2B;
 }
-
 
 /*Drop down menus*/
 .dough-div {
