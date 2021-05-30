@@ -1,26 +1,37 @@
+import DateModule from "../globalModules/DateModule.js";
+
+const FrontpageMainModule = (function () {
+
+}());
+
+DateModule.updateDate();
 /*********************************HTML DOM ETC*****************************************/
-var output = document.getElementsByClassName("columnPosition")[0];
-var priority = document.getElementById("priority");
-var textField = document.getElementById("text-field")
-var headlineTxt = document.getElementById("headline-txt")
-var errorMsg = document.getElementById("error-msg");
-var errorMsg2 = document.getElementById("error-msg2");
-var priorityOrganize = document.getElementById("priority-organize");
-var organizeBtn = document.getElementById("organizeBtn");
-var textFieldEdit = document.getElementById("text-field-edit");
-var headlineTxtEdit = document.getElementById("headline-txt-edit");
-var sortingBtn = document.getElementById("sortingBtn")
-var editBtnEnterKey = document.getElementById("editBtnEnterKey")
+const output = document.getElementsByClassName("columnPosition")[0];
+const priority = document.getElementById("priority");
+const textField = document.getElementById("text-field")
+const headlineTxt = document.getElementById("headline-txt")
+const errorMsg = document.getElementById("error-msg");
+const errorMsg2 = document.getElementById("error-msg2");
+const priorityOrganize = document.getElementById("priority-organize");
+const organizeBtn = document.getElementById("organizeBtn");
+const textFieldEdit = document.getElementById("text-field-edit");
+const headlineTxtEdit = document.getElementById("headline-txt-edit");
+const sortingBtn = document.getElementById("sortingBtn")
+const editBtnEnterKey = document.getElementById("editBtnEnterKey")
+const addButton = document.getElementsByClassName("addBtn")[0];
+const editButton = document.getElementsByClassName("editBtn")[0];
+const closeModalBackground = document.getElementsByClassName("modal-background")[0]
+const saveEdit = document.getElementsByClassName("save")[0];
+const modalClose = document.getElementById("closeModal");
 sortingBtn.addEventListener('click', sortingOnClick);
 organizeBtn.onclick = printSelected;
 
-
 /*************************ENTER KEY ON BUTTONS*********************************/
-var enterKey1 = document.getElementById('button-save-enter');
-var enterKey2 = document.getElementById('headline-txt');
-var enterKey3 = document.getElementById('organizeBtn');
-var enterKey4 = document.getElementById('sortingBtn');
-var enterKey5 = document.getElementById('editBtnEnterKey');
+const enterKey1 = document.getElementById('button-save-enter');
+const enterKey2 = document.getElementById('headline-txt');
+const enterKey3 = document.getElementById('organizeBtn');
+const enterKey4 = document.getElementById('sortingBtn');
+const enterKey5 = document.getElementById('editBtnEnterKey');
 enterKey1.addEventListener('keydown', function (event) {
     if (event.keyCode === 13) {
         handleInput()
@@ -47,38 +58,58 @@ enterKey5.addEventListener('keydown', function (event) {
     }
 })
 
+const modalAdd = document.getElementById("modalAdd");
+
 
 /*************************MODAL OPEN/CLOSE*********************************/
 function openModalCreate() {
-    var modalAdd = document.getElementById("modalAdd");
     modalAdd.classList.toggle("is-active");
     errorMsg.innerHTML = "";
 }
 
+closeModalBackground.addEventListener("click", function () {
+    modalsClose();
+});
+
+
+addButton.addEventListener("click", function () {
+    openModalCreate();
+});
+
+editButton.addEventListener("click", function () {
+    renderModal();
+});
+
 function renderModal() {
-    var renderB = document.getElementById("render-b");
+    const renderB = document.getElementById("render-b");
     renderB.classList.toggle("is-active");
     errorMsg2.innerHTML = "";
     /*Using "option" on diffrent array. Need to put the dropdown array chooser inside function*/
-    for (var i = 0; i < taskArray.length; i++) {
-        var optMenu = taskArray[i].headline;
-        var elem = document.createElement("option");
+    for (let i = 0; i < taskArray.length; i++) {
+        let optMenu = taskArray[i].headline;
+        let elem = document.createElement("option");
         elem.textContent = optMenu;
         elem.value = optMenu;
         selectEdit.appendChild(elem);
     }
 }
 
+
+modalClose.addEventListener("click", function (e) {
+    modalsClose();
+});
+
 function modalsClose() {
-    var modalsClose = document.getElementById("modalAdd");
+    let modalsClose = document.getElementById("modalAdd");
     modalsClose.classList.remove("is-active");
-    var renderB = document.getElementById("render-b");
+    let renderB = document.getElementById("render-b");
     renderB.classList.remove("is-active");
 }
 
 
+
 /********************CONSTANT, NOT-DISPLAYABLE ARRAY FOR DEFAULT VALUES********************/
-var optionsArray =
+const optionsArray =
     [
         {
             importance: "Kritisk!",
@@ -105,23 +136,23 @@ var optionsArray =
 
 
 /***********************GET DATA FROM ARRAY FIELD FOR DROP DOWN MENUS*****************/
-var select = document.getElementById("priority");
-var selectOrg = document.getElementById("priority-organize");
-var selectEdit = document.getElementById("headline-choose");
+const select = document.getElementById("priority");
+const selectOrg = document.getElementById("priority-organize");
+const selectEdit = document.getElementById("headline-choose");
 
 //Check what importance option user have selected in the drop down menu. Theese options are generated from the strings of .importance index in optionsArray   
-for (var i = 0; i < optionsArray.length; i++) {
-    var optMenu = optionsArray[i].importance;
-    var elem = document.createElement("option");
+for (let i = 0; i < optionsArray.length; i++) {
+    let optMenu = optionsArray[i].importance;
+    let elem = document.createElement("option");
     elem.textContent = optMenu;
     elem.value = optMenu;
     select.appendChild(elem);
 }
 
 //Needed a separate for loop for organizing different tasks
-for (var i = 0; i < optionsArray.length; i++) {
-    var optMenu = optionsArray[i].importance;
-    var elem = document.createElement("option");
+for (let i = 0; i < optionsArray.length; i++) {
+    let optMenu = optionsArray[i].importance;
+    let elem = document.createElement("option");
     elem.textContent = optMenu;
     elem.value = optMenu;
     selectOrg.appendChild(elem);
@@ -130,7 +161,7 @@ for (var i = 0; i < optionsArray.length; i++) {
 
 
 /***********************ARRAY COLUMN DATA*****************/
-var taskArray = [
+const taskArray = [
     {
         optionChoice: "Kritisk!",
         colorChoice: "#FF6F5A",
@@ -171,11 +202,11 @@ var taskArray = [
 /***********************ADD TO ARRAY*****************/
 function addToArry() {
     errorMsg.innerHTML = "";
-    var textField = document.getElementById("text-field").value;
-    var headlineTxt = document.getElementById("headline-txt").value;
-    var priority = document.getElementById("priority").value;
+    const textField = document.getElementById("text-field").value;
+    const headlineTxt = document.getElementById("headline-txt").value;
+    const priority = document.getElementById("priority").value;
     /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running spaghetti switch case etc.**/
-    for (var i = 0; i < optionsArray.length; i++) {
+    for (let i = 0; i < optionsArray.length; i++) {
         if (priority === optionsArray[i].importance && textField != "" && headlineTxt != "") {
             taskArray.push(
                 {
@@ -200,7 +231,7 @@ function addToArry() {
 function printFunc() {
     output.innerHTML = "";
     //document.getElementById("text-field").value;
-    for (var i = 0; i < taskArray.length; i++) {
+    for (let i = 0; i < taskArray.length; i++) {
         output.innerHTML += ` <div class="columns">
              <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
          <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
@@ -223,14 +254,14 @@ function update() {
 let notification = document.getElementsByTagName("B");
 //Function for deleting
 function removeButtonFunctionality() {
-    for (var i = 0; i < notification.length; i++) {
+    for (let i = 0; i < notification.length; i++) {
         notification[i].addEventListener("mousedown", function (e) {
             if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") {  //Deletes the selected index of the b class onclick. 
                 if (confirm('Er du sikker på at du ønsker å slette kunngjøringen?')) {
                     e.target.offsetParent.remove() //Removes the parent div for the task. And prevents it from displaying on the web page. 
 
                     //Thees two lines deletes the objectified array item by index. To make sure they do not reappear when user adds another task.
-                    var deleteIndex = taskArray.map(function (item) { return item.id; }).indexOf(i); //We already know the index, lets use the same index to delete from taskArray.
+                    let deleteIndex = taskArray.map(function (item) { return item.id; }).indexOf(i); //We already know the index, lets use the same index to delete from taskArray.
                     // removes the object
                     taskArray.splice(deleteIndex, 1);
                 }
@@ -241,17 +272,17 @@ function removeButtonFunctionality() {
 
 
 /***ONLOAD****/
-window.unload = update();  /** Updating website. Needs to be kept direcly under delete func**/
-window.unload = printFunc(); //In order to always display all elements inn array. 
-window.unload = sortingOnLoad();
+window.onload = update();  /** Updating website. Needs to be kept direcly under delete func**/
+window.onload = printFunc(); //In order to always display all elements inn array. 
+window.onload = sortingOnLoad();
 
 
 /****************PRINT ARRAY*****************/
 function printSelected() {
     output.innerHTML = "";
-    var priorityOrganize = document.getElementById("priority-organize");
-    var dropDownV = priorityOrganize.options[priorityOrganize.selectedIndex].text;
-    for (var i = 0; i < taskArray.length; i++) {
+    const priorityOrganize = document.getElementById("priority-organize");
+    let dropDownV = priorityOrganize.options[priorityOrganize.selectedIndex].text;
+    for (let i = 0; i < taskArray.length; i++) {
         if (dropDownV === taskArray[i].optionChoice) {
             output.innerHTML += ` <div class="columns">
              <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
@@ -270,13 +301,19 @@ function printSelected() {
     update();
 }
 /****************EDIT ARRAY*****************/
+saveEdit.addEventListener("click", function () {
+    console.log("yo");
+    editTask()
+});
+
+
 function editTask() {
     errorMsg2.innerHTML = "";
-    var headlineChoose = document.getElementById("headline-choose");
-    var chooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
-    var textFieldEdit = document.getElementById("text-field-edit").value;
-    var headlineTxtEdit = document.getElementById("headline-txt-edit").value;
-    for (var i = 0; i < taskArray.length; i++) {
+    const headlineChoose = document.getElementById("headline-choose");
+    let chooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
+    let textFieldEdit = document.getElementById("text-field-edit").value;
+    let headlineTxtEdit = document.getElementById("headline-txt-edit").value;
+    for (let i = 0; i < taskArray.length; i++) {
         if (chooseFromArray === taskArray[i].headline && textFieldEdit != "" && headlineTxtEdit != "") {
             taskArray[i].task = textFieldEdit;
             taskArray[i].headline = headlineTxtEdit;
@@ -309,9 +346,6 @@ function sortingOnLoad() { //Split in own function. Also used !onClick.
 function sortByImportance(a, b) { //Always change the crocodile mouth, when reversing the sorting.
     if (a.prioritizeChoice < b.prioritizeChoice) {
         return -1;
-        if (a.prioritizeChoice > b.prioritizeChoice) {
-            return 1;
-        }
     }
     return 0;
 }
@@ -319,9 +353,9 @@ function sortByImportance(a, b) { //Always change the crocodile mouth, when reve
 function sortByImportanceReverse(a, b) {
     if (a.prioritizeChoice > b.prioritizeChoice) {
         return -1;
-        if (a.prioritizeChoice < b.prioritizeChoice) {
-            return 1;
-        }
     }
     return 0;
 }
+
+
+export default { FrontpageMainModule };

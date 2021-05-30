@@ -93,7 +93,7 @@
 
         <main>
             <div class="divTopRight">
-                <button class="addBtn" onclick="openModalCreate()">
+                <button class="addBtn">
                     <p><strong>+</strong> Legg til kunngjøring</p>
                 </button>
             </div>
@@ -102,7 +102,7 @@
 
         <main>
             <div class="divTopRight">
-                <button id="editBtnEnterKey" class="editBtn" onclick="renderModal()">
+                <button id="editBtnEnterKey" class="editBtn">
 
                     <p>
                         <editTag id="editIconHover" class="fas fa-edit"></editTag>
@@ -140,14 +140,14 @@
 
     <!-- MODAL BOX-->
     <div id="modalAdd" class="modal">
-        <div class="modal-background" onclick="modalsClose()"></div>
+        <div class="modal-background"></div>
         <!--Outside the modal. Click outside the modal box, and modal exits -->
 
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">
                     Legg til en beskjed til de ansatte</p>
-                <button class="delete" aria-label="close" onclick="modalsClose()"></button>
+                <button class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
 
@@ -183,12 +183,12 @@
 
     <!-- MODAL BOX-->
     <div id="render-b" class="modal">
-        <div class="modal-background" onclick="modalsClose()"></div>
+        <div class="modal-background" ></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">
                     Rediger en beskjed</p>
-                <button class="delete" aria-label="close" onclick="modalsClose()"></button>
+                <button id="closeModal" class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
                 <textarea id="text-field-edit" placeholder="Rediger kunngjøringen her:" class="txtInput" rows="14"
@@ -203,7 +203,7 @@
                 </div>
             </section>
             <footer class="modal-card-foot">
-                <button id="button-save-enter" class="button-save" onclick="editTask()">Lagre
+                <button id="button-save-enter" class="button-save save">Lagre
                     endringer</button>
                 <erro class="errorOutput" id="error-msg2"></erro>
             </footer>
@@ -211,7 +211,8 @@
     </div>
     <!--End of modal box-->
 
-    <script src="/js/index/indexFrontpage.js"></script>
+    <script type="module" src="js/index/FrontpageIndex.js"></script>
+
 </body>
 
 </html>
