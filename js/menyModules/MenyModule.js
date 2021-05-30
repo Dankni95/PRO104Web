@@ -35,7 +35,7 @@ function writeMenuItems() {
             </div>
             <footer class="card-footer">
             <p class="card-footer-item">
-            <button class="button active">Rediger matrett</button>
+            <button class="button active fas fa-edit">Rediger matrett</button>
             </p>
             </footer>
             </div>`;
@@ -60,7 +60,7 @@ function writeMenuItems() {
                 </div>
                 <footer class="card-footer">
                     <p class="card-footer-item">
-                        <button class="button active">Rediger matrett</button>
+                        <button class="button active fas fa-edit">Rediger matrett</button>
                     </p>
                 </footer>
             </div>
