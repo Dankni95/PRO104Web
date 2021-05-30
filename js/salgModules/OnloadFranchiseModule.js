@@ -4,7 +4,7 @@ import OnloadChartModule from "../salgModules/ChartModule.js"
 import SoldPizzaModule from "../salgModules/SoldPizzaModule.js"
 
 
-const OnloadModule = (window.onload = function data() {
+const OnloadModule = (function() {
     let onloadFranchise = document.getElementById("selected").innerText
 
     if (onloadFranchise === "Lambertseter") {

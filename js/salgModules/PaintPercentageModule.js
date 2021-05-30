@@ -1,6 +1,4 @@
-
-
-const PaintPercentageModule = (function () { }());
+const PaintPercentageModule = (function () {}());
 
 const lastTurnoverContent = document.getElementById("turnover");
 const lastPizzaSoldContent = document.getElementById("pizza-sold");

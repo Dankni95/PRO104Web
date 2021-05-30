@@ -7,7 +7,7 @@ import DataModule from "../globalModules/DataModule.js"
 // on screen :)
 
 
-const ChartModule = (function data() { }());
+const ChartModule = (function() {}());
 let onloadPieChart = document.getElementsByClassName("mypiechart")[0];
 
 function updateChart(dynamicFranchise) {

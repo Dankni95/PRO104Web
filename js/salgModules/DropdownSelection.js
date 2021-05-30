@@ -6,12 +6,9 @@ const DropdownSelection = (function () {
     let selected = document.getElementById("selected");
     let dropdown = document.getElementsByClassName("dropdown")[0];
     let dropdownMenu = document.getElementById("dropdown-menu");
-    let focusFrogner = document.getElementById("frogner");
 
 
-
-   
-    const DropdownSelection = document.getElementById("dropdown-content").addEventListener("click", function (e) {
+    document.getElementById("dropdown-content").addEventListener("click", function (e) {
         RouteModule.changeRoute(e.target.innerText);
         selected.innerHTML = e.target.innerText;
         dropdown.className = "dropdown";
@@ -24,7 +21,7 @@ const DropdownSelection = (function () {
 
     }, false);
 
-    document.getElementById("dropdown-content").addEventListener("mouseleave", function (e) {
+    document.getElementById("dropdown-content").addEventListener("mouseleave", function () {
         DropdownModule.activateDropdownMenu();
     }, false);
 }());

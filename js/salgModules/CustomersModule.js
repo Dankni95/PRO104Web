@@ -1,7 +1,7 @@
 import DataModule from "../globalModules/DataModule.js"
 
 
-const CustomersModule = (function () { }());
+const CustomersModule = (function () {}());
 
 function setDataInCustomersMainPanelFrogner(dynamicFranchise) {
     const tableTitle = document.getElementsByClassName("table-title")[0].parentNode;
@@ -14,7 +14,6 @@ function setDataInCustomersMainPanelFrogner(dynamicFranchise) {
         newContentTable.className = "activated"
 
         let insertedNode = tableTitle.insertBefore(newContentTable, null)
-
         let randomPizzaMenu = generateRandomCustomerMenu();
 
         insertedNode.innerHTML += `<tr>
@@ -51,6 +50,4 @@ function clearBeforeWritingNewCustomers(tableTitle){
 
 }
 
-export default {
-    CustomersModule, setDataInCustomersMainPanelFrogner
-};
+export default { CustomersModule, setDataInCustomersMainPanelFrogner };
