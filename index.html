@@ -210,6 +210,7 @@
 
 
     <script>
+        /*********************************HTML DOM*****************************************/
         var output = document.getElementsByClassName("columnPosition")[0];
         var priority = document.getElementById("priority");
         var textField = document.getElementById("text-field")
@@ -225,7 +226,7 @@
         organizeBtn.onclick = printSelected;
 
 
-        //Makes it possible to use enter key after writing in the text fields in the modal.                    
+        /*************************ENTER KEY ON BUTTONS*********************************/
         var enterKey1 = document.getElementById('button-save-enter');
         var enterKey2 = document.getElementById('headline-txt');
         var enterKey3 = document.getElementById('organizeBtn');
@@ -246,20 +247,21 @@
         })
 
 
+        /******************************************************************EOFDHEOFDEHDOEDHOEIDHEOFDIEHFOEIHEOFIHEFOIEFHOEIF
+         * WDWDWDWDWDWDWDWD LAG ONCLICK TIL SORTER KNAPP/
+
+        /*************************MODAL OPEN/CLOSE*********************************/
         function openModalCreate() {
             var modalAdd = document.getElementById("modalAdd");
             modalAdd.classList.toggle("is-active");
             errorMsg.innerHTML = "";
         }
 
-        /*Using "option" on diffrent array. Need to put the dropdown array chooser inside function*/
         function renderModal() {
             var renderB = document.getElementById("render-b");
             renderB.classList.toggle("is-active");
             errorMsg2.innerHTML = "";
-
-
-
+            /*Using "option" on diffrent array. Need to put the dropdown array chooser inside function*/
             for (var i = 0; i < taskArray.length; i++) {
                 var optMenu = taskArray[i].headline;
                 var elem = document.createElement("option");
@@ -274,9 +276,10 @@
             modalsClose.classList.remove("is-active");
             var renderB = document.getElementById("render-b");
             renderB.classList.remove("is-active");
-
         }
 
+
+        /********************CONSTANT, NOT-DISPLAYABLE ARRAY FOR DEFAULT VALUES********************/
         var optionsArray =
             [
                 {
@@ -302,11 +305,11 @@
 
             ];
 
+
+        /***********************GET DATA FROM ARRAY FIELD FOR DROP DOWN MENUS*****************/
         var select = document.getElementById("priority");
         var selectOrg = document.getElementById("priority-organize");
         var selectEdit = document.getElementById("headline-choose");
-
-
 
         //Check what importance option user have selected in the drop down menu. Theese options are generated from the strings of .importance index in optionsArray   
         for (var i = 0; i < optionsArray.length; i++) {
@@ -328,7 +331,7 @@
 
 
 
-
+        /***********************ARRAY COLUMN DATA*****************/
         var taskArray = [
             {
                 optionChoice: "Kritisk!",
@@ -367,21 +370,15 @@
         ];
 
 
-
-
-
+        /***********************ADD TO ARRAY*****************/
         function addToArry() {
             errorMsg.innerHTML = "";
             var textField = document.getElementById("text-field").value;
             var headlineTxt = document.getElementById("headline-txt").value;
             var priority = document.getElementById("priority").value;
-            //console.log(optionsArray.length);
-
-
             /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running spaghetti switch case etc.**/
             for (var i = 0; i < optionsArray.length; i++) {
                 if (priority === optionsArray[i].importance && textField != "" && headlineTxt != "") {
-
                     taskArray.push(
                         {
                             optionChoice: optionsArray[i].importance, //adapting values from optionsArry
@@ -394,15 +391,14 @@
                     );
                     modalsClose();
                     sortingOnLoad()
-
-
-
                 } else {
                     errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
                 }
             }
         }
 
+
+        /************PRINT ARRAY****************/
         function printFunc() {
             output.innerHTML = "";
             //document.getElementById("text-field").value;
@@ -420,11 +416,12 @@
             }
         }
 
+        /*****UPDATE DELETED TASK******/
         function update() {
             removeButtonFunctionality();
         }
 
-        /***DELETE TASK***/
+        /*****************DELETE TASK**************/
         let notification = document.getElementsByTagName("B");
         //Function for deleting
         function removeButtonFunctionality() {
@@ -445,16 +442,13 @@
         }
 
 
-
+        /***ONLOAD****/
         window.unload = update();  /** Updating website. Needs to be kept direcly under delete func**/
         window.unload = printFunc(); //In order to always display all elements inn array. 
         window.unload = sortingOnLoad();
 
 
-
-
-
-
+        /****************PRINT ARRAY*****************/
         function printSelected() {
             output.innerHTML = "";
             var priorityOrganize = document.getElementById("priority-organize");
@@ -477,9 +471,8 @@
             }
             update();
         }
-
+        /****************EDIT ARRAY*****************/
         function editTask() {
-
             errorMsg2.innerHTML = "";
             var headlineChoose = document.getElementById("headline-choose");
             var chooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
@@ -497,24 +490,20 @@
             }
         }
 
+
         /****************BUBBLE SORT SWITCH ONCLICK*****************/
         var isSorted = false; //Turns true/false onClick
-
         function sortingOnClick() {
             isSorted = !isSorted;
             sortingOnLoad();
         }
 
-        function sortingOnLoad() { //Split in own function. Not only in use onClick.  
-            isSortedIndexChecker = false;
-
+        function sortingOnLoad() { //Split in own function. Also used !onClick.  
             if (isSorted) {
-                printFunc()
-                taskArray.sort(sortByImportanceReverse)
-
+                printFunc(taskArray.sort(sortByImportanceReverse));
             }
             else if (!isSorted) {
-                printFunc(taskArray.sort(sortByImportance))
+                printFunc(taskArray.sort(sortByImportance));
             }
         }
 
@@ -529,7 +518,6 @@
             return 0;
         }
 
-
         function sortByImportanceReverse(a, b) {
             if (a.prioritizeChoice > b.prioritizeChoice) {
                 return -1;
@@ -539,7 +527,6 @@
             }
             return 0;
         }
-
     </script>
 </body>
 
