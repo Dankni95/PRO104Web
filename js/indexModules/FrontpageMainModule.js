@@ -23,6 +23,7 @@ const editButton = document.getElementsByClassName("editBtn")[0];
 const closeModalBackground = document.getElementsByClassName("modal-background")[0]
 const saveEdit = document.getElementsByClassName("save")[0];
 const modalClose = document.getElementById("closeModal");
+const modalAdd = document.getElementById("modalAdd");
 sortingBtn.addEventListener('click', sortingOnClick);
 organizeBtn.onclick = printSelected;
 
@@ -58,7 +59,7 @@ enterKey5.addEventListener('keydown', function (event) {
     }
 })
 
-const modalAdd = document.getElementById("modalAdd");
+
 
 
 /*************************MODAL OPEN/CLOSE*********************************/
@@ -82,9 +83,18 @@ editButton.addEventListener("click", function () {
 
 function renderModal() {
     const renderB = document.getElementById("render-b");
+    const headLines = document.getElementById("headline-choose");
     renderB.classList.toggle("is-active");
     errorMsg2.innerHTML = "";
     /*Using "option" on diffrent array. Need to put the dropdown array chooser inside function*/
+
+    /** Prevents duplicate dropdown menu options**/
+    let allHeadlinesArr = headLines.children
+    let array = [...allHeadlinesArr]
+    array.forEach(element => {
+        element.remove();
+    });
+
     for (let i = 0; i < taskArray.length; i++) {
         let optMenu = taskArray[i].headline;
         let elem = document.createElement("option");
@@ -204,10 +214,9 @@ function addToArry() {
     errorMsg.innerHTML = "";
     const textField = document.getElementById("text-field").value;
     const headlineTxt = document.getElementById("headline-txt").value;
-    const priority = document.getElementById("priority").value;
     /**IMPORTANT! This for loop needs to run because we need standard values (color/icons etc), within the array, not selected directly by user input, but comes with the priority choice index. We choose to do this, instead of running spaghetti switch case etc.**/
     for (let i = 0; i < optionsArray.length; i++) {
-        if (priority === optionsArray[i].importance && textField != "" && headlineTxt != "") {
+        if (priority.value === optionsArray[i].importance && textField != "" && headlineTxt != "") {
             taskArray.push(
                 {
                     optionChoice: optionsArray[i].importance, //adapting values from optionsArry
