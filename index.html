@@ -102,8 +102,14 @@
 
         <main>
             <div class="divTopRight">
-                <button class="editBtn" onclick="renderModal()">
-                    <p>Rediger</p>
+                <button id="editBtnEnterKey" class="editBtn" onclick="renderModal()">
+
+                    <p>
+                        <editTag id="editIconHover" class="fas fa-edit"></editTag>
+                        Rediger
+                    </p>
+
+
                 </button>
             </div>
         </main>
@@ -223,6 +229,7 @@
         var textFieldEdit = document.getElementById("text-field-edit");
         var headlineTxtEdit = document.getElementById("headline-txt-edit");
         var sortingBtn = document.getElementById("sortingBtn")
+        var editBtnEnterKey = document.getElementById("editBtnEnterKey")
         sortingBtn.addEventListener('click', sortingOnClick);
         organizeBtn.onclick = printSelected;
 
@@ -232,6 +239,7 @@
         var enterKey2 = document.getElementById('headline-txt');
         var enterKey3 = document.getElementById('organizeBtn');
         var enterKey4 = document.getElementById('sortingBtn');
+        var enterKey5 = document.getElementById('editBtnEnterKey');
         enterKey1.addEventListener('keydown', function (event) {
             if (event.keyCode === 13) {
                 handleInput()
@@ -248,6 +256,11 @@
             }
         })
         enterKey4.addEventListener('keydown', function (event) {
+            if (event.keyCode === 13) {
+                handleInput()
+            }
+        })
+        enterKey5.addEventListener('keydown', function (event) {
             if (event.keyCode === 13) {
                 handleInput()
             }

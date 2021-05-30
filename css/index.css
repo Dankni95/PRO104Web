@@ -15,8 +15,8 @@
     justify-content: flex-start;
 }
 
-.editBtn{
-  position: absolute;
+.editBtn p{
+    position: absolute;
     border-radius: 10px;
     background-color: #50343A;
     padding: 10px;
@@ -29,7 +29,6 @@
     font-family: "Times New Roman", Times, serif;
   }
 
- 
 
 .addBtn{
     border-radius: 10px;
@@ -141,16 +140,17 @@
         color:#FF6F5A;
     }
 
-
-    .addBtn p:hover:first-letter {
-        color: white;
-    }
+   
 
     .editBtn p:hover{
       color:#FF6F5A;
     }
 
-    .sortingBtnStyle button:hover{
+    .addBtn p:hover:first-letter {
+        color: white;
+    }
+
+   .sortingBtnStyle button:hover{
       color: #FF6F5A;
     }
 
