@@ -3,4 +3,4 @@ import MainModule from "../menyModules/MainModule.js";
 import MenyModule from "../menyModules/MenyModule.js";
 import DateModule from '../globalModules/DateModule.js';
 import ModalModule from '../menyModules/ModalModule.js';
-    
+

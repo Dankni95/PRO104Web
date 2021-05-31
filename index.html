@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/modal.css">
+
     <title>Gyldene Pizza</title>
     <!--Font awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
@@ -14,62 +16,38 @@
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
-    <!--Bulma-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
 
 </head>
 
 <body>
 
-    <header class="topbar">
-        <div class="topbar-left">
-            <h1 class="topbar-title">Forside</h1>
-            <div class="date" style="color: white;">
-                <span id="day-id">Day</span>,
-                <span id="day-nr-id">00</span>.
-                <span id="month-id">Month</span>
-                <span id="year-id">Year</span>
-            </div>
-        </div>
-        <div class="user-name">Daniel Lysak</div>
-        <div class="user-buttons">
-            <div class="fas fa-angle-down" style="position:relative; right: 50%;"></div>
-            <div class="active-underline rotate"></div>
-            <div class="far fa-bell" style="position:relative; left: 50%;"></div>
-        </div>
-        <div class="separator"></div>
-        </div>
-    </header>
-
-
-
-
-    <nav>
+    <nav class="navigation">
         <div class="logo">
-            <img class="logo-image" src="/images/Logo.svg" alt="A chef logo">
+            <img class="logo-image" src="/images/WebproLogo.svg" alt="A chef logo">
         </div>
-        <ul>
-            <li>
+        <ul class="nav-links-wrapper">
+            <li class="nav-links active">
                 <i class="far fa-bell"></i>
                 <a class="nav-link" href="/index.html">Forside</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="fas fa-wallet"></i>
                 <a class="nav-link" href="/salg.html">Salg</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="far fa-map"></i>
                 <a class="nav-link" href="/meny.html">Meny</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="fas fa-users"></i>
                 <a class="nav-link" href="/ansatte.html">Ansatte</a>
             </li>
 
-            <li>
+            <li class="nav-links">
                 <i class="fas fa-utensils"></i>
                 <a class="nav-link" href="/restauranter.html">Restauranter</a>
             </li>
@@ -77,19 +55,164 @@
 
         <div class="seperator"></div>
 
-        <div class="nav-logout">
+        <div class="nav-logout-div">
             <button class="nav-logout-button">
                 <i class="fas fa-sign-out-alt"></i>
                 Logout
             </button>
         </div>
-
     </nav>
 
+    <main class="main-div">
 
-    <article>
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="topbar-title">Forside</h1>
 
-    </article>
+                <div class="date">
+                    <span id="day-id">Day</span>,
+                    <span id="day-nr-id">00</span>.
+                    <span id="month-id">Month</span>
+                    <span id="year-id">Year</span>
+                </div>
+                <div class="separator"></div>
+            </div>
+
+            <div class="h2Header">
+                <h2>Kunngjøringer</h2>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-username">
+                    <h4>Daniel Lysak</h4>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="topbar-line"></div>
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="divTopRight">
+                <button class="addBtn">
+                    <p><strong>+</strong> Legg til kunngjøring</p>
+                </button>
+            </div>
+        </main>
+
+
+        <main>
+            <div class="divTopRight">
+                <button id="editBtnEnterKey" class="editBtn">
+
+                    <p>
+                        <editTag id="editIconHover" class="fas fa-edit"></editTag>
+                        Rediger
+                    </p>
+
+
+                </button>
+            </div>
+        </main>
+
+        <!--DROPDOWN MENU ONLY ONE TASK DISPLAY-->
+        <main>
+            <div class="divTopLeft">
+                <select id="priority-organize" class="dropdownChoiceDisplay">
+                    <option>Viser alle</option>
+
+                </select>
+                <p class="sortingBtnStyle"><button id="sortingBtn" type="button" class="fas fa-sort"></button></p>
+                <input type="button" class="displayChosenBtn" id="organizeBtn" value="Filtrer" />
+            </div>
+        </main>
+
+        <!--Columns Bulma-->
+        <main id="main" class="columnPosition">
+            <div id="1" class="columns">
+                <div class="column is-11
+                is-offset-1 columnColor is-multiline">
+                    <div class="has-text-right"><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
+                </div>
+        </main>
+    </main>
+
+
+
+    <!-- MODAL BOX-->
+    <div id="modalAdd" class="modal">
+        <div class="modal-background"></div>
+        <!--Outside the modal. Click outside the modal box, and modal exits -->
+
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">
+                    Legg til en beskjed til de ansatte</p>
+                <button class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+
+
+
+                <!--           INPUT TXT             -->
+                <textarea id="text-field" placeholder="Skriv kunngjøringen her:" class="txtInput" rows="14" cols="10"
+                    wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
+
+                <!--DROPDOWN MENU CREATE-->
+                <div>
+                    <select id="priority" class="dropdownCSSModalAdd">
+                        <option>Velg en prioritet</option>
+                    </select>
+                </div>
+                <!--End of dropdown menu-->
+
+                <!--   INPUT TXT  -->
+                <textarea id="headline-txt" placeholder="Skriv overskriften her:" class="headlineCSSAdd" rows="14"
+                    cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
+
+            </section>
+            <footer class="modal-card-foot">
+                <button id="button-save-enter" class="button-save" onclick="addToArry()">Lagre endringer</button>
+                <erro class="errorOutput" id="error-msg"></erro>
+
+            </footer>
+        </div>
+    </div>
+    <!--End of modal box-->
+
+
+
+    <!-- MODAL BOX-->
+    <div id="render-b" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">
+                    Rediger en beskjed</p>
+                <button id="closeModal" class="delete" aria-label="close"></button>
+            </header>
+            <section class="modal-card-body">
+                <textarea id="text-field-edit" placeholder="Rediger kunngjøringen her:" class="txtInput" rows="14"
+                    cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
+                <!--   INPUT TXT  -->
+                <textarea id="headline-txt-edit" placeholder="Endre overskriften her:" class="headlineCSS" rows="14"
+                    cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
+                <div>
+                    <select id="headline-choose" class="dropdownCSSModal">
+                        <option>Kunngjøring</option>
+                    </select>
+                </div>
+            </section>
+            <footer class="modal-card-foot">
+                <button id="button-save-enter" class="button-save save">Lagre
+                    endringer</button>
+                <error class="errorOutput" id="error-msg2"></error>
+            </footer>
+        </div>
+    </div>
+    <!--End of modal box-->
+
+    <script type="module" src="js/index/FrontpageIndex.js"></script>
+
 </body>
 
 </html>

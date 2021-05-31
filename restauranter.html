@@ -5,85 +5,148 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/restauranter.css">
     <title>Gyldene Pizza</title>
     <!--Font awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 
 <body>
-   
-    <header class="topbar">
-        <div class="topbar-left">
-            <h1 class="topbar-title">Restauranter</h1>
-            <div class="date" style="color: white;">
-                <span id="day-id">Day</span>,
-                <span id="day-nr-id">00</span>.
-                <span id="month-id">Month</span>
-                <span id="year-id">Year</span>
-            </div>
-            <div class="separator"></div>
-        </div>
-        <div class="user-name">Daniel Lysak</div>
-        <div class="user-buttons">
-            <div class="fas fa-angle-down" style="position:relative; right: 50%;"></div>
-            <div class="active-underline rotate"></div>
-            <div class="far fa-bell" style="position:relative; left: 50%;"></div>
-        </div>
-        <div class="separator"></div>
-        </div>
-    </header>
-    
-    
-    <nav>
+
+    <nav class="navigation">
         <div class="logo">
-            <img class="logo-image" src="/images/Logo.svg" alt="A chef logo">
+            <img class="logo-image" src="/images/WebproLogo.svg" alt="A chef logo">
         </div>
-        <ul>
-            <li> 
+        <ul class="nav-links-wrapper">
+            <li class="nav-links">
                 <i class="far fa-bell"></i>
-                <a href="/index.html">Forside</a>
+                <a class="nav-link " href="/index.html">Forside</a>
             </li>
 
-            <li> 
+            <li class="nav-links">
                 <i class="fas fa-wallet"></i>
-                <a href="/salg.html">Salg</a>
+                <a class="nav-link" href="/salg.html">Salg</a>
             </li>
 
-            <li> 
+            <li class="nav-links">
                 <i class="far fa-map"></i>
-                <a href="/meny.html">Meny</a>
+                <a class="nav-link" href="/meny.html">Meny</a>
             </li>
 
-            <li> 
+            <li class="nav-links">
                 <i class="fas fa-users"></i>
-                <a href="/ansatte.html">Ansatte</a>
+                <a class="nav-link " href="/ansatte.html">Ansatte</a>
             </li>
 
-            <li> 
+            <li class="nav-links active">
                 <i class="fas fa-utensils"></i>
-                <a href="/restauranter.html">Restauranter</a>
+                <a class="nav-link" href="/restauranter.html">Restauranter</a>
             </li>
         </ul>
 
         <div class="seperator"></div>
 
-        <div class="nav-logout">
+        <div class="nav-logout-div">
             <button class="nav-logout-button">
                 <i class="fas fa-sign-out-alt"></i>
                 Logout
-            </button>   
+            </button>
         </div>
-
     </nav>
-    
 
-    <article>
+    <main class="main-div">
 
-    </article>
+        <header class="topbar">
+            <div class="topbar-left">
+                <h1 class="topbar-title">Restauranter</h1>
+                <div class="date">
+                    <span id="day-id">Day</span>,
+                    <span id="day-nr-id">00</span>.
+                    <span id="month-id">Month</span>
+                    <span id="year-id">Year</span>
+                </div>
+                <div class="separator"></div>
+            </div>
+
+            <div class="topbar-right">
+                <div class="topbar-username">
+                    <h4>Isak Standal</h4>
+                    <i class="fas fa-chevron-down"></i>
+                    <div class="topbar-line"></div>
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+
+            </div>
+        </header>
+
+
+        <div class="boxes">
+            <div class="box-card">
+                <div class="box">
+                    <img class="box-img" class="gyldne-pizza-oslo-vest" img src="images/oslo-vest.jpg">
+                </div>
+                <h1>Frogner</h1>
+                <br>
+                <p>Avdeling Frogner er vårt nyeste tilskudd av restauranter og ligger i gamle fasjonable lokaler på
+                    Frogner. Dette er samtidig våres største avdeling med 200 sitteplasser, take away og 3 egne avlukker
+                    for større selskap/møter e.l. Restauranten er utstyrt med det ledende innen teknisk utsyr,
+                    kundesystem og betalingsløsninger. På kjøkkenet finner du de beste kokkene og det ledende innenfor
+                    kjøkkenløsninger og utstyr. Lokalet er helt nyrestaurert og huser nå Oslos fineste og mest moderne
+                    pizzarestaurant.</p>
+                <button class="button" onclick="alert('Ring 98 05 77 78');"> ☎️ 98 05 77 78 </button>
+            </div>
+            <div class="box-card">
+                <div class="box">
+                    <img class="box-img" class="gyldne-pizza-oslo-øst" img src="images/oslo-øst.jpg">
+                </div>
+                <h1>Grønland</h1>
+                <br>
+                <p>Avdeling Grønland ble etablert i 1997 og er vårt flaggskip som den første pizzarestauranten i Oslo.
+                    Her finner du både take away, 100 sitteplasser og avdeling for utkjøring. Med to egne avlukker for
+                    bursdagsselskap/møter eller lignende sammenkomster har vi noe å tilby til alle sammen. Alle våre
+                    ansatte er opplært etter gyldene pizza skolen og har utallige gode kundeanmeldelser å se tilbake på.
+                    Vi har helt siden oppstarten i 1997 holdt oss til samme oppskrifter og har vært grunnlaget for alle
+                    våres avdelinger.</p>
+                <button class="button" onclick="alert('Ring 98 05 77 79');"> ☎️ 98 05 77 79 </button>
+            </div>
+
+            <div class="box-card">
+                <div class="box">
+                    <img class="box-img" class="gyldne-pizza-oslo-øst" img src="images/fornebu2.jpg">
+                </div>
+                <h1>Lambertseter</h1>
+                <br>
+                <p>Avdeling Lambertseter er våres minste avdeling og sentrerer seg mot det store arbeidsmarkedet og
+                    boligområdet i området. Her finner vi mulighetene for take away og utkjøring. Dette er den
+                    avdelingen med den største bilparken med hele 5 biler, der alle bilene går på elektrisitet. Vi føler
+                    det som vårt samfunnsansvar å tenke på miljøet og gjør det vi kan for å gjøre en forskjell. Fretiden
+                    er grønn. Ved å ikke ha muligheter for restaurant senkes kostnadene betraktelig og gjør dette til en
+                    meget lønnsom avdeling. En familiefavoritt. </p>
+                <button class="button" onclick="alert('Ring 98 05 77 80');"> ☎️ 98 05 77 80 </button>
+            </div>
+            <div class="box-card">
+                <div class="box">
+                    <img class="box-img" class="gyldne-pizza-oslo-øst" img src="images/asker.jpg">
+                </div>
+                <h1>Grünerløkka</h1>
+                <br>
+                <p>Avdeling Grünerløkka ble etablert i 2003 og er vår andre restaurant i rekken. Etter at den første
+                    avdelingen ble en umiddelbar hit og etterspørselen i markedet bare vokste bestemte ledelsen seg for
+                    å åpne en avdeling nummer to. Her finner vi både en stor restaurant, muligheten for take away og
+                    utkjøring. Alle bilene i hele gyldene pizzas bilpark går på elektrisitet. Med upåklagelig service og
+                    utallige faste kunder er dette en av våre mest populære restauranter. Kåret til årets restaurant
+                    2018.</p>
+                <button class="button" onclick="alert('Ring 98 05 77 81');"> ☎️ 98 05 77 81 </button>
+            </div>
+
+        </div>
+        <script defer type="module" src="./js/index/RestaurantIndex.js"></script>
+
 </body>
 
 </html>

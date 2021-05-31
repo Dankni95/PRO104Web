@@ -5,9 +5,9 @@ const DataModule = (window.onload = function data() {
     {
         "Lambertseter": {
             "navn": "Lambertseter",
-            "salg": "392999",
-            "kunder": "50023",
-            "pizzas": "123010",
+            "salg": "13999",
+            "kunder": "1223",
+            "pizzas": "1010",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -60,9 +60,6 @@ const DataModule = (window.onload = function data() {
                     "Naliaka Rahim": [
                         {
                             "menykjøpt": "320"
-                        },
-                        {
-                            "betalt": "avventer"
                         },
                         {
                             "status": "tilbereder"
@@ -132,9 +129,9 @@ const DataModule = (window.onload = function data() {
         },
         "Frogner": {
             "navn": "Frogner",
-            "salg": "100002",
-            "kunder": "12321",
-            "pizzas": "19212",
+            "salg": "9002",
+            "kunder": "821",
+            "pizzas": "612",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -232,9 +229,9 @@ const DataModule = (window.onload = function data() {
         },
         "Grønland": {
             "navn": "Grønland",
-            "salg": "200000",
-            "kunder": "5000",
-            "pizzas": "13213",
+            "salg": "5000",
+            "kunder": "700",
+            "pizzas": "513",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -316,9 +313,9 @@ const DataModule = (window.onload = function data() {
         },
         "Grünnerløkka": {
             "navn": "Grünnerløkka",
-            "salg": "392342",
-            "kunder": "21389",
-            "pizzas": "21399",
+            "salg": "7342",
+            "kunder": "889",
+            "pizzas": "799",
             "DagensPizza": [
                 {
                     "mandag": "Pepperoni Pizza"
@@ -354,7 +351,7 @@ const DataModule = (window.onload = function data() {
                     ],
                     "Lành Hamed": [
                         {
-                            "menykjøpt": "320"
+                            "menykjøpt": "350"
                         },
                         {
                             "status": "ferdig"
@@ -366,6 +363,22 @@ const DataModule = (window.onload = function data() {
                         },
                         {
                             "status": "tilbereder"
+                        }
+                    ],
+                    "Daniel Standal": [
+                        {
+                            "menykjøpt": "310"
+                        },
+                        {
+                            "status": "tilbereder"
+                        }
+                    ],
+                    "Bob Lazar": [
+                        {
+                            "menykjøpt": "320"
+                        },
+                        {
+                            "status": "ferdig"
                         }
                     ]
                 }
@@ -512,8 +525,6 @@ const DataModule = (window.onload = function data() {
                         "bilde": "pizza-vegetarian.png"
                     }
                 ],
-
-                
             }
         }
     }

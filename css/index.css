@@ -1,0 +1,292 @@
+.divTopRight {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.divTopLeft {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.editBtn p {
+    position: absolute;
+    border-radius: 10px;
+    background-color: #50343A;
+    padding: 10px;
+    width: auto;
+    top: 7.8rem;
+    right: 30%;
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+}
+
+
+.addBtn {
+    border-radius: 10px;
+    background-color: #50343A;
+    padding: 10px;
+    width: auto;
+    top: 10%;
+    margin-left: 50%;
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    white-space: nowrap;
+}
+
+
+/*The first letter in p tag will change color*/
+.addBtn p::first-letter {
+    font-size: 1.7rem;
+    color: #FF6F5A;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*Position p tag in addBtn class */
+.addBtn p {
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    /*Placing the content in the middle. Centering the contenct relative for the box its in.*/
+    color: white;
+}
+
+
+/*Prevent buttons from displaying shadow visually */
+button {
+    border: none;
+}
+
+
+.columnPosition {
+    position: absolute;
+    width: 100%;
+    left: -57px;
+    top: 25%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 75%;
+    /*In order to not get a white line in the bottom of the html page*/
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+    padding-right: 15px;
+}
+
+.columnPosition::-webkit-scrollbar {
+    background-color: transparent;
+    margin-left: 3rem;
+    width: 14px;
+}
+
+.columnPosition::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    /*Transparent color to make the egdes dissapair*/
+    background-clip: padding-box;
+    /*Slim thumb*/
+    border-radius: 999px;
+    /*Round egdes*/
+    background-color: #E74C3C;
+}
+
+
+
+.columns {
+    /*Because of the transparent scroll bar*/
+    position: relative;
+    /*right: 5%;*/
+    padding-top: 1%;
+}
+
+.columnColor {
+    background: #1F1D2B;
+    border: 1px solid #E74C3C;
+    box-sizing: border-box;
+    color: white;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2);
+    /* Notification shadow */
+    border-radius: 1%;
+}
+
+
+.h2Header {
+    position: relative;
+    top: 15%;
+
+    font-size: 300%;
+}
+
+/*b tag for the X sympol for deleting task*/
+b {
+    color: white;
+    position: absolute;
+    left: 97%
+}
+
+
+b:hover {
+    color: #FF6F5A;
+}
+
+/**************Hovers******************/
+.displayChosenBtn:hover {
+    color: #FF6F5A;
+}
+
+.addBtn p:hover {
+    color: #FF6F5A;
+}
+
+
+
+.editBtn p:hover {
+    color: #FF6F5A;
+}
+
+.addBtn p:hover:first-letter {
+    color: white;
+}
+
+.sortingBtnStyle button:hover {
+    color: #FF6F5A;
+}
+
+.txtInput {
+    position: relative;
+    height: 70%;
+    width: 100%;
+    background: #1F1D2B;
+    border: 1px solid #FF6F5A;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1.5rem;
+    right: 0.35%;
+}
+
+.headlineCSS {
+    position: relative;
+    height: 30%;
+    width: 35%;
+    background: #1F1D2B;
+    border: 1px solid #FF6F5A;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1.5rem;
+    right: 32.5%;
+
+}
+
+.headlineCSSAdd {
+    position: relative;
+    height: 30%;
+    width: 35%;
+    background: #1F1D2B;
+    border: 1px solid #FF6F5A;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1.5rem;
+    right: 32.5%;
+    top: -4rem;
+
+}
+
+.dropdownCSSModal {
+    position: relative;
+    top: -77px;
+    left: -4%;
+    height: 70px;
+    width: 18%;
+    font-size: 100%;
+    text-align-last: center;
+    /*A way to center text in dropdown menu. Only works in chrome*/
+    border: 1px solid #FF6F5A;
+    color: white;
+    background-color: #1F1D2B;
+    cursor: pointer;
+}
+
+.dropdownCSSModalAdd {
+    position: relative;
+    top: 7px;
+    left: -4%;
+    height: 70px;
+    width: 18%;
+    font-size: 100%;
+    text-align-last: center;
+    border: 1px solid #FF6F5A;
+    color: white;
+    background-color: #1F1D2B;
+    cursor: pointer;
+}
+
+.dropdownChoiceDisplay {
+    position: absolute;
+    top: 7.9rem;
+    left: 20%;
+    height: 4.5%;
+    width: 9.1%;
+    font-size: 100%;
+    text-align-last: center;
+    border: 1px solid #FF6F5A;
+    color: white;
+    background-color: #1F1D2B;
+    cursor: pointer;
+}
+
+
+.displayChosenBtn {
+    position: relative;
+    font-size: 1rem;
+    color: white;
+    padding: 15px;
+    width: auto;
+    background-color: #50343A;
+    cursor: pointer;
+    font-family: "Times New Roman", Times, serif;
+    border-radius: 10px;
+    border: none;
+    top: -12.7rem;
+    font-size: 1.5rem;
+    left: 2%;
+}
+
+
+.errorOutput erro {
+    position: relative;
+    color: #FF6F5A;
+    margin-left: 50px;
+}
+
+
+.errorOutput erro p {
+    position: absolute;
+    color: yellow;
+    right: 101%;
+}
+
+.sortingBtnStyle button {
+    background-color: #50343A;
+    color: white;
+    position: relative;
+    font-size: 1rem;
+    padding: 15px;
+    width: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    top: -12.7rem;
+    font-size: 1.7rem;
+
+
+}
