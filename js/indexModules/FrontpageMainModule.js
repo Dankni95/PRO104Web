@@ -311,7 +311,6 @@ function printSelected() {
 }
 /****************EDIT ARRAY*****************/
 saveEdit.addEventListener("click", function () {
-    console.log("yo");
     editTask()
 });
 

@@ -6,7 +6,6 @@ import OnloadChartModule from "../salgModules/ChartModule.js"
 const CalculationModule = (function () { }());
 function calculateTodaysTurnover(dynamicFranchise) {
     let lastTurnover = parseInt(DataModule.getAllData()[dynamicFranchise]?.salg);
-    console.log(lastTurnover);
     let allPayments = 0;
     let allCustomersPayment = document.getElementsByClassName("customer-price");
 
