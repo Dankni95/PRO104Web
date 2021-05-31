@@ -35,11 +35,10 @@ function addEventsToButtons() {
         modal.classList.remove('is-active');
     });
 
-
-
+    //Alert notification for non-implemented feature.
     featureAlert.addEventListener('click', () => {
-        alert("Denne funksjonen er enda ikke implementert, vennligst kontakt systemansvarlig for mer informasjon. ");
-    });
+        ModalModule.showErrorMessage();
+    }); 
 }
 
 export default { MainModule, addEventsToButtons };
