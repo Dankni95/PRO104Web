@@ -1,5 +1,6 @@
 
 const DateModule = (function () {
+    updateDate();
 }());
 
 function updateDate(){
@@ -19,6 +20,5 @@ function updateDate(){
     };
 };
 
-updateDate();
 
 export default { DateModule, updateDate };
