@@ -17,7 +17,6 @@ html::-webkit-scrollbar {
 
 .horizontal-list div {
     display: inline;
-    
 }
 
 .horizontal-a {
@@ -34,7 +33,6 @@ html::-webkit-scrollbar {
 }
 
 .horizontal-a::after {
-
     content: "";
     position: absolute;
     left: 100%;
@@ -49,9 +47,7 @@ html::-webkit-scrollbar {
 
 .horizontal-a:hover::after {
     transform: translateX(-100%) scale(1);
-
 }
-
 
 .section {
     display: flex;
@@ -160,6 +156,7 @@ input::-webkit-inner-spin-button {
 .notification {
     background-color: #4ed34e !important;
 }
+
 .notification p {
     text-align: center;
     font-size: large;   

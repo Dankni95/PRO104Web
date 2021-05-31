@@ -54,7 +54,6 @@ function setUpdatedValues(element) {
 }
 
 function showSuccessMessage(element){
-    console.log(element.parentNode.parentNode.children[2].lastChild);
     successNotification.className = "notification"
     document.getElementById("notification-text").innerHTML = "Endringene på <strong>" +element.parentNode.parentNode.children[2].lastChild.previousSibling.innerText + "</strong> er lagret";
     setTimeout(() => { successNotification.classList = "notification is-hidden"; }, 3000);
