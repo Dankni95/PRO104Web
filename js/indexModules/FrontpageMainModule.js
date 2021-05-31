@@ -244,7 +244,7 @@ function addToArry() {
             modalsClose();
             sortingOnLoad()
         } else {
-            errorMsg.innerHTML = `<erro><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</erro>`;
+            errorMsg.innerHTML = `<error><p>Feil!</p> Du må både velge prioritet og skrive noe i kunngjøringen.</error>`;
         }
     }
 }
@@ -342,7 +342,7 @@ function editTask() {
             printFunc();
             modalsClose();
         } else {
-            errorMsg2.innerHTML = `<erro><p>Feil!</p> Velg kunngjøring. Skriv så ny overskrift og melding.</erro>`;
+            errorMsg2.innerHTML = `<error><p>Feil!</p> Velg kunngjøring. Skriv så ny overskrift og melding.</error>`;
         }
     }
 }
