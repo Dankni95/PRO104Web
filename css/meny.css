@@ -82,7 +82,7 @@ html::-webkit-scrollbar {
 }
 
 #pizza-type {
-    background-color: #00b12c;
+    background-color: #4ed34e;
     color: white;
     font-size: 0.7vw;
     font-weight: bold;
@@ -90,14 +90,14 @@ html::-webkit-scrollbar {
 }
 
 #cheese-type {
-    background-color: grey;
+    background-color: #d34e4e;
     color: white;
     font-size: 0.7vw;
     font-weight: bold;
 }
 
 #sauce-type {
-    background-color: mediumblue;
+    background-color: #4e4ed3;
     color: white;
     font-size: 0.7vw;
     font-weight: bold;
@@ -155,4 +155,13 @@ input::-webkit-inner-spin-button {
 
 .modal-card div{
     padding: 1.5%;
+}
+
+.notification {
+    background-color: #4ed34e !important;
+}
+.notification p {
+    text-align: center;
+    font-size: large;
+    
 }

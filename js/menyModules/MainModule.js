@@ -21,8 +21,9 @@ function addEventsToButtons() {
 
 
                 //Makes save button lock the item
-                saveButton.addEventListener('click', function() {
+                saveButton.addEventListener('click', function() { 
                     ModalModule.setUpdatedValues(el.target.parentNode.parentNode);
+                    ModalModule.showSuccessMessage(el.target.parentNode)
                     modal.classList.remove('is-active');
                 });
             });
