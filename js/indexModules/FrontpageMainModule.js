@@ -20,9 +20,12 @@ const sortingBtn = document.getElementById("sortingBtn")
 const editBtnEnterKey = document.getElementById("editBtnEnterKey")
 const addButton = document.getElementsByClassName("addBtn")[0];
 const editButton = document.getElementsByClassName("editBtn")[0];
-const closeModalBackground = document.getElementsByClassName("modal-background")[0]
-const saveEdit = document.getElementsByClassName("save")[0];
+const closeModalBackgroundAdd = document.getElementById("modal-background-closeAdd");
+const modalBackgroundCloseEdit = document.getElementById("modal-background-closeEdit");
+const saveEdit = document.getElementsByClassName("saveEdit")[0];
+const saveAdd = document.getElementsByClassName("saveAdd")[0];
 const modalClose = document.getElementById("closeModal");
+const modalCloseEdit = document.getElementById("modalCloseEdit");
 const modalAdd = document.getElementById("modalAdd");
 sortingBtn.addEventListener('click', sortingOnClick);
 organizeBtn.onclick = printSelected;
@@ -68,7 +71,11 @@ function openModalCreate() {
     errorMsg.innerHTML = "";
 }
 
-closeModalBackground.addEventListener("click", function () {
+closeModalBackgroundAdd.addEventListener("click", function () {
+    modalsClose();
+});
+
+modalBackgroundCloseEdit.addEventListener("click", function () {
     modalsClose();
 });
 
@@ -80,6 +87,21 @@ addButton.addEventListener("click", function () {
 editButton.addEventListener("click", function () {
     renderModal();
 });
+
+modalClose.addEventListener("click", function (e) {
+    modalsClose();
+});
+
+modalCloseEdit.addEventListener("click", function (e) {
+    modalsClose();
+});
+
+function modalsClose() {
+    let modalAdd = document.getElementById("modalAdd");
+    modalAdd.classList.remove("is-active");
+    let renderB = document.getElementById("render-b");
+    renderB.classList.remove("is-active");
+}
 
 function renderModal() {
     const renderB = document.getElementById("render-b");
@@ -102,18 +124,6 @@ function renderModal() {
         elem.value = optMenu;
         selectEdit.appendChild(elem);
     }
-}
-
-
-modalClose.addEventListener("click", function (e) {
-    modalsClose();
-});
-
-function modalsClose() {
-    let modalsClose = document.getElementById("modalAdd");
-    modalsClose.classList.remove("is-active");
-    let renderB = document.getElementById("render-b");
-    renderB.classList.remove("is-active");
 }
 
 
@@ -172,6 +182,7 @@ for (let i = 0; i < optionsArray.length; i++) {
 
 /***********************ARRAY COLUMN DATA*****************/
 const taskArray = [
+    { headline: "Velg en overskift:" }, //Because of the duplicate fix, we need to do this for adding default value/option in editing dropdown menu. This would be deleted in html 
     {
         optionChoice: "Kritisk!",
         colorChoice: "#FF6F5A",
@@ -210,6 +221,9 @@ const taskArray = [
 
 
 /***********************ADD TO ARRAY*****************/
+saveAdd.addEventListener("click", function () {
+    addToArry();
+});
 function addToArry() {
     errorMsg.innerHTML = "";
     const textField = document.getElementById("text-field").value;
@@ -240,7 +254,7 @@ function addToArry() {
 function printFunc() {
     output.innerHTML = "";
     //document.getElementById("text-field").value;
-    for (let i = 0; i < taskArray.length; i++) {
+    for (let i = 1; i < taskArray.length; i++) { //First index in taskArray is only dropdown menu option.
         output.innerHTML += ` <div class="columns">
              <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
          <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
@@ -291,8 +305,8 @@ function printSelected() {
     output.innerHTML = "";
     const priorityOrganize = document.getElementById("priority-organize");
     let dropDownV = priorityOrganize.options[priorityOrganize.selectedIndex].text;
-    for (let i = 0; i < taskArray.length; i++) {
-        if (dropDownV === taskArray[i].optionChoice) {
+    for (let i = 1; i < taskArray.length; i++) {
+        if (dropDownV === taskArray[i].optionChoice && dropDownV) {
             output.innerHTML += ` <div class="columns">
              <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
          <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
@@ -311,7 +325,7 @@ function printSelected() {
 }
 /****************EDIT ARRAY*****************/
 saveEdit.addEventListener("click", function () {
-    editTask()
+    editTask();
 });
 
 
@@ -321,7 +335,7 @@ function editTask() {
     let chooseFromArray = headlineChoose.options[headlineChoose.selectedIndex].text;
     let textFieldEdit = document.getElementById("text-field-edit").value;
     let headlineTxtEdit = document.getElementById("headline-txt-edit").value;
-    for (let i = 0; i < taskArray.length; i++) {
+    for (let i = 1; i < taskArray.length; i++) {
         if (chooseFromArray === taskArray[i].headline && textFieldEdit != "" && headlineTxtEdit != "") {
             taskArray[i].task = textFieldEdit;
             taskArray[i].headline = headlineTxtEdit;
@@ -364,6 +378,4 @@ function sortByImportanceReverse(a, b) {
     }
     return 0;
 }
-
-
 export default { FrontpageMainModule };

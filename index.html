@@ -140,14 +140,14 @@
 
     <!-- MODAL BOX-->
     <div id="modalAdd" class="modal">
-        <div class="modal-background"></div>
+        <div id="modal-background-closeAdd" class="modal-background"></div>
         <!--Outside the modal. Click outside the modal box, and modal exits -->
 
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">
                     Legg til en beskjed til de ansatte</p>
-                <button class="delete" aria-label="close"></button>
+                <button id="closeModal" class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
 
@@ -171,7 +171,8 @@
 
             </section>
             <footer class="modal-card-foot">
-                <button id="button-save-enter" class="button-save" onclick="addToArry()">Lagre endringer</button>
+                <button id="button-save-enter" class="button-save saveAdd" onclick="addToArry()">Lagre
+                    endringer</button>
                 <erro class="errorOutput" id="error-msg"></erro>
 
             </footer>
@@ -183,12 +184,12 @@
 
     <!-- MODAL BOX-->
     <div id="render-b" class="modal">
-        <div class="modal-background"></div>
+        <div id="modal-background-closeEdit" class="modal-background"></div>
         <div class="modal-card">
             <header class="modal-card-head">
                 <p class="modal-card-title">
                     Rediger en beskjed</p>
-                <button id="closeModal" class="delete" aria-label="close"></button>
+                <button id="modalCloseEdit" class="delete" aria-label="close"></button>
             </header>
             <section class="modal-card-body">
                 <textarea id="text-field-edit" placeholder="Rediger kunngjøringen her:" class="txtInput" rows="14"
@@ -197,13 +198,15 @@
                 <textarea id="headline-txt-edit" placeholder="Endre overskriften her:" class="headlineCSS" rows="14"
                     cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
                 <div>
+                    <label for="headline-choose">Velg overskrift:</label>
                     <select id="headline-choose" class="dropdownCSSModal">
-                        <option>Kunngjøring</option>
+                        <option>Velg overskrift</option>
+                        <!--All options deleted in js.-->
                     </select>
                 </div>
             </section>
             <footer class="modal-card-foot">
-                <button id="button-save-enter" class="button-save save">Lagre
+                <button id="button-save-enter" class="button-save saveEdit">Lagre
                     endringer</button>
                 <error class="errorOutput" id="error-msg2"></error>
             </footer>
