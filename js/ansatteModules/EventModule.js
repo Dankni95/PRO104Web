@@ -12,7 +12,7 @@ const modalBg = document.querySelector('.modal-bg');
 
 
 
-    // Showing All Employees right away
+// Showing All Employees right away
 const showAll = () => {
     const showAllFilter = EmployeModule.getAllEmployees();
     let showAllHtml = "";
@@ -63,9 +63,10 @@ const showAll = () => {
 
     modalBg.addEventListener('click', () => {
         modalBg.classList.remove('bg-active');
+
     })
 
-   
+
 
 }
 
@@ -171,13 +172,7 @@ selector.addEventListener('change', (e) => {
 });
 
 
-
-
-
-
-
-
-export default {EventModule, showAll};
+export default { EventModule, showAll };
 
 
 

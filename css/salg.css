@@ -1,0 +1,281 @@
+.sales {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6%;
+
+    position: absolute;
+    width: 15%;
+    top: 14%;
+
+    background: #1F1D2B;
+    border-radius: 8px;
+    border: 0.1px solid;
+    border-color: #EA7C69;
+}
+
+.total-pizzas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6%;
+
+    position: absolute;
+    width: 15%;
+    left: 22%;
+    top: 14%;
+
+    background: #1F1D2B;
+    border-radius: 10px;
+}
+
+.customers {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6%;
+
+    position: absolute;
+    width: 15%;
+    left: 39%;
+    top: 14%;
+
+    background: #1F1D2B;
+    border-radius: 10px;
+}
+
+/* Icon sizes/placement */
+.arrow-size {
+    position: absolute;
+    width: 10%;
+    height: 71%;
+}
+
+.arrow-placement {
+    position: absolute;
+    bottom: 28%;
+    right: 19%
+}
+
+.icon-size {
+    position: relative;
+    width: 20%;
+    height: 20%;
+}
+
+
+.icon-placement {
+    position: absolute;
+    bottom: 54%;
+    right: 76%
+}
+
+
+
+.sales-percentage-placement {
+    position: absolute;
+    bottom: 50%;
+    right: 53%
+}
+
+.sales-percentage-size {
+    position: absolute;
+    width: 10%;
+    font-size: 0.9vw;
+    height: 20%;
+}
+
+.figures-placement {
+    display: inline;
+    bottom: 42%;
+    right: 66%;
+}
+
+.figures-subtitle {
+    position: absolute;
+    top: 2%;
+    left: 20%;
+    font-size: 1.4vw;
+    width: 100%;
+}
+
+.figures-size {
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    font-size: 1.8vw;
+    text-align: center;
+}
+
+
+.dropdown button {
+    color: rgb(255, 255, 255);
+    background-color: #22212c;
+}
+
+.dropdown span {
+    color: rgb(255, 255, 255);
+    background-color: #1f1d2b00;
+    width: 115px;
+}
+
+.dropdown-content a {
+    color: white;
+}
+
+
+.dropdown {
+    position: relative;
+    left: 33%;
+    z-index: 10;
+}
+
+.dropdown div {
+    background-color: #302d44;
+}
+
+
+.mainpanel-customers {
+    position: absolute;
+    width: 49.5%;
+    max-height: 60%;
+    top: 39%;
+    left: 4.5%;
+
+    background: #1F1D2B;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+div::-webkit-scrollbar {
+    overflow-y: scroll;
+    overflow: hidden;
+    overflow-x: hidden
+}
+
+div::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #1F1D2B;
+    border-radius: 10px;
+    background-color: #1F1D2B i;
+}
+
+div::-webkit-scrollbar {
+    width: 12px;
+    background-color: #1F1D2B;
+}
+
+div::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px #0000004d;
+    background-color: #b6b6b6;
+}
+
+.mainpanel-title {
+    background-color: #15131dee;
+    border-style: none;
+}
+
+#no-border{
+    background-color: #15131dee;
+    border-style-bottom: none !important;
+}
+
+.mainpanel-title abbr {
+    color: white;
+}
+
+.customer-icon {
+    width: 12%;
+    border-style: none;
+}
+
+div table thead .activated th {
+    color: white;
+}
+
+.activated th {
+    background-color: #1F1D2B;
+    border-style: none;
+}
+
+
+.table th {
+    border-style: none;
+    padding: 2%;
+    padding-left: 20px;
+
+}
+
+
+.sidepanel-pizzas {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    width: 37.5%;
+    left: 58%;
+    top: 14%;
+
+    background: #1F1D2B;
+    border-radius: 10px;
+}
+
+.sidepanel-title {
+    position: relative;
+    font-size: 1.5vw;
+    text-align: center;
+    top: 1rem;
+}
+
+.sidepanel-content {
+    position: relative;
+    top: 10%;
+    padding: 10%;
+    text-align: center;
+}
+
+.sidepanel-content-icon {
+    position: relative;
+    margin-top: 2%;
+    width: 10%;
+}
+
+.sidepanel-button {
+    position: relative;
+    width: 30%;
+    padding: 2%;
+    margin: auto;
+    color: #EA7C69;
+    border-color: #EA7C69;
+    background-color: transparent;
+}
+
+.days-pizza-position {
+    position: absolute;
+    right: 4.5%;
+    top: 62%;
+
+    background: #1F1D2B;
+    border-radius: 3%;
+}
+
+.title-graph {
+    position: relative;
+    text-align: center;
+    font-size: 1.2vw;
+}
+
+#pieChart {
+    position: absolute;
+    display: block;
+    top: 5%;
+    bottom: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.days-pizza-size {
+    position: absolute;
+    width: 37.5%;
+    height: 36%;
+}

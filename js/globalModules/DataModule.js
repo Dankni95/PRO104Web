@@ -1,4 +1,4 @@
-const DataModule = (function data() {
+const DataModule = (window.onload = function data() {
 
 
     let json =
@@ -351,7 +351,7 @@ const DataModule = (function data() {
                     ],
                     "Lành Hamed": [
                         {
-                            "menykjøpt": "320"
+                            "menykjøpt": "350"
                         },
                         {
                             "status": "ferdig"
@@ -363,6 +363,22 @@ const DataModule = (function data() {
                         },
                         {
                             "status": "tilbereder"
+                        }
+                    ],
+                    "Daniel Standal": [
+                        {
+                            "menykjøpt": "310"
+                        },
+                        {
+                            "status": "tilbereder"
+                        }
+                    ],
+                    "Bob Lazar": [
+                        {
+                            "menykjøpt": "320"
+                        },
+                        {
+                            "status": "ferdig"
                         }
                     ]
                 }
@@ -397,7 +413,7 @@ const DataModule = (function data() {
                         "bunn": "Amerikansk"
                     },
                     {
-                        "ostetype": "Mozerella"
+                        "ostetype": "Cheddar"
                     },
                     {
                         "saus": "Tomat"
@@ -460,7 +476,7 @@ const DataModule = (function data() {
                         "ostetype": "Mozarella"
                     },
                     {
-                        "saus": "Tomat"
+                        "saus": "Pesto"
                     },
                     {
                         "pris": "350"
@@ -500,7 +516,7 @@ const DataModule = (function data() {
                         "ostetype": "Vegansk"
                     },
                     {
-                        "saus": "Tomat"
+                        "saus": "Pesto"
                     },
                     {
                         "pris": "270"

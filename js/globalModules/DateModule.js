@@ -1,9 +1,9 @@
 
-
 const DateModule = (function () {
+    updateDate();
 }());
 
-function updateDate(){
+function updateDate() {
     let now = new Date();
     let day = now.getDay(),
         dayNr = now.getDate(),
@@ -20,8 +20,5 @@ function updateDate(){
     };
 };
 
-
-
-updateDate();
 
 export default { DateModule, updateDate };
