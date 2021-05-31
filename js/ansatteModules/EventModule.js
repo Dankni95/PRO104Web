@@ -7,6 +7,7 @@ const EventModule = (window.onload = function data() {
 const selector = document.querySelector("#card-section");
 const outputDiv = document.querySelector("#cardsId");
 const modalDiv = document.querySelector('#modal-box');
+const modalBg = document.querySelector('.modal-bg');
 
 
 
@@ -33,11 +34,14 @@ const showAll = () => {
         `;
     })
     outputDiv.innerHTML = showAllHtml;
-    let modalBg = document.querySelector('.modal-bg');
-
+    
+    
     document.querySelectorAll('#section-btn-info').forEach(button => {
+        
         button.addEventListener('click', (e) => {
-
+            
+            
+            
             const foundEmployee = showAllFilter.find(employe => employe.name === e.target.name);
             modalBg.classList.add('bg-active');
             modalDiv.innerHTML = `
@@ -53,13 +57,13 @@ const showAll = () => {
                 </div>
             `;
 
-
+           
         })
     })
 
-    document.addEventListener("click", (e) => {
-        if (e.target.closest(".modal-bg")) return;
-        modalBg.classlist.add("bg-hidden");
+    modalBg.addEventListener('click', () => {
+        modalBg.classList.remove('bg-active');
+
     })
 
 
@@ -144,7 +148,7 @@ selector.addEventListener('change', (e) => {
 
             const foundAllEmployee = filterAll.find(employe => employe.name === e.target.name);
             modalBg.classList.add('bg-active');
-            console.log(foundAllEmployee)
+            
             modalDiv.innerHTML = `
                 <div class="modal-box">
                     <h1 class="modal-category">Avdeling: ${foundAllEmployee.category}</h1>
@@ -166,12 +170,6 @@ selector.addEventListener('change', (e) => {
         modalBg.classList.remove('bg-active');
     })
 });
-
-
-
-
-
-
 
 
 export default { EventModule, showAll };
