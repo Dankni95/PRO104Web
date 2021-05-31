@@ -11,7 +11,7 @@ const modalDiv = document.querySelector('#modal-box');
 
 
 
-    // Showing All Employees right away
+// Showing All Employees right away
 const showAll = () => {
     const showAllFilter = EmployeModule.getAllEmployees();
     let showAllHtml = "";
@@ -58,11 +58,11 @@ const showAll = () => {
     })
 
     document.addEventListener("click", (e) => {
-        if(e.target.closest(".modal-bg")) return;
+        if (e.target.closest(".modal-bg")) return;
         modalBg.classlist.add("bg-hidden");
     })
 
-   
+
 
 }
 
@@ -174,7 +174,7 @@ selector.addEventListener('change', (e) => {
 
 
 
-export default {EventModule, showAll};
+export default { EventModule, showAll };
 
 
 

@@ -7,7 +7,6 @@
     padding: 3% 3% 3% 3%;
     border-radius: 0.5em;
     font-size: medium;
-  
 
 }
 
@@ -55,6 +54,3 @@
 .delete:hover {
     background-color: #ea7c69 !important;
 }
-
-
-
