@@ -11,6 +11,7 @@ function addEventsToButtons() {
     const modal = document.querySelector('.modal');
     const saveButton = document.getElementById('save-button');
     const featureAlert = document.getElementById('horizontal-id');
+    const modalCloseX = document.getElementById('modalCloseX');
 
     //Adds is-active to the modal class.
     for (var i = 0; i < editDish.length; i++) {
@@ -21,7 +22,7 @@ function addEventsToButtons() {
 
 
                 //Makes save button lock the item
-                saveButton.addEventListener('click', function() { 
+                saveButton.addEventListener('click', function () {
                     ModalModule.setUpdatedValues(el.target.parentNode.parentNode);
                     ModalModule.showSuccessMessage(el.target.parentNode)
                     modal.classList.remove('is-active');
@@ -35,10 +36,15 @@ function addEventsToButtons() {
         modal.classList.remove('is-active');
     });
 
+    //Removes is-active from the modal class when clicked on X.'
+    modalCloseX.addEventListener('click', () => {
+        modal.classList.remove('is-active');
+    });
+
     //Alert notification for non-implemented feature.
     featureAlert.addEventListener('click', () => {
         ModalModule.showErrorMessage();
-    }); 
+    });
 }
 
 export default { MainModule, addEventsToButtons };
