@@ -4,7 +4,7 @@ html {
 
 .divTopRight {
     width: 100%;
-    height: 100px;
+    height: 89px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -12,7 +12,7 @@ html {
 
 .divTopLeft {
     width: 100%;
-    height: 100px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -22,13 +22,18 @@ html {
     position: absolute;
     border-radius: 10px;
     background-color: #50343A;
-    padding: 10px;
+    padding: 0.6%;
     width: auto;
-    top: 7.8rem;
-    right: 25%;
+    top: 6.48vw;
+    right: 18%;
     text-decoration: none;
     font-size: 24px;
     cursor: pointer;
+}
+
+.divTopLeft select {
+    margin-top: 3px;
+    left: 253px;
 }
 
 
@@ -77,8 +82,8 @@ button {
     top: 25%;
     overflow-y: scroll;
     overflow-x: hidden;
-    max-height: 75%;
-    font-size: 16px;
+    max-height: 74%;
+    font-size: 15px;
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
@@ -115,7 +120,7 @@ button {
     border: 1px solid #E74C3C;
     box-sizing: border-box;
     color: white;
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 1px 18px rgba(0, 0, 0, 0.12), 0px 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 6px 10px #00000024, 0px 1px 18px #0000001f, 0px 3px 5px #00000033;
     /* Notification shadow */
     border-radius: 1%;
 }
@@ -125,7 +130,7 @@ button {
 b {
     color: white;
     position: absolute;
-    left: 97%
+    left: 98.5%
 }
 
 
@@ -213,7 +218,6 @@ b:hover {
 .dropdownCSSModalAdd {
     position: relative;
     top: 7px;
-    left: -4%;
     height: 70px;
     width: 18%;
     font-size: 100%;
@@ -228,7 +232,7 @@ b:hover {
     position: absolute;
     top: 7.9rem;
     left: 20%;
-    height: 4.5%;
+    height: 5.2%;
     width: 9.1%;
     font-size: 100%;
     text-align-last: center;
@@ -273,7 +277,7 @@ b:hover {
     color: white;
     position: relative;
     font-size: 1rem;
-    padding: 15px;
+    padding: 17px;
     width: auto;
     cursor: pointer;
     border-radius: 10px;
