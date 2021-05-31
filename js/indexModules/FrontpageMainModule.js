@@ -8,16 +8,15 @@ DateModule.updateDate();
 /*********************************HTML DOM ETC*****************************************/
 const output = document.getElementsByClassName("columnPosition")[0];
 const priority = document.getElementById("priority");
-const textField = document.getElementById("text-field")
-const headlineTxt = document.getElementById("headline-txt")
+
 const errorMsg = document.getElementById("error-msg");
 const errorMsg2 = document.getElementById("error-msg2");
-const priorityOrganize = document.getElementById("priority-organize");
+
 const organizeBtn = document.getElementById("organizeBtn");
-const textFieldEdit = document.getElementById("text-field-edit");
-const headlineTxtEdit = document.getElementById("headline-txt-edit");
+
+
 const sortingBtn = document.getElementById("sortingBtn")
-const editBtnEnterKey = document.getElementById("editBtnEnterKey")
+
 const addButton = document.getElementsByClassName("addBtn")[0];
 const editButton = document.getElementsByClassName("editBtn")[0];
 const closeModalBackgroundAdd = document.getElementById("modal-background-closeAdd");
