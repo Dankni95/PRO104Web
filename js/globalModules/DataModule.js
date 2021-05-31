@@ -364,7 +364,7 @@ const DataModule = (window.onload = function data() {
                         {
                             "status": "tilbereder"
                         }
-                    ], 
+                    ],
                     "Daniel Standal": [
                         {
                             "menykjøpt": "310"

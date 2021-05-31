@@ -23,6 +23,14 @@ i {
     z-index: 1;
 }
 
+html {
+    overflow-y: hidden;
+}
+
+html::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
 
 
 
