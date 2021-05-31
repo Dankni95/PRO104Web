@@ -17,8 +17,10 @@ const EventModule = (window.onload = function data() {
 const showAll = () => {
     const showAllFilter = EmployeModule.getAllEmployees();
     let showAllHtml = "";
+    
 
     showAllFilter.forEach(employe => {
+       
         showAllHtml += `
             <div class="cardo" >
                 <div class="cardo-content-wrapper">
@@ -33,7 +35,10 @@ const showAll = () => {
                 </div>
             </div>
         `;
+
+      
     })
+    
     outputDiv.innerHTML = showAllHtml;
     
 //*********Show more information modal with individual button for each employee /Whitin the function*********//    
