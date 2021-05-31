@@ -413,7 +413,7 @@ const DataModule = (window.onload = function data() {
                         "bunn": "Amerikansk"
                     },
                     {
-                        "ostetype": "Mozerella"
+                        "ostetype": "Cheddar"
                     },
                     {
                         "saus": "Tomat"
@@ -476,7 +476,7 @@ const DataModule = (window.onload = function data() {
                         "ostetype": "Mozarella"
                     },
                     {
-                        "saus": "Tomat"
+                        "saus": "Pesto"
                     },
                     {
                         "pris": "350"
@@ -516,7 +516,7 @@ const DataModule = (window.onload = function data() {
                         "ostetype": "Vegansk"
                     },
                     {
-                        "saus": "Tomat"
+                        "saus": "Pesto"
                     },
                     {
                         "pris": "270"

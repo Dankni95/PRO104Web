@@ -279,12 +279,3 @@ div table thead .activated th {
     width: 37.5%;
     height: 36%;
 }
-
-html {
-    overflow-y: hidden;
-}
-
-html::-webkit-scrollbar {
-    width: 0px;
-    background: transparent;
-}
