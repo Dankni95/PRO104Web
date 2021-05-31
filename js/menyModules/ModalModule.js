@@ -3,7 +3,8 @@ let doughType = document.getElementById("pizza-dough");
 let cheeseType = document.getElementById("pizza-cheese");
 let sauceType = document.getElementById("pizza-sauce");
 let priceInput = document.getElementById("price-number");
-let successNotification = document.getElementById("success-save")
+let successNotification = document.getElementById("success-save");
+let errorNotificaiton = document.getElementById("danger-error");
 
 
 function setPreExistingValues(element) {
@@ -59,6 +60,11 @@ function showSuccessMessage(element){
     setTimeout(() => { successNotification.classList = "notification is-hidden"; }, 3000);
 }
 
+function showErrorMessage(){
+    errorNotificaiton.className = "notification"
+    document.getElementById("error-text").innerHTML = "Denne funksjonen er ikke implementert. Vennligst kontakt IT service-desk med spørsmål";
+    setTimeout(() => { errorNotificaiton.classList = "notification is-hidden"; }, 3500);
+}
 
 
-export default { ModalModule, setPreExistingValues, setUpdatedValues, showSuccessMessage };
+export default { ModalModule, setPreExistingValues, setUpdatedValues, showSuccessMessage, showErrorMessage };
