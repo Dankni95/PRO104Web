@@ -67,7 +67,7 @@ body {
 
 /**** Navbar Styling ****/
 
-.logo {
+.logo img{
     width: 100%;
     top: -10%;
     display: flex;
