@@ -8,15 +8,10 @@ DateModule.updateDate();
 /*********************************HTML DOM ETC*****************************************/
 const output = document.getElementsByClassName("columnPosition")[0];
 const priority = document.getElementById("priority");
-
 const errorMsg = document.getElementById("error-msg");
 const errorMsg2 = document.getElementById("error-msg2");
-
 const organizeBtn = document.getElementById("organizeBtn");
-
-
 const sortingBtn = document.getElementById("sortingBtn")
-
 const addButton = document.getElementsByClassName("addBtn")[0];
 const editButton = document.getElementsByClassName("editBtn")[0];
 const closeModalBackgroundAdd = document.getElementById("modal-background-closeAdd");
@@ -27,7 +22,8 @@ const modalClose = document.getElementById("closeModal");
 const modalCloseEdit = document.getElementById("modalCloseEdit");
 const modalAdd = document.getElementById("modalAdd");
 sortingBtn.addEventListener('click', sortingOnClick);
-organizeBtn.onclick = printSelected;
+organizeBtn.addEventListener('click', printSelected);
+
 
 /*************************ENTER KEY ON BUTTONS*********************************/
 const enterKey1 = document.getElementById('button-save-enter');
@@ -280,7 +276,7 @@ function removeButtonFunctionality() {
         notification[i].addEventListener("mousedown", function (e) {
             if (e.target.tagName === "B" && e.target.className === "fas fa-times fa-lg") {  //Deletes the selected index of the b class onclick. 
                 if (confirm('Er du sikker på at du ønsker å slette kunngjøringen?')) {
-                    e.target.offsetParent.remove() //Removes the parent div for the task. And prevents it from displaying on the web page. 
+                    e.target.offsetParent.remove(); //Removes the parent div for the task. And prevents it from displaying on the web page. 
 
                     //Thees two lines deletes the objectified array item by index. To make sure they do not reappear when user adds another task.
                     let deleteIndex = taskArray.map(function (item) { return item.id; }).indexOf(i); //We already know the index, lets use the same index to delete from taskArray.
@@ -299,13 +295,23 @@ window.onload = printFunc(); //In order to always display all elements inn array
 window.onload = sortingOnLoad();
 
 
-/****************PRINT ARRAY*****************/
+/****************PRINT SELECTED*****************/
+function deleteSortingBtn() {
+    document.getElementById("sortingBtn").style.visibility = "hidden";
+}
+
+function reappearSortingBtn() {
+    document.getElementById("sortingBtn").style.visibility = "visible";
+}
+
+
 function printSelected() {
     output.innerHTML = "";
     const priorityOrganize = document.getElementById("priority-organize");
     let dropDownV = priorityOrganize.options[priorityOrganize.selectedIndex].text;
     for (let i = 1; i < taskArray.length; i++) {
         if (dropDownV === taskArray[i].optionChoice && dropDownV) {
+            deleteSortingBtn();
             output.innerHTML += ` <div class="columns">
              <div class="column is-12-mobile is-11-tablet is-offset-1-tablet columnColor is-multiline">
          <div class="has-text-right "><b id="delSymbol" class="fas fa-times fa-lg"></b></div>
@@ -318,6 +324,7 @@ function printSelected() {
         }
     }
     if (output.innerHTML === "") {
+        reappearSortingBtn();
         printFunc();
     }
     update();
