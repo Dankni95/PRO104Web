@@ -15,7 +15,7 @@ function showAllEmployees() {
                 <div class="cardo" >
                     <div class="cardo-content-wrapper">
                         <div class="image-wrapper">
-                            <img class="card-image" src="images/ansatte/${employe.image}" alt="Ansatte's profil bilde">
+                            <img class="card-image" src="./images/ansatte/${employe.image}" alt="Ansatte's profil bilde">
                         </div>
                         <h2 class="name-title">${employe.name}</h2>
                         <p class="card-phone">${employe.phone}</p>
@@ -61,7 +61,7 @@ searchEmployee.addEventListener('input', (e) => {
                     <div class="cardo" >
                         <div class="cardo-content-wrapper">
                             <div class="image-wrapper">
-                                <img class="card-image" src="images/ansatte/${employe.image}" alt="Ansatte's profil bilde">
+                                <img class="card-image" src="/images/ansatte/${employe.image}" alt="Ansatte's profil bilde">
                             </div>
                             <h2 class="name-title">${employe.name}</h2>
                             <p class="card-phone">${employe.phone}</p>
@@ -104,7 +104,7 @@ searchEmployee.addEventListener('input', (e) => {
             <div class="cardo" >
                     <div class="cardo-content-wrapper">
                         <div class="image-wrapper">
-                            <img class="card-image" src="./images/ansatte/${employe.image}" alt="Ansatte's profil bilde">
+                            <img class="card-image" src="images/ansatte/${employe.image}" alt="Ansatte's profil bilde">
                         </div>
                         <h2 class="name-title">${employe.name}</h2>
                         <p class="card-phone">${employe.phone}</p>
