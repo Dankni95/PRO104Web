@@ -1,10 +1,11 @@
 import DateModule from "../globalModules/DateModule.js";
 
 const FrontpageMainModule = (function () {
-    window.location.href = "https://dankni95.github.io/PRO104Web/index.html";
 }());
 
 DateModule.updateDate();
+window.location.href = "https://dankni95.github.io/PRO104Web/index.html";
+
 /*********************************HTML DOM ETC*****************************************/
 const output = document.getElementsByClassName("columnPosition")[0];
 const priority = document.getElementById("priority");
