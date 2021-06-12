@@ -1,7 +1,7 @@
 import DateModule from "../globalModules/DateModule.js";
 
 const FrontpageMainModule = (function () {
-
+    window.location.href = "/index.html";
 }());
 
 DateModule.updateDate();
