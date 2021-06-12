@@ -42,7 +42,6 @@ function countAllCustomersPizzas(allPizzas) {
     return pizzaCount;
 }
 
-
 function clearSidepanelPizzas() {
     sidepanel.innerHTML = null;
 }
