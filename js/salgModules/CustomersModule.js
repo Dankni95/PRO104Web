@@ -7,7 +7,6 @@ function setDataInCustomersMainPanelFrogner(dynamicFranchise) {
     const tableTitle = document.getElementsByClassName("table-title")[0].parentNode;
     let object = DataModule.getAllData()[dynamicFranchise]?.dagensKunder.navn;
     
-    
     clearBeforeWritingNewCustomers(tableTitle);
     for (const name in object) {
         let newContentTable = document.createElement("tr");
@@ -25,7 +24,6 @@ function setDataInCustomersMainPanelFrogner(dynamicFranchise) {
         <th><img class="customer-status" src="./images/${object[name][1].status}-icon.svg" alt="waiting icon"></th>
         </tr>`;
     }
-
     return { setDataInCustomersMainPanelFrogner };
 }
 
@@ -36,7 +34,6 @@ function generateRandomCustomerMenu() {
     for (let name in object) {
         allPizzas.push(object[name]);
     }
-
     return allPizzas[[allPizzas.length * Math.random() << 0]];
 }
 
@@ -47,7 +44,6 @@ function clearBeforeWritingNewCustomers(tableTitle){
         let array = [...clearAllCustomers]
         array.forEach(n => n.remove());
     }
-
 }
 
 export default { CustomersModule, setDataInCustomersMainPanelFrogner };
