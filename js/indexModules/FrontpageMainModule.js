@@ -1,10 +1,10 @@
 import DateModule from "../globalModules/DateModule.js";
 
 const FrontpageMainModule = (function () {
-
 }());
 
 DateModule.updateDate();
+
 /*********************************HTML DOM ETC*****************************************/
 const output = document.getElementsByClassName("columnPosition")[0];
 const priority = document.getElementById("priority");

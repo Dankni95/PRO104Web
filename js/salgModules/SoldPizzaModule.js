@@ -22,7 +22,7 @@ function writeToPizzaRightPanel() {
         let pizzaCount = count[allPizzas[i]];
         let pizzaName = allPizzas[i];
         sidepanel.innerHTML += `<div class="columns">
-                <img class="sidepanel-content-icon" src="${icons}" alt="placeholder icon">
+                <img class="sidepanel-content-icon" src="${icons}" alt="pizza icon">
                 <h1 class="column">${pizzaCount}  ${pizzaName} solgt!</h1>
             </div>`;
     }
@@ -42,9 +42,9 @@ function countAllCustomersPizzas(allPizzas) {
     return pizzaCount;
 }
 
-
 function clearSidepanelPizzas() {
     sidepanel.innerHTML = null;
 }
+
 
 export default { SoldPizzaModule, writeToPizzaRightPanel, clearSidepanelPizzas };
