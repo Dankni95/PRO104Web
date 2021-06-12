@@ -290,7 +290,6 @@ function removeButtonFunctionality() {
 
 
 /***ONLOAD****/
-window.onload = window.location.href = "https://dankni95.github.io/PRO104Web/index.html";
 window.onload = update();  /** Updating website. Needs to be kept direcly under delete func**/
 window.onload = printFunc(); //In order to always display all elements inn array. 
 window.onload = sortingOnLoad();
