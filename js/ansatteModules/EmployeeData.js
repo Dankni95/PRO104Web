@@ -5,7 +5,7 @@ const EmployeModule = (function () {
         // Lambertseter  
         {
             id: 0,
-            image: "image-12.jpg",
+            image: "/image-12.jpg",
             name: "Geir Ludvig",
             phone: "+47 10 10 30 03",
             title: "Daglig Leder",
