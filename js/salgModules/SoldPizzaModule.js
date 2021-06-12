@@ -46,4 +46,5 @@ function clearSidepanelPizzas() {
     sidepanel.innerHTML = null;
 }
 
+
 export default { SoldPizzaModule, writeToPizzaRightPanel, clearSidepanelPizzas };
