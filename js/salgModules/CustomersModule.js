@@ -17,12 +17,12 @@ function setDataInCustomersMainPanelFrogner(dynamicFranchise) {
         let randomPizzaMenu = generateRandomCustomerMenu();
 
         insertedNode.innerHTML += `<tr>
-        <th class="customer-icon"><img src="./images/${randomPizzaMenu[5].bilde}" alt="pizza icon"></th>
+        <th class="customer-icon"><img src="/images/${randomPizzaMenu[5].bilde}" alt="pizza icon"></th>
         <th class="customer-name">${name}</th>
         <th class="customer-meny">${randomPizzaMenu[0].navn}</th>
         <th>
         <th class="customer-price">${randomPizzaMenu[4].pris}</th>
-        <th><img class="customer-status" src="./images/${object[name][1].status}-icon.svg" alt="waiting icon"></th>
+        <th><img class="customer-status" src="/images/${object[name][1].status}-icon.svg" alt="waiting icon"></th>
         </tr>`;
     }
 
