@@ -10,8 +10,8 @@ const SearchModule = (function () { }());
 //*********function to refresh and add all employes after deleting words in search input*********//  
 function showAllEmployees() {
     const showAll = EmployeModule.getAllEmployees();
-        showAll.forEach(employe => {
-            outputDiv.innerHTML += `
+    showAll.forEach(employe => {
+        outputDiv.innerHTML += `
                 <div class="cardo" >
                     <div class="cardo-content-wrapper">
                         <div class="image-wrapper">
@@ -25,12 +25,12 @@ function showAllEmployees() {
                     </div>
                 </div>
         `;
-        })
-//*********Getting extended information from employees by clicking the "Mer informasjon*********//  
+    })
+    //*********Getting extended information from employees by clicking the "Mer informasjon*********//  
     document.querySelectorAll('#section-btn-info').forEach(button => {
         button.addEventListener('click', (e) => {
-           
-            const showModalByBtn = EmployeModule.getAllEmployees().find( employe => employe.name === e.target.name);
+
+            const showModalByBtn = EmployeModule.getAllEmployees().find(employe => employe.name === e.target.name);
             console.log(showModalByBtn)
             modalBg.classList.add('bg-active');
             modalDiv.innerHTML = `
@@ -46,7 +46,7 @@ function showAllEmployees() {
                 </div>
             `;
         })
-    })   
+    })
 }
 
 
@@ -55,9 +55,9 @@ searchEmployee.addEventListener('input', (e) => {
     let nameArray = [];
     let search = searchEmployee.value;
 
-        if (e.target.value) {
-            nameArray = EmployeModule.getAllEmployees().filter(name => name.name.toLowerCase().includes(e.target.value));
-            nameArray = nameArray.map(employe => `
+    if (e.target.value) {
+        nameArray = EmployeModule.getAllEmployees().filter(name => name.name.toLowerCase().includes(e.target.value));
+        nameArray = nameArray.map(employe => `
                     <div class="cardo" >
                         <div class="cardo-content-wrapper">
                             <div class="image-wrapper">
@@ -72,19 +72,19 @@ searchEmployee.addEventListener('input', (e) => {
                     </div>
                 `);
 
-        } else if (search === "") {
-            showAllEmployees();
-        }
+    } else if (search === "") {
+        showAllEmployees();
+    }
 
     showNameArray(nameArray)
-//*********Getting extended information from employees by clicking the "Mer informasjon*********//
+    //*********Getting extended information from employees by clicking the "Mer informasjon*********//
     document.querySelectorAll('#section-btn-info').forEach(button => {
         button.addEventListener('click', (e) => {
-           
-            const showModalByBtn = EmployeModule.getAllEmployees().find( employe => employe.name === e.target.name);
+
+            const showModalByBtn = EmployeModule.getAllEmployees().find(employe => employe.name === e.target.name);
             console.log(showModalByBtn)
             modalBg.classList.add('bg-active');
-                modalDiv.innerHTML = `
+            modalDiv.innerHTML = `
                     <div class="modal-box">
                         <h1 class="modal-category">Avdeling: ${showModalByBtn.category}</h1>
                         <h2>Arbeids Stilling: ${showModalByBtn.title}</h2>
@@ -98,7 +98,7 @@ searchEmployee.addEventListener('input', (e) => {
                 `;
         })
     })
-//*********If the search input is empty*********// 
+    //*********If the search input is empty*********// 
     function showNameArray(nameArray) {
         const html = !nameArray.length ? `
             <div class="cardo" >

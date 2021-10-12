@@ -2,6 +2,12 @@ html {
     font-family: 'Barlow', sans-serif;
 }
 
+/*Prevent buttons from displaying shadow visually */
+button {
+    border: none;
+}
+
+/******************DIV*****************************/
 .divTopRight {
     width: 100%;
     height: 89px;
@@ -18,6 +24,12 @@ html {
     justify-content: flex-start;
 }
 
+
+
+
+
+
+/****************EDIT********************/
 .editBtn p {
     position: absolute;
     border-radius: 10px;
@@ -31,12 +43,274 @@ html {
     cursor: pointer;
 }
 
-.divTopLeft select {
-    margin-top: 3px;
-    left: 253px;
+.headlineCSS {
+    position: relative;
+    height: 30%;
+    width: 35%;
+    background: #1F1D2B;
+    border: 1px solid #FF6F5A;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1.5rem;
+    right: 32.5%;
+    top: 4%;
+    
+}
+
+.txtInputEditDisplay {
+    position: relative;
+    top:25px;
+    height: 135px;
+    max-height: 135px;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    background: #1F1D2B;
+    border: 1px solid #FF6F5A;
+    box-sizing: border-box;
+    color: white;
+    font-size: 28px;
+    right: 0.35%;
+    padding-bottom: 20px;
+    padding-right: 15px;
 }
 
 
+
+.headlineDisplayEdit {
+    position: relative;
+    /*line-height: 50px;*/
+    top:10px;
+    height: 70px;
+    max-height: 70px;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    background: #1F1D2B;
+    border: 1px solid #FF6F5A;
+    box-sizing: border-box;
+    color: white;
+    font-size: 28px;
+    right: 0.35%;
+    padding-bottom: 20px;
+    padding-right: 15px;
+}
+
+
+.dropdownCSSModal {
+    position: relative;
+    top: 80px;
+    /*left: -4%;*/
+    height: 70px;
+    width: 25%;
+    font-size: 100%;
+    text-align-last: center;
+    /*A way to center text in dropdown menu. Only works in chrome*/
+    border: 1px solid #FF6F5A;
+    color: white;
+    background-color: #1F1D2B;
+    cursor: pointer;
+}
+
+
+.editIconTxtOutput{
+    float: right; 
+    position: -webkit-sticky;
+    position: sticky;
+    top: 45%; 
+    cursor:pointer;
+    color:red;
+    animation: blinker 2.5s 4;     
+    animation-delay: 12s;  
+}
+
+/**In need of seperate class because only one icon should be green onclick***/
+.editIconHeadlOutput{
+    float: right; 
+    position: -webkit-sticky;
+    position: sticky;                            /* VIRKER IKKE*/
+    top: 45%;
+    cursor:pointer;
+    color:red;
+    animation: blinker 2.5s 4;     
+    animation-delay: 12s;  
+}
+
+
+/**Animation when user edit complete*/
+@keyframes blinkerFontFadeout { /*Old txt before edit fades out*/
+    0% {color:grey;}
+      
+    50% {opacity: 0;}
+  
+    100% {
+        color:grey;
+        opacity: 0;
+         }
+     }
+
+
+  @keyframes blinkerFontFadein { /*New txt after edit appears*/
+    0% {
+   opacity: 0;
+   color:#3c96ce;
+    }
+   50% {opacity: 1;}
+   70%{color: white;}
+    }
+/******************REGRET BUTTON********************************************/
+                   
+.regretBtnStyle {
+    position: relative;
+    left: 2%;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 3% 3% 3% 3%;
+    font-size: medium;
+    color: black;
+    /*background-color:#FF6F5A;
+    background-color: #008264;*/
+    background-color: #87CEFAb3;
+    cursor: pointer;
+    z-index: 1;
+    -webkit-animation: slideIn 3s forwards;
+    -moz-animation: slideIn 3s forwards;
+    animation: slideIn 3s forwards, blinker 2.5s 4;     /* blinker (the second animation) = How fast blinks and how many*/
+    animation-delay: 0s, 4s;                            /*Only delay the blinker*/
+    }
+
+    .regretBtnStyle:hover{
+    background-color: #87CEFA;
+    }
+
+    /*BLINK/FADE**/
+        
+        @keyframes blinker {
+        50% {
+            opacity: 0.2;
+            
+        }
+        }
+
+        /*Slide from right to left*/
+
+    @-webkit-keyframes slideIn {
+        0% {
+            transform: translateX(600px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+        }
+        @-moz-keyframes slideIn {
+        0% {
+            transform: translateX(600px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+        }
+        @keyframes slideIn {
+        0% {
+            transform: translateX(600px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+     }
+
+
+
+
+
+/***********DELETE*******************/
+@keyframes deleteColumnCompressBox {
+    /*Scaling x and y*/
+    /*from {transform: scale(1,1);} 
+    
+    to {transform: scale(0.08, 0.8);}*/
+    
+   /*from{width: 100%;
+    left: -57px;
+}
+   to{width: 40%;
+    left: 500px;
+    height: 10px !important;
+    }*/
+    0% {
+        transform: translateX(0);}
+    20% {
+        background-color: transparent;
+        }
+    100% {
+        transform: translateX(-2200px);
+        background-color: transparent;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+/***********SORT*******************/
+
+.sortingBtnStyle button {
+    background-color: #50343A;
+    color: white;
+    position: relative;
+    font-size: 1rem;
+    padding: 17px;
+    width: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    top: -7.2rem;
+    font-size: 28px;
+}
+
+
+/************FILTER****************/
+.divTopLeft select {
+    margin-top: 3px;
+    left: 150px;
+}
+
+
+.dropdownChoiceDisplay {
+    position: absolute;
+    top: 7.9rem;
+    height: 5.2%;
+    width: auto; /*More responsive font*/
+    padding: 0.5%  1%  0.5% 1% ;
+    font-size: 100%;
+    text-align-last: center;
+    border: 1px solid #50343A;
+    color: white;
+    background-color: #50343A;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden; /*No need for scrollbar when only 3 options. Scrollbar could be useful in responsiv test. But in that case it disappeared :/ */
+}
+
+/*
+.dropdownChoiceDisplay:focus {
+    background-color: #1F1D2B;
+    }*/
+
+
+
+
+
+
+
+
+
+
+/*********************ADD****************/
 .addBtn {
     border-radius: 10px;
     background-color: #50343A;
@@ -68,13 +342,72 @@ html {
     color: white;
 }
 
-
-/*Prevent buttons from displaying shadow visually */
-button {
-    border: none;
+.headlineCSSAdd {
+    position: relative;
+    height: 30%;
+    width: 35%;
+    background: #1F1D2B;
+    border: 1px solid #FF6F5A;
+    box-sizing: border-box;
+    color: white;
+    font-size: 1.5rem;
+    right: 32.5%;
+    top: -4rem;
 }
 
+.dropdownCSSModalAdd {
+    position: relative;
+    top: 7px;
+    height: 70px;
+    width: 25%;
+    font-size: 100%;
+    text-align-last: center;
+    border: 1px solid #FF6F5A;
+    color: white;
+    background-color: #1F1D2B;
+    cursor: pointer;
+    }
 
+
+    .dropdownCSSModalAdd option:hover {
+        background-color: #50343A;
+        /*padding-left: -1.3%;*/
+    }
+
+    .dropdownCSSModalAdd::-webkit-scrollbar { display: none; }
+
+
+
+
+/**Animation when added column**/
+    @keyframes blinkercolumnColor {
+        0%{
+            opacity: 0.5;
+            background-color: #50343A;
+        }
+      50% {
+          background-color: #50343A;
+     opacity: 1;
+      }
+      100%{
+          background-color: #1F1D2B;
+      }
+    }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********TASK COLUMN**********/
 .columnPosition {
     position: absolute;
     width: 100%;
@@ -88,22 +421,7 @@ button {
     flex-direction: column;
     padding-bottom: 20px;
     padding-right: 15px;
-}
-
-.columnPosition::-webkit-scrollbar {
-    background-color: transparent;
-    margin-left: 2rem;
-    width: 14px;
-}
-
-.columnPosition::-webkit-scrollbar-thumb {
-    border: 4px solid rgba(0, 0, 0, 0);
-    /*Transparent color to make the egdes dissapair*/
-    background-clip: padding-box;
-    /*Slim thumb*/
-    border-radius: 999px;
-    /*Round egdes*/
-    background-color: #E74C3C;
+    z-index: 1;
 }
 
 
@@ -113,16 +431,18 @@ button {
     position: relative;
     /*right: 5%;*/
     padding-top: 1%;
+    z-index: 1;
 }
 
 .columnColor {
     background: #1F1D2B;
     border: 1px solid #E74C3C;
     box-sizing: border-box;
-    color: white;
+    /*color: white;*/
     box-shadow: 0px 6px 10px #00000024, 0px 1px 18px #0000001f, 0px 3px 5px #00000033;
     /* Notification shadow */
     border-radius: 1%;
+    z-index: 1;
 }
 
 
@@ -134,33 +454,56 @@ b {
 }
 
 
-b:hover {
-    color: #FF6F5A;
+
+
+
+
+
+
+
+
+/**************SCROLL BARS*******************/
+::-webkit-scrollbar {
+    background-color: transparent;
+    margin-left: 2rem;
+    width: 14px;
 }
 
-/**************Hovers******************/
-.displayChosenBtn:hover {
-    color: #FF6F5A;
+::-webkit-scrollbar-thumb {
+    border: 4px solid rgba(0, 0, 0, 0);
+    /*Transparent color to make the egdes dissapair*/
+    background-clip: padding-box;
+    /*Slim thumb*/
+    border-radius: 999px;
+    /*Round egdes*/
+    background-color: #E74C3C;
 }
 
-.addBtn p:hover {
-    color: #FF6F5A;
-}
 
 
 
-.editBtn p:hover {
-    color: #FF6F5A;
-}
 
-.addBtn p:hover:first-letter {
-    color: white;
-}
 
-.sortingBtnStyle button:hover {
-    color: #FF6F5A;
-}
 
+/**************HOVERS******************/
+b:hover {color: #FF6F5A;}
+
+.addBtn p:hover {color: #FF6F5A;}
+
+.editBtn p:hover {color: #FF6F5A;}
+
+.addBtn p:hover:first-letter {color: white;}
+
+.sortingBtnStyle button:hover {color: #FF6F5A;}
+
+.editIconTxtOutput:hover{color: #FF6F5A;}
+
+.editIconHeadlOutput:hover{color: #FF6F5A;}
+
+
+
+
+/*****MODALS******/
 .txtInput {
     position: relative;
     height: 70%;
@@ -173,92 +516,15 @@ b:hover {
     right: 0.35%;
 }
 
-.headlineCSS {
-    position: relative;
-    height: 30%;
-    width: 35%;
-    background: #1F1D2B;
-    border: 1px solid #FF6F5A;
-    box-sizing: border-box;
-    color: white;
-    font-size: 1.5rem;
-    right: 32.5%;
-
-}
-
-.headlineCSSAdd {
-    position: relative;
-    height: 30%;
-    width: 35%;
-    background: #1F1D2B;
-    border: 1px solid #FF6F5A;
-    box-sizing: border-box;
-    color: white;
-    font-size: 1.5rem;
-    right: 32.5%;
-    top: -4rem;
-
-}
-
-.dropdownCSSModal {
-    position: relative;
-    top: -77px;
-    left: -4%;
-    height: 70px;
-    width: 18%;
-    font-size: 100%;
-    text-align-last: center;
-    /*A way to center text in dropdown menu. Only works in chrome*/
-    border: 1px solid #FF6F5A;
-    color: white;
-    background-color: #1F1D2B;
-    cursor: pointer;
-}
-
-.dropdownCSSModalAdd {
-    position: relative;
-    top: 7px;
-    height: 70px;
-    width: 18%;
-    font-size: 100%;
-    text-align-last: center;
-    border: 1px solid #FF6F5A;
-    color: white;
-    background-color: #1F1D2B;
-    cursor: pointer;
-}
-
-.dropdownChoiceDisplay {
-    position: absolute;
-    top: 7.9rem;
-    left: 20%;
-    height: 5.2%;
-    width: 9.1%;
-    font-size: 100%;
-    text-align-last: center;
-    border: 1px solid #FF6F5A;
-    color: white;
-    background-color: #1F1D2B;
-    cursor: pointer;
-}
 
 
-.displayChosenBtn {
-    position: relative;
-    font-size: 1rem;
-    color: white;
-    padding: 15px;
-    width: auto;
-    background-color: #50343A;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    top: -12.7rem;
-    font-size: 28px;
-    left: 2%;
-}
 
 
+
+
+
+
+/*********************OUTPUT MESSAGE***********/
 .errorOutput error {
     position: relative;
     color: #FF6F5A;
@@ -269,21 +535,44 @@ b:hover {
 .errorOutput error p {
     position: absolute;
     color: yellow;
-    right: 101%;
+    right: 95%;
+    padding-right: 7%;
 }
 
-.sortingBtnStyle button {
-    background-color: #50343A;
-    color: white;
+
+
+
+
+
+
+/*****************DROPDOWN DEFAULT VALUES****************/
+select:focus {outline: 0;} /*Remove ugly white egde onclick */ 
+
+option:hover {   /*Affects all dropdown menu's with option tag*/
+    border: 2px solid #E74C3C;
+    border-radius: 40px;
+}
+option {text-transform: uppercase;}
+
+
+
+
+
+
+
+   
+
+  .dropdownCSSModalEdit {
     position: relative;
-    font-size: 1rem;
-    padding: 17px;
-    width: auto;
+    top: 40px;
+    
+    height: 150px;
+    width: 70%;
+    font-size: 150%;
+    text-align-last: center;
+    
+    border: 1px solid #FF6F5A;
+    color: white;
+    background-color: #1F1D2B;
     cursor: pointer;
-    border-radius: 10px;
-    border: none;
-    top: -12.7rem;
-    font-size: 28px;
-
-
-}
+    }

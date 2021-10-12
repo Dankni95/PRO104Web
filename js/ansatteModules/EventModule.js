@@ -17,10 +17,10 @@ const EventModule = (window.onload = function data() {
 const showAll = () => {
     const showAllFilter = EmployeModule.getAllEmployees();
     let showAllHtml = "";
-    
+
 
     showAllFilter.forEach(employe => {
-       
+
         showAllHtml += `
             <div class="cardo" >
                 <div class="cardo-content-wrapper">
@@ -36,18 +36,18 @@ const showAll = () => {
             </div>
         `;
 
-      
+
     })
-    
+
     outputDiv.innerHTML = showAllHtml;
-    
-//*********Show more information modal with individual button for each employee /Whitin the function*********//    
+
+    //*********Show more information modal with individual button for each employee /Whitin the function*********//    
     document.querySelectorAll('#section-btn-info').forEach(button => {
-        
-        button.addEventListener('click', (e) => {   
+
+        button.addEventListener('click', (e) => {
             const foundEmployee = showAllFilter.find(employe => employe.name === e.target.name);
             modalBg.classList.add('bg-active');
-                modalDiv.innerHTML = `
+            modalDiv.innerHTML = `
                     <div class="modal-box">
                         <h1 class="modal-category">Avdeling: ${foundEmployee.category}</h1>
                         <h2>Arbeids Stilling: ${foundEmployee.title}</h2>
@@ -58,13 +58,13 @@ const showAll = () => {
                         </div>
                         
                     </div>
-                `; 
+                `;
         })
     })
-            modalBg.addEventListener('click', () => {
-                modalBg.classList.remove('bg-active');
+    modalBg.addEventListener('click', () => {
+        modalBg.classList.remove('bg-active');
 
-            })
+    })
 }
 showAll();
 
@@ -76,7 +76,7 @@ selector.addEventListener('change', (e) => {
     const filterAll = EmployeModule.getAllEmployees().filter(item => item.all === e.target.value);
 
     let html = "";
-//*********Showing Employees based on chosen department*********//
+    //*********Showing Employees based on chosen department*********//
     filterCategory.forEach(employe => {
         html += `
             <div class="cardo" >
@@ -93,7 +93,7 @@ selector.addEventListener('change', (e) => {
             </div>
         `;
     })
-//*********Showing all employees based on the choice "Alle avdelinger*********// 
+    //*********Showing all employees based on the choice "Alle avdelinger*********// 
     filterAll.forEach(employe => {
         html += `
             <div class="cardo" >
@@ -113,14 +113,14 @@ selector.addEventListener('change', (e) => {
     outputDiv.innerHTML = html;
 
 
-//*********Showing extended information on indidvidual employees*********//  
+    //*********Showing extended information on indidvidual employees*********//  
     let modalBg = document.querySelector('.modal-bg');
     document.querySelectorAll('#section-btn-info').forEach(button => {
         button.addEventListener('click', (e) => {
 
             const foundEmployee = filterCategory.find(employe => employe.name === e.target.name);
             modalBg.classList.add('bg-active');
-                modalDiv.innerHTML = `
+            modalDiv.innerHTML = `
                     <div class="modal-box">
                         <h1 class="modal-category">Avdeling: ${foundEmployee.category}</h1>
                         <h2>Arbeids Stilling: ${foundEmployee.title}</h2>
@@ -134,14 +134,14 @@ selector.addEventListener('change', (e) => {
                 `;
         })
     })
-//*********Show more information modal with individual button for each employee*********//  
+    //*********Show more information modal with individual button for each employee*********//  
     document.querySelectorAll('#section-btn-info').forEach(button => {
         button.addEventListener('click', (e) => {
 
             const foundAllEmployee = filterAll.find(employe => employe.name === e.target.name);
             modalBg.classList.add('bg-active');
-            
-                modalDiv.innerHTML = `
+
+            modalDiv.innerHTML = `
                     <div class="modal-box">
                         <h1 class="modal-category">Avdeling: ${foundAllEmployee.category}</h1>
                         <h2>Arbeids Stilling: ${foundAllEmployee.title}</h2>
@@ -156,13 +156,10 @@ selector.addEventListener('change', (e) => {
         })
     })
 
-            modalBg.addEventListener('click', () => {
-                modalBg.classList.remove('bg-active');
-            })
+    modalBg.addEventListener('click', () => {
+        modalBg.classList.remove('bg-active');
+    })
 });
 
 
 export default { EventModule, showAll };
-
-
-

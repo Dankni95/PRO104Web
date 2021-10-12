@@ -95,33 +95,33 @@
                 <button class="addBtn">
                     <p><strong>+</strong> Legg til kunngjøring</p>
                 </button>
-            </div>
 
 
-            <div class="divTopRight">
                 <button id="editBtnEnterKey" class="editBtn">
 
                     <p style="font-size: 20px; ">
                         <editTag id="editIconHover" class="fas fa-edit"></editTag>
                         Rediger
                     </p>
-
-
                 </button>
             </div>
+
         </main>
 
         <!--DROPDOWN MENU ONLY ONE TASK DISPLAY-->
         <main>
             <div class="divTopLeft">
-                <select id="priority-organize" class="dropdownChoiceDisplay">
+                <select id="priority-organize"
+                    class="dropdownChoiceDisplay onmouseoverPriority onmouseoutPriority organizeClick"
+                    onmouseout="this.size=1;">
+                    <!--onmouse for hover effect-->
+                    <option id="hideWhiteBoxFilter">Filtrer</option>
                     <option>Viser alle</option>
-
                 </select>
+
                 <p class="sortingBtnStyle"><button style="font-size: 20px;" id="sortingBtn" type="button"
                         class="fas fa-sort"></button></p>
-                <input style="font-size: 20px;" type="button" class="displayChosenBtn" id="organizeBtn"
-                    value="Filtrer" />
+
             </div>
         </main>
 
@@ -148,29 +148,36 @@
                     Legg til en beskjed til de ansatte</p>
                 <button id="closeModal" class="delete" aria-label="close"></button>
             </header>
-            <section class="modal-card-body">
-
-
+            <section class="modal-card-body is-clipped">
+                <!-- is-clipped to remove scroll bar-->
 
                 <!--           INPUT TXT             -->
-                <textarea id="text-field" placeholder="Skriv kunngjøringen her:" class="txtInput" rows="14" cols="10"
-                    wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
+                <textarea id="text-field" class="txtInput" rows="14" cols="10" wrap="soft" maxlength="1000"
+                    style="overflow:hidden; resize:none; color:gray"
+                    onfocus="if(this.value == 'Skriv kunngjøringen her:') this.value='';this.style.color='white'"
+                    onblur="if(this.value == '') this.value='Skriv kunngjøringen her:';this.style.color='gray'">Skriv kunngjøringen her:</textarea>
 
                 <!--DROPDOWN MENU CREATE-->
                 <div>
-                    <select id="priority" class="dropdownCSSModalAdd">
-                        <option>Velg en prioritet</option>
+                    <select id="priority" class="dropdownCSSModalAdd" onfocus='this.size=10;' onblur='this.size=0;'
+                        onchange='this.size=40; this.blur();'>
+                        <option id="removeDefaultInList" selected="true" disabled="disabled">Velg en prioritet:</option>
+                        <!-- This specific OPTION tag has its own id-->
+
                     </select>
                 </div>
                 <!--End of dropdown menu-->
 
-                <!--   INPUT TXT  -->
-                <textarea id="headline-txt" placeholder="Skriv overskriften her:" class="headlineCSSAdd" rows="14"
-                    cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
+                <!--   INPUT headline  -->
+
+                <textarea id="headline-txt" class="headlineCSSAdd" rows="14" cols="10" wrap="soft" maxlength="40"
+                    style="overflow:hidden; resize:none; color:gray"
+                    onfocus="if(this.value == 'Skriv overskriften her:') this.value='';this.style.color='white'"
+                    onblur="if(this.value == '') this.value='Skriv overskriften her:';this.style.color='gray'">Skriv overskriften her:</textarea>
 
             </section>
             <footer class="modal-card-foot">
-                <button id="button-save-enter" class="button-save saveAdd" onclick="addToArry()">Lagre
+                <button id="button-save-enter" class="button-save saveAdd">Lagre
                     endringer</button>
                 <error class="errorOutput" id="error-msg"></error>
 
@@ -190,24 +197,47 @@
                     Rediger en beskjed</p>
                 <button id="modalCloseEdit" class="delete" aria-label="close"></button>
             </header>
-            <section class="modal-card-body">
-                <textarea id="text-field-edit" placeholder="Rediger kunngjøringen her:" class="txtInput" rows="14"
-                    cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
-                <!--   INPUT TXT  -->
-                <textarea id="headline-txt-edit" placeholder="Endre overskriften her:" class="headlineCSS" rows="14"
-                    cols="10" wrap="soft" maxlength="1000" style="overflow:hidden; resize:none;"></textarea>
+            <section class="modal-card-body is-clipped">
+
+                <textarea id="headline-txt-edit" class="headlineCSS" rows="14" cols="10" wrap="soft" maxlength="40"
+                    style="overflow:hidden; resize:none; color:gray"
+                    onfocus="if(this.value == 'Endre overskriften her:') this.value='';this.style.color='white'"
+                    onblur="if(this.value == '') this.value='Endre overskriften her:';this.style.color='gray'">Endre overskriften her:</textarea>
+                <!--  INPUT TXT  -->
+
+                <textarea id="text-field-edit" class="txtInput" rows="14" cols="10" wrap="soft" maxlength="1000"
+                    style="overflow:hidden; resize:none; color:gray"
+                    onfocus="if(this.value == 'Endre kunngjøringen her:') this.value='';this.style.color='white'"
+                    onblur="if(this.value == '') this.value='Endre kunngjøringen her:';this.style.color='gray'">Endre kunngjøringen her:</textarea>
+                <!--placeholder with grey color. Removes placeholder onclick-->
+
+
+                <div id="taskDisplayed"></div>
+
+
                 <div>
-                    <label for="headline-choose">Velg overskrift:</label>
-                    <select id="headline-choose" class="dropdownCSSModal">
+
+
+
+                    <select id="headline-choose" class="dropdownCSSModalEdit" onfocus='this.size=10;'
+                        onblur='this.size=0;' onchange='this.size=40; this.blur();'>
                         <option>Velg overskrift</option>
                         <!--All options deleted in js.-->
                     </select>
+
                 </div>
             </section>
             <footer class="modal-card-foot">
+
+                <button class="button-save headlineChooseBtn">Gå videre</button>
+                <button id="whatEditBtn" class="button-save">Gå videre</button>
                 <button id="button-save-enter" class="button-save saveEdit">Lagre
                     endringer</button>
+
+                <button class="getBack fade-in" id="regretAndGetBack">Gå tilbake</button>
+
                 <error class="errorOutput" id="error-msg2"></error>
+                <error class="errorOutput" id="error-msg3"></error>
             </footer>
         </div>
     </div>
