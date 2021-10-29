@@ -1,10 +1,10 @@
 import DateModule from "../globalModules/DateModule.js";
 
 const FrontpageMainModule = (function () {
+
 }());
 
 DateModule.updateDate();
-
 /*********************************HTML DOM ETC*****************************************/
 const errorMsg = document.getElementById("error-msg");
 const errorMsg2 = document.getElementById("error-msg2");
@@ -600,4 +600,59 @@ function sortByImportanceReverse(a, b) {
     }
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+/**************** MOUSEOVER DROPDOWN MENU PRINT SELECTED *****************/
+priorityOrganize.addEventListener("mouseover", function () {
+    mouseOverFilterDropMenu();
+});
+
+
+onmouseoutPriority.addEventListener("mouseout", function () {
+    closeFilterDropMenu();
+});
+
+organizeClick.addEventListener("click", function () {
+    printSelected();
+});
+
+
+/***This could possible be rather been done in css*/
+
+function mouseOverFilterDropMenu() {
+    var priorityOrganize = document.getElementById("priority-organize").options.length;
+    document.getElementById("priority-organize").size = priorityOrganize;
+    priorityOrganize = document.getElementById("priority-organize").style.height = "100px";
+    priorityOrganize = document.getElementById("priority-organize").style.width = "200px";
+    priorityOrganize = document.getElementById("priority-organize").style.backgroundColor = "rgb(31, 29, 43)"; /*Do not change BackGcolor in CSS with hover on select tag. Looks glitchy. */
+    priorityOrganize = document.getElementById("priority-organize").style.border = "2px solid #E74C3C";
+    priorityOrganize = document.getElementById("priority-organize").style.borderRadius = "20px";
+}
+
+
+
+function closeFilterDropMenu() {
+    priorityOrganize = document.getElementById("priority-organize").style.backgroundColor = "#50343A";
+    priorityOrganize = document.getElementById("priority-organize").style.height = "5.2%";
+    priorityOrganize = document.getElementById("priority-organize").style.width = "auto";
+    priorityOrganize = document.getElementById("priority-organize").style.border = "none";
+    priorityOrganize = document.getElementById("priority-organize").style.borderRadius = "10px";
+}
+
+
+/*********DROPDOWN MENU ADD ARRAY REMOVE DEFAULT VALUE IN LIST**********/
+var removeDefaultInList = document.getElementById("removeDefaultInList").style.display = "none"; /***IMPORTANT. this specific OPTION tag has its own id***/
+
+/************Filter button**************/
+var hideWhiteBoxFilter = document.getElementById("hideWhiteBoxFilter").style.display = "none";
+
+
 export default { FrontpageMainModule };
