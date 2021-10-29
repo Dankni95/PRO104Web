@@ -305,9 +305,10 @@ function printFunc() {
           </div>
         </div>`;
 
-        for (let i = 0; i < blinkOnAdded.length; i++) {
+        for (let i = 0; i < blinkOnAdded.length; i++) { 
             if (taskArray[i].isJustAdded) {
-                blinkOnAdded[i].style.animation = "blinkercolumnColor 15s 1";
+               
+                blinkOnAdded[i].style.animation = "blinkercolumnColor 2s 1";
                 taskArray[i].isJustAdded = false;
             }
         }
@@ -337,8 +338,10 @@ function removeButtonFunctionality() {
                     //Thees two lines deletes the objectified array item by index. To make sure they do not reappear when user adds another task.
                     let deleteIndex = taskArray.map(function (item) { return item.id; }).indexOf(i); //We already know the index, lets use the same index to delete from taskArray.
 
-
-                    e.target.offsetParent.style.animation = "deleteColumnCompressBox 2s 1";
+                   
+                    e.target.offsetParent.style.animation = "deleteColumnCompressBox 2s 1"; 
+                   
+                    
 
                     setTimeout(delayDelete, 800);
                     function delayDelete() {
